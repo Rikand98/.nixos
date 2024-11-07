@@ -1,3 +1,7 @@
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# : Manager {{{
+
 [manager]
 cwd = { fg = "#83a598" }
 
@@ -137,3 +141,5 @@ rules = [
     { name = "*", fg = "#a89984" },
     { name = "*/", fg = "#83a598" }
 ]
+
+# : }}}

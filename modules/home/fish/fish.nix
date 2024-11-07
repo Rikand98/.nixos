@@ -1,6 +1,9 @@
 {pkgs, ...}: {
   programs = {
-    fish = { enable = true;
+    fish = { 
+      enable = true;
+      config = ''set -Ux EDITOR nvim'';
+      loginShellInit = ''export EDITOR=nvim'';
 
       interactiveShellInit = '' ${pkgs.pfetch}/bin/pfetch
 
