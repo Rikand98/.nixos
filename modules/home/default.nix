@@ -31,6 +31,6 @@
     ./waybar                          # status bar
     ./wezterm.nix                     # terminal
     ./xdg-mimes.nix                   # xdg config
-    ./yazi.nix                        # terminal filesystem
+    ./yazi                            # terminal filesystem
   ];
 }
