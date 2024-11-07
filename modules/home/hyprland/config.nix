@@ -1,4 +1,3 @@
-#!/usr/bin/env fish
 { ... }: 
 {
   wayland.windowManager.hyprland = {
@@ -160,7 +159,7 @@
         "$mainMod, E, exec, nemo"
         "$mainMod SHIFT, B, exec, toggle_waybar"
         "$mainMod, C ,exec, hyprpicker -a"
-	"$mainMod, Y, exec, fish -c yazi"
+	"$mainMod, Y, exec, yazi"
         "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod SHIFT, W, exec, vm-start"
 
