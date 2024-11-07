@@ -21,7 +21,6 @@
     ./micro.nix                       # nano replacement
     ./nemo.nix                        # file manager
     ./nvim.nix                        # neovim editor
-    ./p10k/p10k.nix
     ./packages.nix                    # other packages
     ./rofi.nix                        # launcher
     ./scripts/scripts.nix             # personal scripts
@@ -32,7 +31,6 @@
     ./waybar                          # status bar
     ./wezterm.nix                     # terminal
     ./xdg-mimes.nix                   # xdg config
-    ./zsh                             # shell
     ./yazi.nix                        # terminal filesystem
   ];
 }

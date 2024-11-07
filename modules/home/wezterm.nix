@@ -23,7 +23,7 @@
       config.cell_width = 1
       config.underline_thickness = 2
 
-      config.default_prog = { 'zsh' }
+      config.default_prog = { 'fish' }
 
       config.window_decorations = "NONE"
       config.window_background_opacity = 0.45
@@ -34,7 +34,6 @@
         top = 5,
         bottom = 5,
       }
-
       config.default_cursor_style = "SteadyBar"
 
       config.enable_scroll_bar    = false
@@ -46,43 +45,43 @@
       config.freetype_load_target = 'Light'
       config.freetype_render_target = 'HorizontalLcd'
 
-      -- config.color_scheme = "GruvboxDarkHard"
+      config.color_scheme = 'Gruvbox Material (Gogh)'
       config.bold_brightens_ansi_colors = false
-      config.colors = {
-        foreground = '#EBDBB2',
-        background = '#282828',
+      -- config.colors = {
+      --  foreground = '#EBDBB2',
+      --  background = '#282828',
 
-        cursor_bg = '#BDAE93',
-        cursor_fg = '#BDAE93',
-        cursor_border = '#BDAE93',
+      --  cursor_bg = '#BDAE93',
+      --  cursor_fg = '#BDAE93',
+      --  cursor_border = '#BDAE93',
 
-        selection_fg = '#1D2021',
-        selection_bg = '#98971A',
+      --  selection_fg = '#1D2021',
+      --  selection_bg = '#98971A',
 
         -- The color of the split lines between panes
-        split = '#928374',
+      --  split = '#928374',
 
-        ansi = {
-          '#3c3836',
-          '#cc241d',
-          '#98971a',
-          '#d79921',
-          '#458588',
-          '#b16286',
-          '#689d6a',
-          '#a89984',
-        },
-        brights = {
-          '#928374',
-          '#fb4934',
-          '#b8bb26',
-          '#fabd2f',
-          '#83a598',
-          '#d3869b',
-          '#8ec07c',
-          '#fbf1c7',
-        },
-      }
+      --  ansi = {
+      --    '#3c3836',
+      --    '#cc241d',
+      --    '#98971a',
+      --    '#d79921',
+      --    '#458588',
+      --    '#b16286',
+      --    '#689d6a',
+      --    '#a89984',
+      --  },
+      --  brights = {
+      --    '#928374',
+      --    '#fb4934',
+      --    '#b8bb26',
+      --    '#fabd2f',
+      --    '#83a598',
+      --    '#d3869b',
+      --    '#8ec07c',
+      --    '#fbf1c7',
+      --  },
+     -- }
 
       --# tab bar
       config.hide_tab_bar_if_only_one_tab = true

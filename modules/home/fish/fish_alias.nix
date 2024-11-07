@@ -1,6 +1,6 @@
 { hostname, config, pkgs, host, ...}: 
 {
-  programs.zsh = {
+  programs.fish = {
     shellAliases = {
       # Utils
       c = "clear";
@@ -27,16 +27,12 @@
 
       # Nixos
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";
-      ns = "nom-shell --run zsh";
+      ns = "nom-shell --run fish";
       nix-switch = "nh os switch";
       nix-update = "nh os switch --update";
       nix-clean = "nh clean all --keep 5";
       nix-search = "nh search";
       nix-test = "nh os test";
-
-      # python
-      piv = "python -m venv .venv";
-      psv = "source .venv/bin/activate";
     };
   };
 }

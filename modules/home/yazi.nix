@@ -3,7 +3,7 @@
   programs.yazi = {
     enable = true; 
     settings = {
-        flavor = "gruvbox-gtk-theme"
+        flavor = "gruvbox-gtk-theme";
     };
   };
  }

@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env fish
 
 # VM name
 vm_name="win10"
