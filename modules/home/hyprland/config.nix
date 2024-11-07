@@ -1,3 +1,4 @@
+#!/usr/bin/env fish
 { ... }: 
 {
   wayland.windowManager.hyprland = {
@@ -139,7 +140,7 @@
         "$mainMod, F1, exec, show-keybinds"
 
         # keybindings
-        "$mainMod, Return, exec, wezterm"
+        "$mainMod, W, exec, wezterm"
         "ALT, Return, exec, [float; center; size 950 650] wezterm"
         "$mainMod SHIFT, Return, exec, [fullscreen] wezterm"
         "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] floorp'"
@@ -147,7 +148,7 @@
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
         "$mainMod, Space, exec, toggle_float"
-        "$mainMod, D, exec, rofi -show drun || pkill rofi"
+        "$mainMod, R, exec, rofi -show drun || pkill rofi"
         "$mainMod SHIFT, D, exec, webcord --enable-features=UseOzonePlatform --ozone-platform=wayland"
         "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
         "$mainMod, Escape, exec, swaylock"
@@ -159,8 +160,7 @@
         "$mainMod, E, exec, nemo"
         "$mainMod SHIFT, B, exec, toggle_waybar"
         "$mainMod, C ,exec, hyprpicker -a"
-        "$mainMod, W, exec, wezterm"
-	"$mainMod, Y, exec, yazi"
+	"$mainMod, Y, exec, fish -c yazi"
         "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod SHIFT, W, exec, vm-start"
 

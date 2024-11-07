@@ -26,7 +26,7 @@
       config.default_prog = { 'fish' }
 
       config.window_decorations = "NONE"
-      config.window_background_opacity = 0.45
+      config.window_background_opacity = 0.98
       config.window_close_confirmation = 'NeverPrompt'
       config.window_padding = {
         left = 5,
