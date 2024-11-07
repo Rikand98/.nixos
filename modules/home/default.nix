@@ -20,7 +20,7 @@
     ./swaync/swaync.nix               # notification deamon
     ./micro.nix                       # nano replacement
     ./nemo.nix                        # file manager
-    ./nvim.nix                        # neovim editor
+    ./nixvim                          # nixvim editor
     ./packages.nix                    # other packages
     ./rofi.nix                        # launcher
     ./scripts/scripts.nix             # personal scripts
