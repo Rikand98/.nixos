@@ -34,7 +34,7 @@
         top = 5,
         bottom = 5,
       }
-      config.default_cursor_style = "SteadyBar"
+      config.default_cursor_style = "SteadyBlock"
 
       config.enable_scroll_bar    = false
       config.warn_about_missing_glyphs = false
@@ -47,41 +47,6 @@
 
       config.color_scheme = 'Gruvbox Material (Gogh)'
       config.bold_brightens_ansi_colors = false
-      -- config.colors = {
-      --  foreground = '#EBDBB2',
-      --  background = '#282828',
-
-      --  cursor_bg = '#BDAE93',
-      --  cursor_fg = '#BDAE93',
-      --  cursor_border = '#BDAE93',
-
-      --  selection_fg = '#1D2021',
-      --  selection_bg = '#98971A',
-
-        -- The color of the split lines between panes
-      --  split = '#928374',
-
-      --  ansi = {
-      --    '#3c3836',
-      --    '#cc241d',
-      --    '#98971a',
-      --    '#d79921',
-      --    '#458588',
-      --    '#b16286',
-      --    '#689d6a',
-      --    '#a89984',
-      --  },
-      --  brights = {
-      --    '#928374',
-      --    '#fb4934',
-      --    '#b8bb26',
-      --    '#fabd2f',
-      --    '#83a598',
-      --    '#d3869b',
-      --    '#8ec07c',
-      --    '#fbf1c7',
-      --  },
-     -- }
 
       --# tab bar
       config.hide_tab_bar_if_only_one_tab = true
@@ -90,6 +55,7 @@
       -- config.tab_and_split_indices_are_zero_based = true
 
       -- unbind keys
+      config.leader = { key = 'Space', mods = 'CTRL', timeout_milliseconds = 1000 }
       config.keys = {
         { key = 'UpArrow', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment, },
         { key = 'DownArrow', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment, },

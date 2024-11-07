@@ -344,9 +344,10 @@
       ];
 
     };
-
+    #TODO#
     extraConfig = "
-      monitor=,preferred,auto,auto
+      monitor = DVI-D-2,1920x1080@144,0x0,auto
+      monitor = HDMI-A-1,192x1080@60,-1920x0,auto
 
       xwayland {
         force_zero_scaling = true
