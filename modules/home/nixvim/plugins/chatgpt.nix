@@ -1,7 +1,8 @@
 {
   programs.nixvim = {
-    plugins.mini-animate = {
+    plugins.chatgpt = {
       enable = true;
     };
   };
 }
+

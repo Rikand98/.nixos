@@ -1,6 +1,6 @@
 {
   programs.nixvim = {
-    plugins.mini-completion = {
+    plugins.none-ls = {
       enable = true;
     };
   };

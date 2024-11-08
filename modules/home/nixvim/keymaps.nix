@@ -96,14 +96,14 @@
 	"<space>" = "<space>";
 	
 	# exit to normal mode
-	"<esc>" =  [[<C-\><C-n>]];
+	"<esc>" =  "[[<C-\><C-n>]]";
 	
 	#move between windows
-	"<C-h>" = [[<Cmd>wincmd h<CR>]];
-	"<C-j>" = [[<Cmd>wincmd j<CR>]];
-	"<C-k>" = [[<Cmd>wincmd k<CR>]];
-	"<C-l>" = [[<Cmd>wincmd l<CR>]];
-	"<C-w>" = [[<C-\><C-n><C-w>]];
+	"<C-h>" = "[[<Cmd>wincmd h<CR>]]";
+	"<C-j>" = "[[<Cmd>wincmd j<CR>]]";
+	"<C-k>" = "[[<Cmd>wincmd k<CR>]]";
+	"<C-l>" = "[[<Cmd>wincmd l<CR>]]";
+	"<C-w>" = "[[<C-\><C-n><C-w>]]";
         };
     in
       config.lib.nixvim.keymaps.mkKeymaps

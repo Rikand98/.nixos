@@ -20,6 +20,9 @@
         clearOnCursorMove = false;
       };
     };
+    treesitter-context = {
+      enable = true;
+    };
 
     hmts.enable = true;
   };

@@ -1,5 +1,5 @@
 {
-  plugins.lsp.servers = {
+  programs.nixvim.plugins.lsp.servers = {
     marksman = {
       enable = true;
       };

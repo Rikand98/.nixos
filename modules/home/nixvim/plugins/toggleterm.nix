@@ -2,7 +2,7 @@
   programs.nixvim = {
     plugins.toggleterm = {
       enable = true;
-      opts = { open_mapping = [[<c-t>]], auto_scroll = false },
+      opts = { open_mapping = [[<c-t>]]; auto_scroll = false;};
     };
   };
 }

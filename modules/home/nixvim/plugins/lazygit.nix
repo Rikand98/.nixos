@@ -1,6 +1,6 @@
 {
   programs.nixvim = {
-    plugins.mini-hipatterns = {
+    plugins.lazygit = {
       enable = true;
     };
   };

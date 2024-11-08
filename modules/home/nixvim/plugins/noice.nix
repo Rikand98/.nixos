@@ -1,8 +1,7 @@
 {
   programs.nixvim = {
-    plugins.mini-pairs = {
+    plugins.noice = {
       enable = true;
     };
   };
 }
-

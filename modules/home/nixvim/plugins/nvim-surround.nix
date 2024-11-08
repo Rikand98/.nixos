@@ -1,6 +1,6 @@
 {
   programs.nixvim = {
-    plugins.mini-surround = {
+    plugins.nvim-surround = {
       enable = true;
     };
   };

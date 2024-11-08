@@ -1,5 +1,5 @@
 {
-  plugins.lsp.servers = {
+  programs.nixvim.plugins.lsp.servers = {
     ruff.enable = true;
     pyright = {
       enable = true;

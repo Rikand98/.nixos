@@ -2,22 +2,24 @@
   imports = [
   	./lsp
 	./barbar.nix
+	./chatgpt.nix
 	./fzf-lua.nix
 	./harpoon.nix
+	./inc-rename.nix
+	./indent-o-matix.nix
+	./lazygit.nix
+	./lualine.nix
 	./markdown-preview.nix
-	./mini-animate.nix
-	./mini-completion.nix
 	./mini-files.nix
-	./mini-hipatterns.nix
-	./mini-indentscope.nix
-	./mini-pairs.nix
-	./mini-surroun.nix
+	./navic.nix
+	./noice.nix
+	./none-ls.nix
 	./nvim-bqf.nix
+	./nvim-sorround.nix
 	./prettier.nix
 	./project.nix
 	./toggleterm.nix
 	./treesitter.nix
-	./vim-doge.nix
 	./vimtex.nix
 	./yanky.nix
 	./yazi.nix

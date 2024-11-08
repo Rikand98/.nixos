@@ -1,6 +1,6 @@
 {
   programs.nixvim = {
-    plugins.mini-indentscope = {
+    plugins.inc-rename = {
       enable = true;
     };
   };
