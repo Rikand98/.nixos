@@ -1,6 +1,6 @@
 {
   programs.nixvim = {
-    plugins.prettier = {
+    plugins.project-nvim = {
       enable = true;
     };
   };
