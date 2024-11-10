@@ -1,7 +1,8 @@
 {
   programs.nixvim = {
-    plugins.noice = {
+    plugins.fidget = {
       enable = true;
     };
   };
 }
+

@@ -1,6 +1,6 @@
 {
   programs.nixvim = {
-    plugins.indent-o-matic = {
+    plugins.bufferline = {
       enable = true;
     };
   };

@@ -1,6 +1,6 @@
 {
   programs.nixvim = {
-    plugins.nvim-surround = {
+    plugins.conform-nvim = {
       enable = true;
     };
   };
