@@ -1,5 +1,6 @@
 {
-  programs.nixvim.plugins.which-key = {
+  programs.nixvim = {
+    plugins.which-key = {
     enable = true;
 
     settings = {
@@ -89,4 +90,5 @@
       options = { silent = true; desc = "Buffer Keymaps (which-key)"; };
     }
   ];
+};
 }

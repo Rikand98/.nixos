@@ -21,8 +21,10 @@
 
       lsp = {
         enable = true;
+      };
+      };
 
-        keymaps = [
+     keymaps = [
     {
       mode = ["n"];
       key = "<leader>cl";
@@ -138,7 +140,5 @@
       options = { silent = true; desc = "Prev Reference"; };
     }
                 ];
-      };
     };
-  };
 }

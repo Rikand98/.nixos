@@ -4,7 +4,6 @@
       enable = true;
       settings = { open_mapping = "[[<c-t>]]"; auto_scroll = false;};
     };
-  };
     keymaps = [
     {
       mode = "n";
@@ -39,4 +38,5 @@
       };
     }
   ];
+  };
 }

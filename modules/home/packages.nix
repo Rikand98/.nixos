@@ -61,7 +61,7 @@
     audacity
     bleachbit                         # cache cleaner
     gimp
-    ibreoffice-qt6-fresh
+    libreoffice-qt6-fresh
     nix-prefetch-github
     obs-studio
     pavucontrol                       # pulseaudio volume controle (GUI)

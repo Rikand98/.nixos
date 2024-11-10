@@ -4,8 +4,7 @@
     plugins.yazi = {
       enable = true;
     };
-  };
-keymaps = lib.optionals config.plugins.yazi.enable [
+keymaps =  [
     {
       mode = "n";
       key = "<leader>e";
@@ -20,4 +19,5 @@ keymaps = lib.optionals config.plugins.yazi.enable [
       };
     }
   ];
+  };
 }

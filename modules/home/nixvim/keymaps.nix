@@ -1,5 +1,9 @@
 {
-  globals.mapleader = " ";
+programs.nixvim = {
+    globals = {
+      mapleader = " ";
+      maplocalleader = " ";
+    };
 
     keymaps = [
       # Movement and Window Navigation
@@ -95,4 +99,5 @@
       { mode = ["n"]; key = "<leader><tab>d"; action = ":tabclose<CR>"; options = { silent = true; desc = "Close Tab"; }; }
       { mode = ["n"]; key = "<leader><tab>["; action = ":tabprevious<CR>"; options = { silent = true; desc = "Previous Tab"; }; }
     ];
+ };
 }

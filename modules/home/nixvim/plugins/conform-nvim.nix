@@ -138,7 +138,6 @@
       };
     };
   };
-};
     keymaps = [
       {
         mode = ["n"];
@@ -153,4 +152,5 @@
         options = { silent = true; desc = "Auto Fix with Conform"; };
       }
     ];
+};
 }

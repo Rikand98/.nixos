@@ -3,7 +3,6 @@
     plugins.yanky = {
       enable = true;
     };
-  };
 keymaps = [
     # Yanky Keymaps
     {
@@ -115,4 +114,5 @@ keymaps = [
       options = { silent = true; desc = "Yank Text"; };
     }
   ];
+  };
 }

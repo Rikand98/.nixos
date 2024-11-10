@@ -18,6 +18,7 @@
 	./nvim-bqf.nix
 	./project-nvim.nix
 	./scope.nix
+    ./startup
 	./toggleterm.nix
 	./treesitter.nix
 	./vimtex.nix

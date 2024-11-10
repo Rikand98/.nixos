@@ -12,7 +12,6 @@
 		};
 
 	};
-  };
     keymaps = [
     # Mini.Surround Keymaps
     {
@@ -58,4 +57,5 @@
       options = { silent = true; desc = "Replace Surrounding"; };
     }
   ];
+  };
 }
