@@ -1,8 +1,7 @@
 {
   programs.nixvim = {
-    plugins.chatgpt = {
+    plugins.indent-o-matic = {
       enable = true;
     };
   };
 }
-

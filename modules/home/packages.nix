@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: 
+{ inputs, pkgs, ... }:
 
 {
   home.packages = (with pkgs; [
@@ -8,13 +8,12 @@
     binsider
     bitwise                           # cli tool for bit / hex manipulation
     caligula                          # User-friendly, lightweight TUI for disk imaging
-    dconf-editor
     docfd                             # TUI multiline fuzzy document finder
     eza                               # ls replacement
     entr                              # perform action when file change
     fd                                # find replacement
     ffmpeg
-    file                              # Show file information 
+    file                              # Show file information
     gtt                               # google translate TUI
     gifsicle                          # gif utility
     gtrash                            # rm replacement, put deleted files in system trash
@@ -24,7 +23,7 @@
     killall
     lazygit
     libnotify
-	  man-pages					            	  # extra man pages
+	man-pages					            	  # extra man pages
     mimeo
     mpv                               # video player
     ncdu                              # disk space
@@ -51,7 +50,7 @@
     xdg-utils
     xxd
 
-    ## CLI 
+    ## CLI
     cbonsai                           # terminal screensaver
     cmatrix
     pipes                             # terminal screensaver
@@ -62,7 +61,7 @@
     audacity
     bleachbit                         # cache cleaner
     gimp
-    libreoffice
+    ibreoffice-qt6-fresh
     nix-prefetch-github
     obs-studio
     pavucontrol                       # pulseaudio volume controle (GUI)
@@ -84,6 +83,7 @@
     # Python
     python3
     python312Packages.ipython
+    python312Packages.pip
 
     inputs.alejandra.defaultPackage.${system}
   ]);
