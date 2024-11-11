@@ -36,7 +36,7 @@
       {
         mode = "n";
         key = "m";
-        action = ":VimtexView<cr>";
+        action = "<cmd>VimtexView<cr>";
       }
     ];
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Check if yazi is installed
 if ! command -v yazi &> /dev/null; then
@@ -7,4 +7,4 @@ if ! command -v yazi &> /dev/null; then
 fi
 
 # Start yazi with optional arguments
-yazi "$@"
+yazi

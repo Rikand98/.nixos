@@ -84,6 +84,14 @@
     python312Packages.ipython
     python312Packages.pip
 
+    #Flutter + Dart
+    flutter
+
+
+    # Android
+    android-studio
+
+    # Latex
     texliveFull
 
     inputs.alejandra.defaultPackage.${system}

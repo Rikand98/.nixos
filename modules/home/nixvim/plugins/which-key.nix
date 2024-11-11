@@ -80,13 +80,13 @@
     {
       mode = ["n"];
       key = "<c-w><space>";
-      action = ":WhichKey '<space>'<CR>";
+      action = "<cmd>WhichKey '<space>'<CR>";
       options = { silent = true; desc = "Window Hydra Mode (which-key)"; };
     }
     {
       mode = ["n"];
       key = "<leader>?";
-      action = ":WhichKey '?'<CR>";
+      action = "<cmd>WhichKey '?'<CR>";
       options = { silent = true; desc = "Buffer Keymaps (which-key)"; };
     }
   ];

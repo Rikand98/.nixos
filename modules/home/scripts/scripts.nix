@@ -30,7 +30,7 @@
 
   rofi-power-menu = pkgs.writeScriptBin "rofi-power-menu" (builtins.readFile ./scripts/rofi-power-menu.sh);
   power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ./scripts/power-menu.sh);
-  yazi = pkgs.writeScriptBin "Yazi" (builtins.readFile ./scripts/yazi.sh);
+  yazi = pkgs.writeShellScriptBin "yazi-open" (builtins.readFile ./scripts/yazi.sh);
 in {
   home.packages = with pkgs; [
     wall-change
