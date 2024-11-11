@@ -3,13 +3,13 @@ with lib;
 let
   defaultApps = {
     browser = [ "floorp.desktop" ];
-    text = [ "org.gnome.TextEditor.desktop" ];
+    text = [ "nvim.desktop" ];
     image = [ "viewnior.desktop" ];
     audio = [ "mpv.desktop" ];
     video = [ "mpv.desktop" ];
     directory = [ "nemo.desktop" ];
     office = [ "libreoffice.desktop" ];
-    pdf = [ "org.gnome.Evince.desktop" ];
+    pdf = [ "org.pwmt.zathura.desktop" ];
     terminal = [ "wezterm.desktop" ];
     archive = [ "org.gnome.FileRoller.desktop" ];
     discord = [ "webcord.desktop" ];

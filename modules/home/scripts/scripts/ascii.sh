@@ -1,11 +1,11 @@
 #!/usr/bin/env fish
 
-RED=$(tput setaf 1)
-GREEN=$(tput setaf 2)
-BLUE=$(tput setaf 4)
-MAGENTA=$(tput setaf 5)
-CYAN=$(tput setaf 6)
-NORMAL=$(tput sgr0)
+RED $(tput setaf 1)
+GREEN $(tput setaf 2)
+BLUE $(tput setaf 4)
+MAGENTA $(tput setaf 5)
+CYAN $(tput setaf 6)
+NORMAL $(tput sgr0)
 
 echo -e "┌─────────────┬─────────────┬─────────────┬─────────────┐"
 echo -e "│ ${BLUE}Dec${NORMAL} ${GREEN}Hex${NORMAL} Chr │ ${BLUE}Dec${NORMAL} ${GREEN}Hex${NORMAL} Chr │ ${BLUE}Dec${NORMAL} ${GREEN}Hex${NORMAL} Chr │ ${BLUE}Dec${NORMAL} ${GREEN}Hex${NORMAL} Chr │"

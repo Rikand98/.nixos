@@ -1,8 +1,4 @@
 { pkgs, config, ... }:
-let 
-  monolisa = pkgs.callPackage ../../pkgs/monolisa/monolisa.nix {}; 
-  monolisa-nerd = pkgs.callPackage ../../pkgs/monolisa/monolisa-nerd.nix { inherit monolisa; }; 
-in
 {
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
@@ -41,7 +37,7 @@ in
       size = 24;
     };
   };
-  
+
   home.pointerCursor = {
     name = "Bibata-Modern-Ice";
     package = pkgs.bibata-cursors;

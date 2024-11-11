@@ -17,7 +17,7 @@ let custom = {
   opacity = "1";
   indicator_height = "2px";
 };
-in 
+in
 {
   programs.waybar.settings.mainBar = with custom; {
     position= "bottom";
@@ -28,7 +28,7 @@ in
     margin-left= 0;
     margin-right= 0;
     modules-left= [
-        "custom/launcher" 
+        "custom/launcher"
         "hyprland/workspaces"
         "tray"
     ];
@@ -39,7 +39,7 @@ in
         "cpu"
         "memory"
         (if (host == "desktop") then "disk" else "")
-        "pulseaudio" 
+        "pulseaudio"
         "network"
         "battery"
         "custom/notification"
@@ -48,10 +48,10 @@ in
         calendar = {
           format = { today = "<span color='#98971A'><b>{}</b></span>"; };
         };
-        format = "  {:%H:%M}";
+        format = "  {:%d/%m}   {:%H:%M}";
         tooltip= "true";
         tooltip-format= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-        format-alt= "  {:%d/%m}";
+        # format-alt= "";
     };
     "hyprland/workspaces"= {
         active-only= false;
@@ -134,7 +134,7 @@ in
     "custom/launcher"= {
         format= "";
         on-click= "rofi -show drun";
-        on-click-right= "wallpaper-picker"; 
+        on-click-right= "wallpaper-picker";
         tooltip= "false";
     };
     "custom/notification" = {
