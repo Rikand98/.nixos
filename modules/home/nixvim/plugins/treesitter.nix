@@ -1,15 +1,16 @@
+{pkgs, ...}:
 {
   programs.nixvim.plugins = {
     treesitter = {
       enable = true;
 
-      nixvimInjections = true;
-
       settings = {
         highlight.enable = true;
         indent.enable = true;
       };
-      folding = true;
+      folding = false;
+      nixvimInjections = true;
+      grammarPackages = pkgs.vimPlugins.nvim-treesitter.allGrammars;
     };
 
     treesitter-refactor = {

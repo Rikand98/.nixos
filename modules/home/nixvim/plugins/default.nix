@@ -8,7 +8,7 @@
 	./fzf-lua.nix
 	./harpoon.nix
 	./inc-rename.nix
-    ./indent-o-matic.nix
+  ./indent-o-matic.nix
 	./lazygit.nix
 	./lualine.nix
 	./mini.nix
@@ -47,7 +47,7 @@
       trim = {
         enable = true;
         settings = {
-          highlight = true;
+          highlight = false;
           ft_blocklist = [
             "checkhealth"
             "lspinfo"
