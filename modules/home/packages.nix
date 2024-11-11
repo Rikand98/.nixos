@@ -90,6 +90,11 @@
 
     # Android
     android-studio
+    firebase-tools
+
+    # SQL stuff
+    gdal
+    postgresql_17
 
     # Latex
     texliveFull
