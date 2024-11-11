@@ -2,7 +2,6 @@
   imports = [
   	./lsp
 	./barbar.nix
-	./bufferline.nix
 	./conform-nvim.nix
 	./coq-nvim.nix
 	./fidget.nix
@@ -41,14 +40,10 @@
         };
       };
 
-      nvim-autopairs.enable = true;
-
       nvim-colorizer = {
         enable = true;
         userDefaultOptions.names = false;
       };
-
-      oil.enable = true;
 
       trim = {
         enable = true;
