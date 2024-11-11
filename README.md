@@ -204,6 +204,6 @@ Other dotfiles that I learned / copy from:
 [wf-recorder]: https://github.com/ammen99/wf-recorder
 [hyprpicker]: https://github.com/hyprwm/hyprpicker
 [Gruvbox]: https://github.com/morhetz/gruvbox
-[Papirus-Dark]: https://github.com/SylEleuth/gruvbox-plus-icon-pack
+[Gruvbox-Plus]: https://github.com/SylEleuth/gruvbox-plus-icon-pack
 [Bibata-Modern-Ice]: https://www.gnome-look.org/p/1197198
 [maxfetch]: https://github.com/jobcmax/maxfetch
