@@ -7,7 +7,7 @@
     keymaps = [
     {
       mode = "n";
-      key = "<leader>t";
+      key = "<C-t>";
       action = "<cmd>ToggleTerm<cr>";
       options = {
         desc = "Toggle Terminal Window";

@@ -88,13 +88,13 @@
     flutter
 
 
-    # Android
-    android-studio
+    # # Android
+    # android-studio
     firebase-tools
-
-    # SQL stuff
+    #
+    # # SQL stuff
     gdal
-    postgresql_17
+    # postgresql_17
 
     # Latex
     texliveFull
