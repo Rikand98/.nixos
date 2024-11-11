@@ -85,6 +85,8 @@
     python312Packages.ipython
     python312Packages.pip
 
+    texliveFull
+
     inputs.alejandra.defaultPackage.${system}
   ]);
 }

@@ -29,7 +29,7 @@
           "prettier"
         ];
         nix = [
-          "nixfmt"
+          "nixfmt-rfc-style"
         ];
         python = [
           "black"
@@ -42,14 +42,14 @@
           "latexindent"
         ];
         toml = [
-          "tomlsort"
+          "toml-sort"
         ];
         yaml = [
           "prettier"
-          "yamlfix"
+          "yamlfmt"
         ];
         "_" = [
-          "squeeze_blanks"
+          # "squeeze_blanks"
           "trim_whitespace"
           "trim_newlines"
         ];
@@ -102,20 +102,20 @@
         shellharden = {
           command = lib.getExe pkgs.shellharden;
         };
-        squeeze_blanks = {
-          command = lib.getExe pkgs.coreutils "cat";
-        };
+        # squeeze_blanks = {
+        #   command = lib.getExe pkgs.coreutils "cat";
+        # };
         dart_format = {
-          command = lib.getExe pkgs.dartPackages.dartfmt;
+          command = "${pkgs.dart}/bin/dart format";
         };
         gitlint = {
           command = lib.getExe pkgs.gitlint;
         };
         prettier = {
-          command = lib.getExe pkgs.prettier;
+          command = lib.getExe pkgs.prettierd;
         };
-        nixfmt = {
-          command = lib.getExe pkgs.nixfmt;
+        nixfmt-rfc-style = {
+          command = lib.getExe pkgs.nixfmt-rfc-style;
         };
         black = {
           command = lib.getExe pkgs.python3Packages.black;
@@ -127,13 +127,13 @@
           command = lib.getExe pkgs.rustPackages.rustfmt;
         };
         latexindent = {
-          command = lib.getExe pkgs.latexindent;
+          command = "${pkgs.texlivePackages.latexindent}/bin/latexindent";
         };
-        tomlsort = {
-          command = lib.getExe pkgs.tomlsort;
+        toml-sort = {
+          command = lib.getExe pkgs.toml-sort;
         };
-        yamlfix = {
-          command = lib.getExe pkgs.yamlfix;
+        yamlfmt = {
+          command = lib.getExe pkgs.yamlfmt;
         };
       };
     };

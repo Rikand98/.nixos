@@ -14,6 +14,7 @@
       if wezterm.config_builder then
           config = wezterm.config_builder()
       end
+      config.max_fps = 144
 
       config.check_for_updates = false
       config.automatically_reload_config = false
@@ -40,7 +41,7 @@
       config.warn_about_missing_glyphs = false
 
       config.scrollback_lines = 10000
-      -- config.harfbuzz_features = { "cv30", "cv21", "cv32", "ss09" } 
+      -- config.harfbuzz_features = { "cv30", "cv21", "cv32", "ss09" }
       config.freetype_load_flags = 'NO_HINTING'
       config.freetype_load_target = 'Light'
       config.freetype_render_target = 'HorizontalLcd'
