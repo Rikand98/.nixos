@@ -88,9 +88,9 @@
           "yamlfmt"
         ];
         "_" = [
-          # "squeeze_blanks"
-          "trim_whitespace"
-          "trim_newlines"
+          "squeeze_blanks"
+          # "trim_whitespace"
+          # "trim_newlines"
         ];
       };
 
@@ -141,9 +141,9 @@
         shellharden = {
           command = lib.getExe pkgs.shellharden;
         };
-        # squeeze_blanks = {
-        #   command = lib.getExe pkgs.coreutils "cat";
-        # };
+        squeeze_blanks = {
+            command = lib.getExe' pkgs.coreutils "cat";
+        };
         dart_format = {
           command = "${pkgs.dart}/bin/dart format";
         };
@@ -177,19 +177,6 @@
       };
     };
   };
-    keymaps = [
-      {
-        mode = ["n"];
-        key = "<leader>cf";
-        action = "<cmd>ConformFormat<CR>";
-        options = { silent = true; desc = "Format File with Conform"; };
-      }
-      {
-        mode = ["n"];
-        key = "<leader>cF";
-        action = "<cmd>ConformFix<CR>";
-        options = { silent = true; desc = "Auto Fix with Conform"; };
-      }
-    ];
-};};
+};
+};
 }

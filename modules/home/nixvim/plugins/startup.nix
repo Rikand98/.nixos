@@ -42,19 +42,19 @@
             "f"
           ]
           [
-            "󰍉 Find Word"
-            "lua require('fzf-lua').word({ cwd = vim.fn.getcwd() })"
-            "w"
-          ]
-          [
             " Recent Files"
-            "lua require('fzf-lua').recent_files()"
+            "lua require('fzf-lua').resume()"
             "r"
           ]
           [
             " File Browser"
-            "Yazi file_browser"
+            "Yazi"
             "e"
+          ]
+          [
+            "X Quit"
+            "q"
+            "q"
           ]
         ];
         highlight = "string";

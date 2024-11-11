@@ -13,17 +13,6 @@
 		enable = true;
 		defaultEditor = true;
 		colorschemes.gruvbox.enable = true;
-        performance = {
-	      combinePlugins = {
-            enable = true;
-            standalonePlugins = [
-              "hmts.nvim"
-              "neorg"
-              "nvim-treesitter"
-            ];
-	      };
-	      byteCompileLua.enable = true;
-	    };
 
 	    viAlias = true;
 	    vimAlias = true;
