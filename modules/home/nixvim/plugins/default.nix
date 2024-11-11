@@ -11,7 +11,6 @@
     ./indent-o-matic.nix
 	./lazygit.nix
 	./lualine.nix
-	./markdown-preview.nix
 	./mini.nix
 	./none-ls.nix
 	./nvim-bqf.nix

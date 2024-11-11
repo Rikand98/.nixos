@@ -3,8 +3,8 @@
     enable = true;
 
     colors = {
-      background = "#ffffff";
-      foldedSection = "#ffffff";
+      # background = "#ffffff";
+      # foldedSection = "#ffffff";
     };
 
     sections = {
@@ -38,23 +38,23 @@
         content = [
           [
             " Find File"
-            "FZF find_files"
-            "ff"
+            "lua require('fzf-lua').files({ cwd = vim.fn.getcwd() })"
+            "f"
           ]
           [
             "󰍉 Find Word"
-            "FZF live_grep"
-            "fr"
+            "lua require('fzf-lua').word({ cwd = vim.fn.getcwd() })"
+            "w"
           ]
           [
             " Recent Files"
-            "Telescope oldfiles"
-            "fg"
+            "lua require('fzf-lua').recent_files()"
+            "r"
           ]
           [
             " File Browser"
-            "Telescope file_browser"
-            "fe"
+            "Yazi file_browser"
+            "e"
           ]
         ];
         highlight = "string";
