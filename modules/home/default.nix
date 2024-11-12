@@ -15,7 +15,7 @@
     ./git.nix                         # version control
     ./gnome.nix                       # gnome apps
     ./gtk.nix                         # gtk theme
-    ./gui                             # gui packages
+    ./gui.nix                         # gui packages
     ./hyprland                        # window manager
     ./kitty.nix                       # terminal
     ./swayosd.nix                     # brightness / volume wiget
@@ -23,7 +23,6 @@
     ./micro.nix                       # nano replacement
     ./nemo.nix                        # file manager
     ./nixvim                          # nixvim editor
-    ./packages.nix                    # other packages
     ./rofi.nix                        # launcher
     ./scripts/scripts.nix             # personal scripts
    # ./spicetify.nix                   # spotify client

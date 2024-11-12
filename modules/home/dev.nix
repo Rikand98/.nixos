@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     # C/C++ Development
     gcc
     gdb
@@ -30,5 +30,5 @@
 
     # LaTeX for typesetting
     texliveFull
-  ];
+  ]);
 }

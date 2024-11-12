@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     # Productivity Apps
     libreoffice-qt6-fresh
     qalculate-gtk                     # Calculator
@@ -18,5 +18,5 @@
     obs-studio                       # Streaming/recording
     pitivi                           # Video editor
     gimp                              # Image editor
-  ];
+  ]);
 }

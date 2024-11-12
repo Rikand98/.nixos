@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     #Fun CLI Tools
     ani-cli                           # CLI anime player
     cbonsai                           # ASCII bonsai tree
@@ -37,5 +37,5 @@
     gtt                               # Google Translate
     man-pages                         # Additional man pages
     unzip
-  ];
+  ]);
 }

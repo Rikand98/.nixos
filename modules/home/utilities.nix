@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{inputs, pkgs, ... }:
 {
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     # File Management & System utils
     eza                               # ls replacement
     fd                                # find replacement
@@ -27,5 +27,7 @@
     # Windows
     winetricks                        # Helper for Wine installation
     wineWowPackages.wayland           # Wine for Wayland
-  ];
+
+    inputs.alejandra.defaultPackage.${system}
+  ]);
 }
