@@ -68,7 +68,7 @@
 
         -- Split terminal panes
         { key = '|', mods = 'CTRL', action = wezterm.action.SplitHorizontal{ domain = "CurrentPaneDomain" } },
-        { key = '¦', mods = 'CTRL', action = wezterm.action.SplitVertical{ domain = "CurrentPaneDomain" } },
+        { key = '¦', mods = 'CTRL|SHIFT', action = wezterm.action.SplitVertical{ domain = "CurrentPaneDomain" } },
 
         -- Switch between tabs
         { key = 'h', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(-1) },
