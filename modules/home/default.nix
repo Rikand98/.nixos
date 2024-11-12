@@ -1,4 +1,4 @@
-{inputs, username, host, ...}: {
+{
   imports = [
     ./aseprite/aseprite.nix           # pixel art editor
     ./audacious.nix                   # music player
@@ -6,6 +6,7 @@
     ./btop.nix                        # resouces monitor
     ./bottom.nix                      # resouces monitor
     ./cava.nix                        # audio visualizer
+    ./dev.nix                         # dev packags
     ./discord/discord.nix             # discord with gruvbox
     ./fastfetch.nix                   # fetch tool
     ./floorp/floorp.nix               # firefox based browser
@@ -14,6 +15,7 @@
     ./git.nix                         # version control
     ./gnome.nix                       # gnome apps
     ./gtk.nix                         # gtk theme
+    ./gui                             # gui packages
     ./hyprland                        # window manager
     ./kitty.nix                       # terminal
     ./swayosd.nix                     # brightness / volume wiget
@@ -27,6 +29,8 @@
    # ./spicetify.nix                   # spotify client
     ./starship.nix                    # shell prompt
     ./swaylock.nix                    # lock screen
+    ./terminal.nix                    # terminal packages
+    ./utilities.nix                   # utilities
     ./viewnior.nix                    # image viewer
     ./waybar                          # status bar
     ./wezterm.nix                     # terminal

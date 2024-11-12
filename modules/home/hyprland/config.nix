@@ -157,8 +157,8 @@
         "$mainMod, E, exec, nemo"
         "$mainMod SHIFT, B, exec, toggle_waybar"
         "$mainMod, C ,exec, hyprpicker -a"
-    	  "$mainMod, Y, exec, /etc/profiles/per-user/rikand/bin/yazi-open"
-        "$mainMod, N, exec, swaync-client -t -sw"
+    	  "$mainMod, N, exec, nixvim"
+        "$mainMod, S, exec, swaync-client -t -sw"
         "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot

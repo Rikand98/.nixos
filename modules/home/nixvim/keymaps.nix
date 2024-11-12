@@ -41,7 +41,7 @@ programs.nixvim = {
       { mode = ["n"]; key = "<leader>bD"; action = "<cmd>Bdelete!<CR>"; options = { silent = true; desc = "Delete Buffer and Window"; }; }
 
       # Clearing Search Highlight
-      { mode = ["n" "i"]; key = "<esc>"; action = "<cmd>noh<CR><esc>"; options = { silent = true; desc = "Escape and Clear hlsearch"; }; }
+      { mode = ["n" "i" "t" "x"]; key = "<esc>"; action = "<cmd>noh<CR><esc>"; options = { silent = true; desc = "Escape and Clear hlsearch"; }; }
 
       # Search Navigation
       { mode = ["n" "x" "o"]; key = "n"; action = "nzzzv"; options = { silent = true; desc = "Next Search Result"; }; }
@@ -91,13 +91,13 @@ programs.nixvim = {
       { mode = ["n"]; key = "<leader>wm"; action = "<cmd>wincmd _<CR><C-w>|<CR>"; options = { silent = true; desc = "Toggle Maximize"; }; }
 
       # Tab Management
-      { mode = ["n"]; key = "<leader><tab>l"; action = "<cmd>tablast<CR>"; options = { silent = true; desc = "Last Tab"; }; }
+      { mode = ["n"]; key = "<leader><tab>j"; action = "<cmd>tablast<CR>"; options = { silent = true; desc = "Last Tab"; }; }
       { mode = ["n"]; key = "<leader><tab>o"; action = "<cmd>tabonly<CR>"; options = { silent = true; desc = "Close Other Tabs"; }; }
-      { mode = ["n"]; key = "<leader><tab>f"; action = "<cmd>tabfirst<CR>"; options = { silent = true; desc = "First Tab"; }; }
+      { mode = ["n"]; key = "<leader><tab>k"; action = "<cmd>tabfirst<CR>"; options = { silent = true; desc = "First Tab"; }; }
       { mode = ["n"]; key = "<leader><tab><tab>"; action = "<cmd>tabnew<CR>"; options = { silent = true; desc = "New Tab"; }; }
-      { mode = ["n"]; key = "<leader><tab>]"; action = "<cmd>tabnext<CR>"; options = { silent = true; desc = "Next Tab"; }; }
+      { mode = ["n"]; key = "<leader><tab>l"; action = "<cmd>tabnext<CR>"; options = { silent = true; desc = "Next Tab"; }; }
       { mode = ["n"]; key = "<leader><tab>d"; action = "<cmd>tabclose<CR>"; options = { silent = true; desc = "Close Tab"; }; }
-      { mode = ["n"]; key = "<leader><tab>["; action = "<cmd>tabprevious<CR>"; options = { silent = true; desc = "Previous Tab"; }; }
+      { mode = ["n"]; key = "<leader><tab>h"; action = "<cmd>tabprevious<CR>"; options = { silent = true; desc = "Previous Tab"; }; }
     ];
  };
 }

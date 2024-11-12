@@ -1,9 +1,3 @@
-{ inputs, pkgs, ... }:
-
-{
-  home.packages = (with pkgs; [
-
-    ## CLI utility
     ani-cli
     binsider
     bitwise                           # cli tool for bit / hex manipulation
@@ -48,15 +42,11 @@
     yt-dlp-light
     xdg-utils
     xxd
-
-    ## CLI
     cbonsai                           # terminal screensaver
     cmatrix
     pipes                             # terminal screensaver
     sl
     tty-clock                         # cli clock
-
-    ## GUI Apps
     audacity
     bleachbit                         # cache cleaner
     gimp
@@ -73,32 +63,4 @@
     wineWowPackages.wayland
     zenity
     google-chrome
-
-    # C / C++
-    gcc
-    gdb
-    gnumake
-
-    # Python
-    python3
-    python312Packages.ipython
-    python312Packages.pip
-
-    #Flutter + Dart
-    flutter
-
-
-    # # Android
-    android-studio
-    firebase-tools
-    #
-    # # SQL stuff
-    gdal
-    postgresql
-
-    # Latex
-    texliveFull
-
     inputs.alejandra.defaultPackage.${system}
-  ]);
-}

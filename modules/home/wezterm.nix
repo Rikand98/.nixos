@@ -62,6 +62,16 @@
         { key = 'DownArrow', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment, },
         { key = 'LeftArrow', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment, },
         { key = 'RightArrow', mods = 'CTRL|SHIFT', action = wezterm.action.DisableDefaultAssignment, },
+        { key = 'k', mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection="Up", },
+        { key = 'j', mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection="Down", },
+        { key = 'h', mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection="Left", },
+        { key = 'l', mods = 'CTRL|SHIFT', action = wezterm.action.ActivatePaneDirection="Right", },
+        { key = 'd', mods = 'CTRL|SHIFT', action = wezterm.action.CloseCurrentPane, },
+        { key = '|', mods = 'CTRL|SHIFT', action = wezterm.action.SplitHorizontal={domain="CurrentPaneDomain"}, },
+        { key = '-', mods = 'CTRL|SHIFT', action = wezterm.action.SplitVertical={domain="CurrentPaneDomain"}, },
+        { key = 'h', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative=-1, },
+        { key = 'l', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative=1, },
+        { key = 'd', mods = 'CTRL|ALT', action = wezterm.action.CloseCurrentTab{confirm=true}, },
       }
       -- remove copy on highlight
       config.mouse_bindings = {
