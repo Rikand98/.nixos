@@ -4,234 +4,347 @@
       enable = true;
     };
     keymaps = [
-    # fzf-lua Keymaps
-    {
-      mode = ["n"];
-      key = "<leader><space>";
-      action = "<cmd>lua require('fzf-lua').files({ cwd = vim.fn.getcwd() })<CR>";
-      options = { silent = true; desc = "Find Files (Root Dir)"; };
-    }
     {
       mode = ["n"];
       key = "<leader>,";
-      action = "<cmd>lua require('fzf-lua').buffers()<CR>";
-      options = { silent = true; desc = "Switch Buffer"; };
+      action = "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>";
+      options = {
+        desc = "Switch Buffer";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>/";
-      action = "<cmd>lua require('fzf-lua').grep_cword({ cwd = vim.fn.getcwd() })<CR>";
-      options = { silent = true; desc = "Grep (Root Dir)"; };
+      action = "<cmd>lua require('fzf-lua').live_grep({ cwd = '/'})<cr>";
+      options = {
+        desc = "Grep (Root Dir)";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>:";
-      action = "<cmd>lua require('fzf-lua').commands_history()<CR>";
-      options = { silent = true; desc = "Command History"; };
+      action = "<cmd>FzfLua command_history<cr>";
+      options = {
+        desc = "Command History";
+      };
     }
+    {
+      mode = ["n"];
+      key = "<leader><space>";
+      action = "<cmd>lua require('fzf-lua').files({ cwd = '/'})<cr>";
+      options = {
+        desc = "Find Files (Root Dir)";
+      };
+    }
+    # find
     {
       mode = ["n"];
       key = "<leader>fb";
-      action = "<cmd>lua require('fzf-lua').buffers()<CR>";
-      options = { silent = true; desc = "Buffers"; };
-    }
-    {
-      mode = ["n"];
-      key = "<leader>fc";
-      action = "<cmd>lua require('fzf-lua').find_config_files()<CR>";
-      options = { silent = true; desc = "Find Config File"; };
+      action = "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>";
+      options = {
+        desc = "Buffers";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>ff";
-      action = "<cmd>lua require('fzf-lua').files({ cwd = vim.fn.getcwd() })<CR>";
-      options = { silent = true; desc = "Find Files (Root Dir)"; };
+      action = "<cmd>lua require('fzf-lua').files({ cwd = '/'})<cr>";
+      options = {
+        desc = "Find Files (Root Dir)";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>fF";
-      action = "<cmd>lua require('fzf-lua').files({ cwd = vim.fn.getcwd() })<CR>";
-      options = { silent = true; desc = "Find Files (cwd)"; };
+      action = "FzfLua files";
+      options = {
+        desc = "Find Files (cwd)";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>fg";
-      action = "<cmd>lua require('fzf-lua').git_files()<CR>";
-      options = { silent = true; desc = "Find Files (git-files)"; };
+      action = "<cmd>FzfLua git_files<cr>";
+      options = {
+        desc = "Find Files (git-files)";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>fr";
-      action = "<cmd>lua require('fzf-lua').recent_files()<CR>";
-      options = { silent = true; desc = "Recent"; };
+      action = "<cmd>lua require('fzf-lua').oldfiles({ cwd = '/'})<cr>";
+      options = {
+        desc = "Recent";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>fR";
-      action = "<cmd>lua require('fzf-lua').recent_files({ cwd = vim.fn.getcwd() })<CR>";
-      options = { silent = true; desc = "Recent (cwd)"; };
+      action = "<cmd>FzfLua oldfiles<cr>";
+      options = {
+        desc = "Recent (cwd)";
+      };
     }
+    # git
     {
       mode = ["n"];
       key = "<leader>gc";
-      action = "<cmd>lua require('fzf-lua').git_commits()<CR>";
-      options = { silent = true; desc = "Commits"; };
+      action = "<cmd>FzfLua git_commits<CR>";
+      options = {
+        desc = "Commits";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>gs";
-      action = "<cmd>lua require('fzf-lua').git_status()<CR>";
-      options = { silent = true; desc = "Status"; };
+      action = "<cmd>FzfLua git_status<CR>";
+      options = {
+        desc = "Status";
+      };
     }
+    # search
     {
       mode = ["n"];
       key = "<leader>s\"";
-      action = "<cmd>lua require('fzf-lua').registers()<CR>";
-      options = { silent = true; desc = "Registers"; };
+      action = "<cmd>FzfLua registers<cr>";
+      options = {
+        desc = "Registers";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sa";
-      action = "<cmd>lua require('fzf-lua').autocommands()<CR>";
-      options = { silent = true; desc = "Auto Commands"; };
+      action = "<cmd>FzfLua autocmds<cr>";
+      options = {
+        desc = "Auto Commands";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sb";
-      action = "<cmd>lua require('fzf-lua').buffers()<CR>";
-      options = { silent = true; desc = "Buffer"; };
+      action = "<cmd>FzfLua grep_curbuf<cr>";
+      options = {
+        desc = "Buffer";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sc";
-      action = "<cmd>lua require('fzf-lua').commands_history()<CR>";
-      options = { silent = true; desc = "Command History"; };
+      action = "<cmd>FzfLua command_history<cr>";
+      options = {
+        desc = "Command History";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sC";
-      action = "<cmd>lua require('fzf-lua').commands()<CR>";
-      options = { silent = true; desc = "Commands"; };
+      action = "<cmd>FzfLua commands<cr>";
+      options = {
+        desc = "Commands";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sd";
-      action = "<cmd>lua require('fzf-lua').document_diagnostics()<CR>";
-      options = { silent = true; desc = "Document Diagnostics"; };
+      action = "<cmd>FzfLua diagnostics_document<cr>";
+      options = {
+        desc = "Document Diagnostics";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sD";
-      action = "<cmd>lua require('fzf-lua').workspace_diagnostics()<CR>";
-      options = { silent = true; desc = "Workspace Diagnostics"; };
+      action = "<cmd>FzfLua diagnostics_workspace<cr>";
+      options = {
+        desc = "Workspace Diagnostics";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sg";
-      action = "<cmd>lua require('fzf-lua').grep({ cwd = vim.fn.getcwd() })<CR>";
-      options = { silent = true; desc = "Grep (Root Dir)"; };
+      action = "<cmd>lua require('fzf-lua').live_grep({ cwd = '/'})<cr>";
+      options = {
+        desc = "Grep (Root Dir)";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sG";
-      action = "<cmd>lua require('fzf-lua').grep({ cwd = vim.fn.getcwd() })<CR>";
-      options = { silent = true; desc = "Grep (cwd)"; };
+      action = "<cmd>FzfLua live_grep<cr>";
+      options = {
+        desc = "Grep (cwd)";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sh";
-      action = "<cmd>lua require('fzf-lua').help_pages()<CR>";
-      options = { silent = true; desc = "Help Pages"; };
+      action = "<cmd>FzfLua help_tags<cr>";
+      options = {
+        desc = "Help Pages";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sH";
-      action = "<cmd>lua require('fzf-lua').search_highlight_groups()<CR>";
-      options = { silent = true; desc = "Search Highlight Groups"; };
+      action = "<cmd>FzfLua highlights<cr>";
+      options = {
+        desc = "Search Highlight Groups";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sj";
-      action = "<cmd>lua require('fzf-lua').jumplist()<CR>";
-      options = { silent = true; desc = "Jumplist"; };
+      action = "<cmd>FzfLua jumps<cr>";
+      options = {
+        desc = "Jumplist";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sk";
-      action = "<cmd>lua require('fzf-lua').keymaps()<CR>";
-      options = { silent = true; desc = "Key Maps"; };
+      action = "<cmd>FzfLua keymaps<cr>";
+      options = {
+        desc = "Key Maps";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sl";
-      action = "<cmd>lua require('fzf-lua').location_list()<CR>";
-      options = { silent = true; desc = "Location List"; };
-    }
-    {
-      mode = ["n"];
-      key = "<leader>sm";
-      action = "<cmd>lua require('fzf-lua').marks()<CR>";
-      options = { silent = true; desc = "Jump to Mark"; };
+      action = "<cmd>FzfLua loclist<cr>";
+      options = {
+        desc = "Location List";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sM";
-      action = "<cmd>lua require('fzf-lua').manpages()<CR>";
-      options = { silent = true; desc = "Man Pages"; };
+      action = "<cmd>FzfLua man_pages<cr>";
+      options = {
+        desc = "Man Pages";
+      };
     }
     {
       mode = ["n"];
-      key = "<leader>sq";
-      action = "<cmd>lua require('fzf-lua').quickfix_list()<CR>";
-      options = { silent = true; desc = "Quickfix List"; };
+      key = "<leader>sm";
+      action = "<cmd>FzfLua marks<cr>";
+      options = {
+        desc = "Jump to Mark";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sR";
-      action = "<cmd>lua require('fzf-lua').resume()<CR>";
-      options = { silent = true; desc = "Resume"; };
+      action = "<cmd>FzfLua resume<cr>";
+      options = {
+        desc = "Resume";
+      };
     }
     {
       mode = ["n"];
-      key = "<leader>ss";
-      action = "<cmd>lua require('fzf-lua').symbols()<CR>";
-      options = { silent = true; desc = "Goto Symbol"; };
-    }
-    {
-      mode = ["n"];
-      key = "<leader>sS";
-      action = "<cmd>lua require('fzf-lua').workspace_symbols()<CR>";
-      options = { silent = true; desc = "Goto Symbol (Workspace)"; };
+      key = "<leader>sq";
+      action = "<cmd>FzfLua quickfix<cr>";
+      options = {
+        desc = "Quickfix List";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sw";
-      action = "<cmd>lua require('fzf-lua').word({ cwd = vim.fn.getcwd() })<CR>";
-      options = { silent = true; desc = "Word (Root Dir)"; };
+      action = "<cmd>lua require('fzf-lua').grep_cword({ cwd = '/'})<cr>";
+      options = {
+        desc = "Word (Root Dir)";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>sW";
-      action = "<cmd>lua require('fzf-lua').word({ cwd = vim.fn.getcwd() })<CR>";
-      options = { silent = true; desc = "Word (cwd)"; };
+      action = "<cmd>FzfLua grep_cword<cr>";
+      options = {
+        desc = "Word (cwd)";
+      };
     }
     {
       mode = ["v"];
       key = "<leader>sw";
-      action = "<cmd>lua require('fzf-lua').selection({ cwd = vim.fn.getcwd() })<CR>";
-      options = { silent = true; desc = "Selection (Root Dir)"; };
+      action = "<cmd>lua require('fzf-lua').grep_visual({ cwd = '/'})<cr>";
+      options = {
+        desc = "Selection (Root Dir)";
+      };
     }
     {
       mode = ["v"];
       key = "<leader>sW";
-      action = "<cmd>lua require('fzf-lua').selection({ cwd = vim.fn.getcwd() })<CR>";
-      options = { silent = true; desc = "Selection (cwd)"; };
+      action = "<cmd>FzfLua grep_visual<cr>";
+      options = {
+        desc = "Selection (cwd)";
+      };
     }
     {
       mode = ["n"];
       key = "<leader>uC";
-      action = "<cmd>lua require('fzf-lua').colorscheme_preview()<CR>";
-      options = { silent = true; desc = "Colorscheme with Preview"; };
+      action = "<cmd>FzfLua colorschemes<cr>";
+      options = {
+        desc = "Colorscheme with Preview";
+      };
+    }
+    {
+      mode = ["n"];
+      key = "<leader>ss";
+      action = "lua function()
+        require(fzf-lua).lsp_document_symbols({
+          regex_filter = symbols_filter,
+        })
+      end";
+      options = {
+        desc = "Goto Symbol";
+      };
+    }
+    {
+      mode = ["n"];
+      key = "<leader>sS";
+      action = "lua function()
+        require(fzf-lua).lsp_live_workspace_symbols({
+          regex_filter = symbols_filter,
+        })
+      end";
+      options = {
+        desc = "Goto Symbol (Workspace)";
+      };
+    }
+    #lsp
+    {
+      mode = ["n"];
+      key = "gd";
+      action = "<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>";
+      options = {
+        desc = "Goto Definition";
+        has = "definition";
+    };
+    }
+    {
+      mode = ["n"];
+      key = "gr";
+      action = "<cmd>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<cr>";
+      options = {
+        desc = "References";
+        nowait = true;
+      };
+    }
+    {
+      mode = ["n"];
+      key = "gI";
+      action = "<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>";
+      options = {
+        desc = "Goto Implementation";
+      };
+    }
+    {
+      mode = ["n"];
+      key = "gy";
+      action = "<cmd>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<cr>";
+      options = {
+        desc = "Goto T[y]pe Definition";
+      };
     }
   ];
   };
