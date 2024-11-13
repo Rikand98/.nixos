@@ -31,9 +31,9 @@
     {
       mode = ["n"];
       key = "<leader><space>";
-      action = "<cmd>lua require('fzf-lua').files({ cwd = '/'})<cr>";
+      action = "<cmd>FzfLua files<cr>";
       options = {
-        desc = "Find Files (Root Dir)";
+        desc = "Find Files (cwd)";
       };
     }
     {
@@ -47,17 +47,17 @@
     {
       mode = ["n"];
       key = "<leader>ff";
-      action = "<cmd>lua require('fzf-lua').files({ cwd = '/'})<cr>";
+      action = "<cmd>FzfLua files<cr>";
       options = {
-        desc = "Find Files (Root Dir)";
+        desc = "Find Files (cwd)";
       };
     }
     {
       mode = ["n"];
       key = "<leader>fF";
-      action = "<cmd>FzfLua files<cr>";
+      action = "<cmd>lua require('fzf-lua').files({ cwd = '/'})<cr>";
       options = {
-        desc = "Find Files (cwd)";
+        desc = "Find Files (Root Dir)";
       };
     }
     {
@@ -71,17 +71,17 @@
     {
       mode = ["n"];
       key = "<leader>fr";
-      action = "<cmd>lua require('fzf-lua').oldfiles({ cwd = '/'})<cr>";
+      action = "<cmd>FzfLua oldfiles<cr>";
       options = {
-        desc = "Recent";
+        desc = "Recent (cwd)";
       };
     }
     {
       mode = ["n"];
       key = "<leader>fR";
-      action = "<cmd>FzfLua oldfiles<cr>";
+      action = "<cmd>lua require('fzf-lua').oldfiles({ cwd = '/'})<cr>";
       options = {
-        desc = "Recent (cwd)";
+        desc = "Recent";
       };
     }
     {
@@ -159,17 +159,17 @@
     {
       mode = ["n"];
       key = "<leader>sg";
-      action = "<cmd>lua require('fzf-lua').live_grep({ cwd = '/'})<cr>";
+      action = "<cmd>FzfLua live_grep<cr>";
       options = {
-        desc = "Grep (Root Dir)";
+        desc = "Grep (cwd)";
       };
     }
     {
       mode = ["n"];
       key = "<leader>sG";
-      action = "<cmd>FzfLua live_grep<cr>";
+      action = "<cmd>lua require('fzf-lua').live_grep({ cwd = '/'})<cr>";
       options = {
-        desc = "Grep (cwd)";
+        desc = "Grep (Root Dir)";
       };
     }
     {
@@ -247,33 +247,33 @@
     {
       mode = ["n"];
       key = "<leader>sw";
-      action = "<cmd>lua require('fzf-lua').grep_cword({ cwd = '/'})<cr>";
-      options = {
-        desc = "Word (Root Dir)";
-      };
-    }
-    {
-      mode = ["n"];
-      key = "<leader>sW";
       action = "<cmd>FzfLua grep_cword<cr>";
       options = {
         desc = "Word (cwd)";
       };
     }
     {
+      mode = ["n"];
+      key = "<leader>sW";
+      action = "<cmd>lua require('fzf-lua').grep_cword({ cwd = '/'})<cr>";
+      options = {
+        desc = "Word (Root Dir)";
+      };
+    }
+    {
       mode = ["v"];
       key = "<leader>sw";
-      action = "<cmd>lua require('fzf-lua').grep_visual({ cwd = '/'})<cr>";
+      action = "<cmd>FzfLua grep_visual<cr>";
       options = {
-        desc = "Selection (Root Dir)";
+        desc = "Selection (cwd)";
       };
     }
     {
       mode = ["v"];
       key = "<leader>sW";
-      action = "<cmd>FzfLua grep_visual<cr>";
+      action = "<cmd>lua require('fzf-lua').grep_visual({ cwd = '/'})<cr>";
       options = {
-        desc = "Selection (cwd)";
+        desc = "Selection (Root Dir)";
       };
     }
     {
