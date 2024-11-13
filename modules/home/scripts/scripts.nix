@@ -31,6 +31,7 @@
   rofi-power-menu = pkgs.writeScriptBin "rofi-power-menu" (builtins.readFile ./scripts/rofi-power-menu.sh);
   power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ./scripts/power-menu.sh);
   nixvim = pkgs.writeShellScriptBin "nixvim" (builtins.readFile ./scripts/nixvim.sh);
+  yazi-open = pkgs.writeShellScriptBin "yazi-open" (builtins.readFile ./scripts/yazi-open.sh);
 in {
   home.packages = with pkgs; [
     wall-change
@@ -66,5 +67,7 @@ in {
     power-menu
 
     nixvim
+
+    yazi-open
   ];
 }

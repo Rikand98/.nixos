@@ -158,6 +158,7 @@
         "$mainMod SHIFT, B, exec, toggle_waybar"
         "$mainMod, C ,exec, hyprpicker -a"
     	  "$mainMod, N, exec, nixvim"
+    	  "$mainMod, Y, exec, yazi-open"
         "$mainMod, S, exec, swaync-client -t -sw"
         "$mainMod SHIFT, W, exec, vm-start"
 

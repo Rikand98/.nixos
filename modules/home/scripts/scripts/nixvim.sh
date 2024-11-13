@@ -7,4 +7,4 @@ if ! command -v nvim &> /dev/null; then
 fi
 
 # Start yazi with optional arguments
-nvim
+wezterm -e nvim
