@@ -36,7 +36,6 @@
         desc = "Find Files (Root Dir)";
       };
     }
-    # find
     {
       mode = ["n"];
       key = "<leader>fb";
@@ -85,7 +84,6 @@
         desc = "Recent (cwd)";
       };
     }
-    # git
     {
       mode = ["n"];
       key = "<leader>gc";
@@ -102,7 +100,6 @@
         desc = "Status";
       };
     }
-    # search
     {
       mode = ["n"];
       key = "<leader>s\"";
@@ -311,7 +308,6 @@
         desc = "Goto Symbol (Workspace)";
       };
     }
-    #lsp
     {
       mode = ["n"];
       key = "gd";
