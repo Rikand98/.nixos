@@ -55,7 +55,7 @@
     {
       mode = ["n"];
       key = "<leader>fF";
-      action = "FzfLua files";
+      action = "<cmd>FzfLua files<cr>";
       options = {
         desc = "Find Files (cwd)";
       };
@@ -314,7 +314,6 @@
       action = "<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>";
       options = {
         desc = "Goto Definition";
-        has = "definition";
     };
     }
     {
