@@ -7,14 +7,13 @@
 
 </h1>
 
-
 ### 🖼️ Gallery
 
 <p align="center">
    <img src="./.github/assets/screenshots/1.png" style="margin-bottom: 10px;"/> <br>
    <img src="./.github/assets/screenshots/2.png" style="margin-bottom: 10px;"/> <br>
    <img src="./.github/assets/screenshots/3.png" style="margin-bottom: 10px;"/> <br>
-   Screenshots last updated <b>2024-08-24</b>
+   Screenshots last updated <b>2024-11-13</b>
 </p>
 
 <details>
@@ -66,7 +65,6 @@ Hyprlock (EXPAND)
 | **Screen Recording**        | [wf-recorder][wf-recorder] |
 | **Clipboard**               | [wl-clip-persist][wl-clip-persist] |
 | **Color Picker**            | [hyprpicker][hyprpicker] |
-
 
 </details>
 
@@ -165,7 +163,6 @@ Other dotfiles that I learned / copy from:
 
 - Nix Flakes
   - [Frost-Phoenix/nixos-config](https://github.com/Frost-Phoenix/nixos-config) Heavily based on this config!
-
 
 <!-- # ✨ Stars History -->
 
