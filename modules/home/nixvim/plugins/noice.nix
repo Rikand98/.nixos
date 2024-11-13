@@ -1,6 +1,6 @@
 {
   programs.nixvim = {
-    plugins.vim-doge = {
+    plugins.noice = {
       enable = true;
     };
   };

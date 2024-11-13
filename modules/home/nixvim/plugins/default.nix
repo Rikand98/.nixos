@@ -12,12 +12,17 @@
 	./lazygit.nix
 	./lualine.nix
 	./mini.nix
+  ./noice.nix
 	./none-ls.nix
+  ./notify.nix
+  ./nui.nix
 	./nvim-bqf.nix
 	./project-nvim.nix
 	./scope.nix
     ./startup.nix
+  ./todo-comments.nix
 	./toggleterm.nix
+  ./trouble.nix
 	./treesitter.nix
 	./vimtex.nix
     ./which-key.nix

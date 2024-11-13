@@ -6,7 +6,6 @@
 			bracketed = {};
 			hipatterns = {};
 			indentscope = {};
-			notify = {};
 			pairs = {};
 			surround = {};
 		};

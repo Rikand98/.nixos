@@ -15,6 +15,10 @@ programs.nixvim = {
       { mode = ["n"]; key = "<C-j>"; action = "<C-w>j"; options = { silent = true; desc = "Go to Lower Window"; }; }
       { mode = ["n"]; key = "<C-k>"; action = "<C-w>k"; options = { silent = true; desc = "Go to Upper Window"; }; }
       { mode = ["n"]; key = "<C-l>"; action = "<C-w>l"; options = { silent = true; desc = "Go to Right Window"; }; }
+      { mode = ["t"]; key = "<C-h>"; action = "<cmd>wincmd h<CR>"; options = { silent = true; desc = "Go to Left Window"; }; }
+      { mode = ["t"]; key = "<C-j>"; action = "<cmd>wincmd j<CR>"; options = { silent = true; desc = "Go to Lower Window"; }; }
+      { mode = ["t"]; key = "<C-k>"; action = "<cmd>wincmd k<CR>"; options = { silent = true; desc = "Go to Upper Window"; }; }
+      { mode = ["t"]; key = "<C-l>"; action = "<cmd>wincmd l<CR>"; options = { silent = true; desc = "Go to Right Window"; }; }
 
       # Window Resizing
       { mode = ["n"]; key = "<C-Up>"; action = "<cmd>resize +2<CR>"; options = { silent = true; desc = "Increase Window Height"; }; }
@@ -27,21 +31,12 @@ programs.nixvim = {
       { mode = ["n" "i" "v"]; key = "<A-k>"; action = "<cmd>m .-2<CR>=="; options = { silent = true; desc = "Move Line Up"; }; }
       { mode = ["n" "i" "v"]; key = "<A-h>"; action = "^"; options = { silent = true; desc = "Move to start of Line"; }; }
       { mode = ["n" "i" "v"]; key = "<A-l>"; action = "$"; options = { silent = true; desc = "Move to end of Line"; }; }
-
-
-      # Buffer Navigation
-      { mode = ["n"]; key = "<S-h>"; action = "<cmd>bprevious<CR>"; options = { silent = true; desc = "Prev Buffer"; }; }
-      { mode = ["n"]; key = "<S-l>"; action = "<cmd>bnext<CR>"; options = { silent = true; desc = "Next Buffer"; }; }
-      { mode = ["n"]; key = "[b"; action = "<cmd>bprevious<CR>"; options = { silent = true; desc = "Prev Buffer"; }; }
-      { mode = ["n"]; key = "]b"; action = "<cmd>bnext<CR>"; options = { silent = true; desc = "Next Buffer"; }; }
-      { mode = ["n"]; key = "<leader>bb"; action = "<cmd>b#<CR>"; options = { silent = true; desc = "Switch to Other Buffer"; }; }
-      { mode = ["n"]; key = "<leader>`"; action = "<cmd>b#<CR>"; options = { silent = true; desc = "Switch to Other Buffer"; }; }
-      { mode = ["n"]; key = "<leader>bd"; action = "<cmd>bdelete<CR>"; options = { silent = true; desc = "Delete Buffer"; }; }
-      { mode = ["n"]; key = "<leader>bo"; action = "<cmd>bufdo bdelete<CR>"; options = { silent = true; desc = "Delete Other Buffers"; }; }
-      { mode = ["n"]; key = "<leader>bD"; action = "<cmd>Bdelete!<CR>"; options = { silent = true; desc = "Delete Buffer and Window"; }; }
+      { mode = ["v"]; key = "<"; action = "<gv"; options = { silent = true; }; }
+      { mode = ["v"]; key = ">"; action = ">gv"; options = { silent = true; }; }
 
       # Clearing Search Highlight
-      { mode = ["n" "i" "t" "x"]; key = "<esc>"; action = "<cmd>noh<CR><esc>"; options = { silent = true; desc = "Escape and Clear hlsearch"; }; }
+      { mode = ["n" "i" "x"]; key = "<esc>"; action = "<cmd>noh<CR><esc>"; options = { silent = true; desc = "Escape and Clear hlsearch"; }; }
+      { mode = ["t"]; key = "<esc>"; action = "<C-\><C-n>"; options = { silent = true; desc = "Exit Terminal Mode"; }; }
 
       # Search Navigation
       { mode = ["n" "x" "o"]; key = "n"; action = "nzzzv"; options = { silent = true; desc = "Next Search Result"; }; }
@@ -49,10 +44,6 @@ programs.nixvim = {
 
       # Saving
       { mode = ["n" "x" "i" "s"]; key = "<C-s>"; action = "<cmd>w<CR><esc>"; options = { silent = true; desc = "Save File"; }; }
-
-      # Commenting
-      { mode = ["n"]; key = "gco"; action = "<cmd>lua require('Comment.api').insert_linewise_below()<CR>"; options = { silent = true; desc = "Add Comment Below"; }; }
-      { mode = ["n"]; key = "gcO"; action = "<cmd>lua require('Comment.api').insert_linewise_above()<CR>"; options = { silent = true; desc = "Add Comment Above"; }; }
 
       # Various Tools
       { mode = ["n"]; key = "<leader>K"; action = "<cmd>lua vim.lsp.buf.hover()<CR>"; options = { silent = true; desc = "Keywordprg"; }; }

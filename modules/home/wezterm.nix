@@ -74,8 +74,10 @@
         { key = 'h', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(-1) },
         { key = 'l', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(1) },
         --
-        -- -- Close current tab with confirmation
+        -- Close current tab with confirmation
         { key = 'd', mods = 'CTRL|ALT', action = wezterm.action.CloseCurrentTab { confirm = true } },
+        { key = 'n', mods = 'CTRL|ALT', action = wezterm.action.SpawnTab "DefaultDomain" },
+        { key = 'n', mods = 'CTRL|ALT|SHIFT', action = wezterm.action.SpawnTab "CurrentPaneDomain" },
       }
 
       -- Mouse bindings to disable copy on highlight

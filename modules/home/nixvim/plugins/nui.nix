@@ -1,6 +1,6 @@
 {
   programs.nixvim = {
-    plugins.coq-nvim = {
+    plugins.nui = {
       enable = true;
     };
   };
