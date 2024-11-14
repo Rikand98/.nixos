@@ -3,7 +3,10 @@
     fish = {
       enable = true;
       config = ''set -Ux EDITOR nvim'';
-      loginShellInit = ''export EDITOR=nvim'';
+      loginShellInit = ''
+        export EDITOR=nvim \n
+        starship init fish | source
+      '';
 
       interactiveShellInit = '' ${pkgs.pfetch}/bin/pfetch
 

@@ -18,9 +18,15 @@
         "$git_status"
         "[](fg:color_aqua bg:color_blue)"
         "$nix_shell"
+        "$python"
+        "$dart"
+        "$lua"
         "[](fg:color_blue bg:color_bg3)"
+        "$docker_context"
+        "[](fg:color_bg3 bg:color_bg1)"
         "$cmd_duration"
-        "[](fg:color_bg3) "
+        "[](fg:color_bg1)"
+        "$line_break$character"
       ];
 
       palette = "gruvbox_dark";
@@ -75,9 +81,9 @@
       };
 
       cmd_duration = {
-        format = "[ 󰔛 $duration ]($style)";
+        format = "[ [󰔛 $duration](fg:color_fg0 bg:color_bg1)]($style)";
         disabled = false;
-        style = "bg:color_bg3 fg:color_fg0";
+        style = "bg:color_bg1";
         show_notifications = false;
         min_time_to_notify = 60000;
       };
@@ -88,8 +94,40 @@
 
       character = {
         disabled = false;
-        success_symbol = "[  ](bold fg:color_green)";
-        error_symbol = "[  ](bold fg:color_red)";
+        success_symbol = "[](bold fg:color_green)";
+        error_symbol = "[](bold fg:color_red)";
+        vimcmd_symbol = "[](bold fg:color_green)";
+        vimcmd_replace_one_symbol = "[](bold fg:color_purple)";
+        vimcmd_replace_symbol = "[](bold fg:color_purple)";
+        vimcmd_visual_symbol = "[](bold fg:color_yellow)";
+      };
+
+      hostname = {
+        ssh_symbol = " ";
+      };
+
+      docker_context = {
+        symbol = " ";
+        style = "bg:color_blue";
+        format = "[[ $symbol](fg:#83a598 bg:color_bg3)]($style)";
+      };
+
+      python = {
+        symbol = " ";
+        style = "bg:color_blue";
+        format = "[[ $symbol($virtualenv) ](fg:color_fg0 bg:color_blue)]($style)";
+      };
+
+      dart = {
+        symbol = " ";
+        style = "bg:color_blue";
+        format = "[[ $symbol](fg:color_fg0 bg:color_blue)]($style)";
+      };
+
+      lua = {
+        symbol = " ";
+        style = "bg:color_blue";
+        format = "[[ $symbol](fg:color_fg0 bg:color_blue)]($style)";
       };
     };
   };
