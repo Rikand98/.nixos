@@ -17,5 +17,6 @@
     obs-studio                       # Streaming/recording
     pitivi                           # Video editor
     gimp                              # Image editor
+    zathura                           # pdf viewer
   ]);
 }
