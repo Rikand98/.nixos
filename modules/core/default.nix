@@ -10,7 +10,7 @@
     ./program.nix
     ./security.nix
     ./services.nix
-    ./steam.nix
+    # ./steam.nix
     ./system.nix
     ./flatpak.nix
     ./user.nix

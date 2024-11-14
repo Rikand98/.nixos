@@ -3,25 +3,17 @@
 # These are settings for my old amd gpu (r390x)
 {
   hardware = {
-    # graphics = {
-    #   enable = true;
-    # };
-    amd = {
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [ mesa ];
+    };
+    amdgpu = {
       amdvlk = {
         enable = true;
-        support32Bit = true;
+        support32Bit.enable = true;
       };
       initrd.enable = true;
       opencl.enable = true;
-    };
-    opengl = {
-      enable = true;
-      driSupport = true;
-    #   driSupport32Bit = true;
-    #   extraPackages = with pkgs; [
-    #     mesa.opencl
-    #     amdgpu-pro-opencl
-    # ];
     };
   };
   hardware.enableRedistributableFirmware = true;
