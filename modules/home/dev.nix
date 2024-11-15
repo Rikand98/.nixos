@@ -27,5 +27,8 @@
 
     # LaTeX for typesetting
     texliveFull
+
+    #geo data
+    gdal
   ]);
 }
