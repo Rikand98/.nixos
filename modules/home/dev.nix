@@ -25,14 +25,6 @@
     onefetch
     nix-prefetch-github
 
-    # SQL and Geospatial Libraries
-    postgresql_17
-    postgresql17Packages.postgis
-    sqlite
-    mariadb_114
-    gdal
-
-
     # LaTeX for typesetting
     texliveFull
   ]);
