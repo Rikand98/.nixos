@@ -6,6 +6,7 @@
     qalculate-gtk                     # Calculator
     thunderbird                       # Email client
     zenity                            # GUI dialogs
+    google-chrome
 
     # Video & Image Viewers
     imv                              # CLI image viewer

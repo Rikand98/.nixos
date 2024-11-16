@@ -7,18 +7,21 @@
     gdb
     gnumake
     valgrind
+    libstdcxx5
 
     # Python
     python3
-    python312Packages.ipython
-    python312Packages.pip
+    # python312Packages.gdal
+    poetry
 
     # Flutter & Dart
     flutter
 
     # Android Development
     android-studio
+    android-tools
     firebase-tools
+    google-cloud-sdk
 
     # Git & Git-related utilities
     lazygit

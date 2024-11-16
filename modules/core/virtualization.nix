@@ -27,4 +27,5 @@
     spiceUSBRedirection.enable = true;
   };
   services.spice-vdagentd.enable = true;
+  boot.kernelModules = [ "kvm-amd" ];
 }

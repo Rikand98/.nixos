@@ -32,15 +32,15 @@
       package = pkgs.gruvbox-plus-icons;
     };
     cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
+      name = "Capitaine-Cursors";
+      package = pkgs.capitaine-cursors-themed;
       size = 24;
     };
   };
 
   home.pointerCursor = {
-    name = "Bibata-Modern-Ice";
-    package = pkgs.bibata-cursors;
+    name = "Capitaine-Cursors";
+    package = pkgs.capitaine-cursors-themed;
     size = 24;
   };
 }
