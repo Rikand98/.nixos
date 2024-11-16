@@ -1,28 +1,28 @@
-<h1 align="center">
-   <img src="./.github/assets/logo/nixos-logo.png  " width="100px" />
-   <br>
-      NixOS
-   <br>
-      <img src="./.github/assets/pallet/pallet-0.png" width="600px" /> <br>
+sh1 align="center">
+<img src="./.github/assets/logo/nixos-logo.png  " width="100px" />
+<br>
+NixOS
+<br>
+<img src="./.github/assets/pallet/pallet-0.png" width="600px" /> <br>
 
 </h1>
 
 ### 🖼️ Gallery
 
 <p align="center">
-   <img src="./.github/assets/screenshots/1.png" style="margin-bottom: 10px;"/> <br>
-   <img src="./.github/assets/screenshots/2.png" style="margin-bottom: 10px;"/> <br>
-   <img src="./.github/assets/screenshots/3.png" style="margin-bottom: 10px;"/> <br>
-   Screenshots last updated <b>2024-11-13</b>
+    <img src="./.github/assets/screenshots/1.png" style="margin-bottom: 10px;"/> <br>
+    <img src="./.github/assets/screenshots/2.png" style="margin-bottom: 10px;"/> <br>
+    <img src="./.github/assets/screenshots/3.png" style="margin-bottom: 10px;"/> <br>
+    Screenshots last updated <b>2024-11-13</b>
 </p>
 
 <details>
-<summary>
-Hyprlock (EXPAND)
-</summary>
-<p align="center">
-   <img src="./.github/assets/screenshots/hyprlock.png" style="margin-bottom: 10px;" /> <br>
-</p>
+    <summary>
+        Hyprlock (EXPAND)
+    </summary>
+    <p align="center">
+        <img src="./.github/assets/screenshots/hyprlock.png" style="margin-bottom: 10px;" /> <br>
+    </p>
 </details>
 
 # 🗃️ Overview
@@ -31,12 +31,12 @@ Hyprlock (EXPAND)
 
 -   [flake.nix](flake.nix) base of the configuration
 -   [hosts](hosts) 🌳 per-host configurations that contain machine specific configurations
-    - [desktop](hosts/desktop/) 🖥️ Desktop specific configuration
-    - [laptop](hosts/laptop/) 💻 Laptop specific configuration
-    - [vm](hosts/vm/) 🗄️ VM specific configuration
+- [desktop](hosts/desktop/) 🖥️ Desktop specific configuration
+- [laptop](hosts/laptop/) 💻 Laptop specific configuration
+- [vm](hosts/vm/) 🗄️ VM specific configuration
 -   [modules](modules) 🍱 modularized NixOS configurations
-    -   [core](modules/core/) ⚙️ Core NixOS configuration
-    -   [homes](modules/home/) 🏠 my [Home-Manager](https://github.com/nix-community/home-manager) config
+-   [core](modules/core/) ⚙️ Core NixOS configuration
+-   [homes](modules/home/) 🏠 my [Home-Manager](https://github.com/nix-community/home-manager) config
 -   [pkgs](flake/pkgs) 📦 Packages Build from source
 -   [wallpapers](wallpapers/) 🌄 wallpapers collection
 
@@ -55,7 +55,7 @@ Hyprlock (EXPAND)
 | **File Manager**            | [yazi][yazi] |
 | **Fonts**                   | [CascadiaCode Nerd Font][Nerd fonts] + [JetBrainsMono Nerd Font][Nerd fonts] |
 | **Color Scheme**            | [Gruvbox Dark Hard][Gruvbox] |
-| **Cursor**                  | [Bibata-Modern-Ice][Bibata-Modern-Ice] |
+| **Cursor**                  | [Capitaine Cursors][Capitaine-Cursors] |
 | **Icons**                   | [Gruvbox-plus][Gruvbox-plus] |
 | **Lockscreen**              | [Hyprlock][Hyprlock] + [Swaylock-effects][Swaylock-effects] |
 | **Image Viewer**            | [qview][qview] |
@@ -115,10 +115,10 @@ Even though I use home manager, there is still a little bit of manual configurat
 - Change the git account information in `./modules/home/git.nix`
 ```nix
 programs.git = {
-   ...
-   userName = "Rikand";
-   userEmail = "test@gmail.com";
-   ...
+    ...
+    userName = "Rikand";
+    userEmail = "test@gmail.com";
+    ...
 };
 ```
 
@@ -202,5 +202,5 @@ Other dotfiles that I learned / copy from:
 [hyprpicker]: https://github.com/hyprwm/hyprpicker
 [Gruvbox]: https://github.com/morhetz/gruvbox
 [Gruvbox-Plus]: https://github.com/SylEleuth/gruvbox-plus-icon-pack
-[Bibata-Modern-Ice]: https://www.gnome-look.org/p/1197198
+[Capitaine-Cursors]: https://github.com/sainnhe/capitaine-cursors
 [maxfetch]: https://github.com/jobcmax/maxfetch
