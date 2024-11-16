@@ -1,4 +1,4 @@
-{ inputs, pkgs, ...}: 
+{ inputs, pkgs, ...}:
 {
   home.packages = with pkgs; [
     swww
@@ -20,7 +20,6 @@
     enable = true;
     xwayland = {
       enable = true;
-      # hidpi = true;
     };
     # enableNvidiaPatches = false;
     systemd.enable = true;
