@@ -8,7 +8,6 @@
     ./dev.nix                         # dev packags
     ./discord                         # discord with gruvbox
     ./fastfetch.nix                   # fetch tool
-    ./floorp                          # firefox based browser
     ./fzf.nix                         # fuzzy finder
    # ./gaming.nix                      # packages related to gaming
     ./git.nix                         # version control

@@ -2,12 +2,12 @@
 with lib;
 let
   defaultApps = {
-    browser = [ "floorp.desktop" ];
+    browser = [ "zen.desktop" ];
     text = [ "nvim.desktop" ];
     image = [ "viewnior.desktop" ];
     audio = [ "mpv.desktop" ];
     video = [ "mpv.desktop" ];
-    directory = [ "nemo.desktop" ];
+    directory = [ "yazi.desktop" ];
     office = [ "libreoffice.desktop" ];
     pdf = [ "org.pwmt.zathura.desktop" ];
     terminal = [ "wezterm.desktop" ];

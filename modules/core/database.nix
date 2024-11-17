@@ -1,7 +1,7 @@
 {pkgs, ...}:
 {
   services.postgresql = {
-    enable = true;
+    enable = false;
     package = pkgs.postgresql_17;
     extraPlugins = with pkgs; [
       postgresql17Packages.postgis
@@ -34,6 +34,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    postgresql_17
     sqlite
     mariadb
   ];
