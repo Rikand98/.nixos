@@ -1,15 +1,14 @@
 {
   imports = [
-    ./aseprite/aseprite.nix           # pixel art editor
     ./audacious.nix                   # music player
     ./bat.nix                         # better cat command
     ./btop.nix                        # resouces monitor
     ./bottom.nix                      # resouces monitor
     ./cava.nix                        # audio visualizer
     ./dev.nix                         # dev packags
-    ./discord/discord.nix             # discord with gruvbox
+    ./discord                         # discord with gruvbox
     ./fastfetch.nix                   # fetch tool
-    ./floorp/floorp.nix               # firefox based browser
+    ./floorp                          # firefox based browser
     ./fzf.nix                         # fuzzy finder
    # ./gaming.nix                      # packages related to gaming
     ./git.nix                         # version control
@@ -19,13 +18,13 @@
     ./hyprland                        # window manager
     ./kitty.nix                       # terminal
     ./swayosd.nix                     # brightness / volume wiget
-    ./swaync/swaync.nix               # notification deamon
+    ./swaync                          # notification deamon
     ./micro.nix                       # nano replacement
     ./nemo.nix                        # file manager
     ./nixvim                          # nixvim editor
     ./rofi.nix                        # launcher
-    ./scripts/scripts.nix             # personal scripts
-   # ./spicetify.nix                   # spotify client
+    ./scripts                         # personal scripts
+    ./spicetify.nix                   # spotify client
     ./starship.nix                    # shell prompt
     ./swaylock.nix                    # lock screen
     ./terminal.nix                    # terminal packages
@@ -35,5 +34,6 @@
     ./wezterm.nix                     # terminal
     ./xdg-mimes.nix                   # xdg config
     ./yazi                            # terminal filesystem
+    ./zen.nix
   ];
 }

@@ -15,7 +15,7 @@
         "wl-paste --watch cliphist store &"
         "waybar &"
         "swaync &"
-        "hyprctl setcursor Capitaine-Cursors 24 &"
+        "hyprctl  setcursor 'Capitaine Cursors (Gruvbox)' 24&"
         "swww init && swww img $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) --transition-type none &"
 
         "hyprlock"
@@ -132,7 +132,7 @@
         "$mainMod, W, exec, wezterm"
         "ALT, Return, exec, [float; center; size 950 650] wezterm"
         "$mainMod SHIFT, Return, exec, [fullscreen] wezterm"
-        "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] floorp'"
+        "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] zen'"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"

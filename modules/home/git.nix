@@ -1,12 +1,12 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 {
   programs.git = {
     enable = true;
-    
+
     userName = "Rikardp98";
     userEmail = "Rikardp98@gmail.com";
-    
-    extraConfig = { 
+
+    extraConfig = {
       init.defaultBranch = "main";
       credential.helper = "store";
       merge.conflictstyle = "diff3";

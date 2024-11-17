@@ -26,7 +26,7 @@
       tree = "eza --icons --tree --group-directories-first";
 
       # Nixos
-      cdnix = "cd ~/nixos-config && codium ~/nixos-config";
+      cdnix = "cd ~/.nixos && codium ~/.nixos";
       ns = "nom-shell --run fish";
       nix-switch = "nh os switch";
       nix-update = "nh os switch --update";

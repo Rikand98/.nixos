@@ -30,19 +30,18 @@ confirm() {
 
 print_header() {
     echo -E "$CYAN
-      _____              _   ____  _                      _        
-     |  ___| __ ___  ___| |_|  _ \| |__   ___   ___ _ __ (_)_  __  
-     | |_ | '__/ _ \/ __| __| |_) | '_ \ / _ \ / _ \ '_ \| \ \/ /  
-     |  _|| | | (_) \__ \ |_|  __/| | | | (_) |  __/ | | | |>  <   
-     |_|  |_|  \___/|___/\__|_|   |_| |_|\___/ \___|_| |_|_/_/\_\  
-     _   _ _       ___        ___           _        _ _           
-    | \ | (_)_  __/ _ \ ___  |_ _|_ __  ___| |_ __ _| | | ___ _ __ 
+      _____              _   ____  _                      _
+     |  ___| __ ___  ___| |_|  _ \| |__   ___   ___ _ __ (_)_  __
+     | |_ | '__/ _ \/ __| __| |_) | '_ \ / _ \ / _ \ '_ \| \ \/ /
+     |  _|| | | (_) \__ \ |_|  __/| | | | (_) |  __/ | | | |>  <
+     |_|  |_|  \___/|___/\__|_|   |_| |_|\___/ \___|_| |_|_/_/\_\
+     _   _ _       ___        ___           _        _ _
+    | \ | (_)_  __/ _ \ ___  |_ _|_ __  ___| |_ __ _| | | ___ _ __
     |  \| | \ \/ / | | / __|  | || '_ \/ __| __/ _' | | |/ _ \ '__|
-    | |\  | |>  <| |_| \__ \  | || | | \__ \ || (_| | | |  __/ |   
-    |_| \_|_/_/\_\\\\___/|___/ |___|_| |_|___/\__\__,_|_|_|\___|_| 
+    | |\  | |>  <| |_| \__ \  | || | | \__ \ || (_| | | |  __/ |
+    |_| \_|_/_/\_\\\\___/|___/ |___|_| |_|___/\__\__,_|_|_|\___|_|
 
-
-                  $BLUE https://github.com/Frost-Phoenix $RED 
+                  $BLUE https://github.com/Frost-Phoenix $RED
       ! To make sure everything runs correctly DONT run as root ! $GREEN
                         -> '"./install.sh"' $NORMAL
 
@@ -77,7 +76,7 @@ get_host() {
         echo "Invalid choice. Please select 'D' for desktop, 'L' for laptop or 'V' for virtual machine."
         exit 1
     fi
-    
+
     echo -en "$NORMAL"
     echo -en "Use the$YELLOW "$HOST"$NORMAL ${GREEN}host${NORMAL} ? "
     confirm
@@ -90,9 +89,11 @@ install() {
     # Create basic directories
     echo -e "Creating folders:"
     echo -e "    - ${MAGENTA}~/Music${NORMAL}"
+    echo -e "    - ${MAGENTA}~/Video${NORMAL}"
     echo -e "    - ${MAGENTA}~/Documents${NORMAL}"
     echo -e "    - ${MAGENTA}~/Pictures/wallpapers/others${NORMAL}"
     mkdir -p ~/Music
+    mkdir -p ~/Video
     mkdir -p ~/Documents
     mkdir -p ~/Pictures/wallpapers/others
     sleep 0.2

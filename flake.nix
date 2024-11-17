@@ -41,6 +41,8 @@
     };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    zen-browser.url = "github:fufexan/zen-browser-flake";
   };
 
   outputs = { nixpkgs, self, ...} @ inputs:
