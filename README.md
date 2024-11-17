@@ -1,10 +1,9 @@
-<sh1 align="center">
-<img src="./.github/assets/logo/nixos-logo.png  " width="100px" />
-<br>
-NixOS
-<br>
-<img src="./.github/assets/pallet/pallet-0.png" width="600px" /> <br>
-
+<h1 align="center">
+    <img src="./.github/assets/logo/nixos-logo.png  " width="100px" />
+    <br>
+    Rikand NixOS
+    <br>
+    <img src="./.github/assets/pallet/pallet-0.png" width="600px" /> <br>
 </h1>
 
 ### 🖼️ Gallery
