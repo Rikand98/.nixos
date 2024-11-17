@@ -4,7 +4,7 @@
     ./bat.nix                         # better cat command
     ./btop.nix                        # resouces monitor
     ./bottom.nix                      # resouces monitor
-    ./cava.nix                        # audio visualizer
+    # ./cava.nix                        # audio visualizer
     ./dev.nix                         # dev packags
     ./discord                         # discord with gruvbox
     ./fastfetch.nix                   # fetch tool
