@@ -1,4 +1,4 @@
-sh1 align="center">
+<sh1 align="center">
 <img src="./.github/assets/logo/nixos-logo.png  " width="100px" />
 <br>
 NixOS
@@ -26,6 +26,10 @@ NixOS
 </details>
 
 # 🗃️ Overview
+> [!TIP]
+> Great commands for cleaning and optimising your nixos system
+    > $nix store optimise
+    > $nix store gc
 
 ## 📚 Layout
 
@@ -50,6 +54,7 @@ NixOS
 | **Terminal Emulator**       | [Wezterm][Wezterm] |
 | **Shell**                   | [fish][fish] |
 | **Text Editor**             | [Neovim][Neovim] |
+| **Browser**                 | [Zen][Zen] |
 | **network management tool** | [NetworkManager][NetworkManager] + [network-manager-applet][network-manager-applet] |
 | **System resource monitor** | [Btop][Btop] |
 | **File Manager**            | [yazi][yazi] |
@@ -138,6 +143,7 @@ The script will replace all occurancies of the default usename ```CURRENT_USERNA
 
 The following directories will be created:
 - ```~/Music```
+- ```~/Video```
 - ```~/Documents```
 - ```~/Pictures/wallpapers/others```
 
