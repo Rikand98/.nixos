@@ -209,3 +209,4 @@ Other dotfiles that I learned / copy from:
 [Gruvbox-Plus]: https://github.com/SylEleuth/gruvbox-plus-icon-pack
 [Capitaine-Cursors]: https://github.com/sainnhe/capitaine-cursors
 [maxfetch]: https://github.com/jobcmax/maxfetch
+[Zen]: https://zen-browser.app/
