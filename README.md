@@ -28,7 +28,7 @@ NixOS
 # 🗃️ Overview
 > [!TIP]
 > Great commands for cleaning and optimising your nixos system
-> ```nix store optimise```
+> ```nix store optimise``` and
 > ```nix store gc```
 
 ## 📚 Layout
