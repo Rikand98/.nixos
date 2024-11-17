@@ -28,8 +28,8 @@ NixOS
 # 🗃️ Overview
 > [!TIP]
 > Great commands for cleaning and optimising your nixos system
-    > $nix store optimise
-    > $nix store gc
+> ```nix store optimise```
+> ```nix store gc```
 
 ## 📚 Layout
 
