@@ -15,7 +15,9 @@
     {
       mode = ["n"];
       key = "<leader>/";
-      action = "<cmd>lua require('fzf-lua').live_grep({ cwd = '/'})<cr>";
+      action = {
+          __raw ="function() require('fzf-lua').live_grep({ cwd = '/'}) end";
+      };
       options = {
         desc = "Grep (Root Dir)";
       };
@@ -55,7 +57,9 @@
     {
       mode = ["n"];
       key = "<leader>fF";
-      action = "<cmd>lua require('fzf-lua').files({ cwd = '/'})<cr>";
+      action = {
+          __raw = "function() require('fzf-lua').files({ cwd = '/'})end";
+        };
       options = {
         desc = "Find Files (Root Dir)";
       };
@@ -79,7 +83,9 @@
     {
       mode = ["n"];
       key = "<leader>fR";
-      action = "<cmd>lua require('fzf-lua').oldfiles({ cwd = '/'})<cr>";
+      action = {
+          __raw = "function() require('fzf-lua').oldfiles({ cwd = '/'}) end";
+        };
       options = {
         desc = "Recent";
       };
@@ -167,7 +173,9 @@
     {
       mode = ["n"];
       key = "<leader>sG";
-      action = "<cmd>lua require('fzf-lua').live_grep({ cwd = '/'})<cr>";
+      action = {
+          __raw = "function()require('fzf-lua').live_grep({ cwd = '/'}) end";
+        };
       options = {
         desc = "Grep (Root Dir)";
       };
@@ -255,7 +263,9 @@
     {
       mode = ["n"];
       key = "<leader>sW";
-      action = "<cmd>lua require('fzf-lua').grep_cword({ cwd = '/'})<cr>";
+      action = {
+          __raw = "function() require('fzf-lua').grep_cword({ cwd = '/'}) end";
+        };
       options = {
         desc = "Word (Root Dir)";
       };
@@ -271,7 +281,9 @@
     {
       mode = ["v"];
       key = "<leader>sW";
-      action = "<cmd>lua require('fzf-lua').grep_visual({ cwd = '/'})<cr>";
+      action = {
+          __raw = "function()require('fzf-lua').grep_visual({ cwd = '/'}) end";
+        };
       options = {
         desc = "Selection (Root Dir)";
       };
@@ -287,11 +299,12 @@
     {
       mode = ["n"];
       key = "<leader>ss";
-      action = "lua function()
+      action = {
+          __raw = "function()
         require(fzf-lua).lsp_document_symbols({
           regex_filter = symbols_filter,
-        })
-      end";
+        })end";
+        };
       options = {
         desc = "Goto Symbol";
       };
@@ -299,11 +312,12 @@
     {
       mode = ["n"];
       key = "<leader>sS";
-      action = "lua function()
+      action = {
+          __raw = "function()
         require(fzf-lua).lsp_live_workspace_symbols({
           regex_filter = symbols_filter,
-        })
-      end";
+        })end";
+        };
       options = {
         desc = "Goto Symbol (Workspace)";
       };

@@ -24,6 +24,9 @@
     pavucontrol                       # PulseAudio control
     soundwireserver                   # Sound server tools
 
+    #kvm
+    barrier                           # Open-source KVM software
+
     # Windows
     winetricks                        # Helper for Wine installation
     wineWowPackages.wayland           # Wine for Wayland

@@ -9,23 +9,21 @@
 	./harpoon.nix
 	./inc-rename.nix
   ./indent-o-matic.nix
-	./lazygit.nix
 	./lualine.nix
 	./mini.nix
   ./noice.nix
 	./none-ls.nix
-  ./notify.nix
   ./nui.nix
 	./nvim-bqf.nix
 	./project-nvim.nix
 	./scope.nix
-    ./startup.nix
   ./todo-comments.nix
-	./toggleterm.nix
+	# ./toggleterm.nix
   ./trouble.nix
 	./treesitter.nix
+  ./snacks.nix
 	./vimtex.nix
-    ./which-key.nix
+  ./which-key.nix
 	./yanky.nix
 	./yazi.nix
   ];

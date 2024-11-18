@@ -5,6 +5,7 @@
 		modules = {
 			bracketed = {};
 			hipatterns = {};
+      icons = {};
 			indentscope = {};
 			pairs = {};
 			surround = {};
@@ -16,43 +17,57 @@
     {
       mode = ["n" "v"];
       key = "gsa";
-      action = "<cmd>lua require('mini.surround').add()<CR>";
+      action = {
+          __raw = "function() require('mini.surround').add()end";
+        };
       options = { silent = true; desc = "Add Surrounding"; };
     }
     {
       mode = ["n"];
       key = "gsd";
-      action = "<cmd>lua require('mini.surround').delete()<CR>";
+      action = {
+          __raw = "function() require('mini.surround').delete()end";
+        };
       options = { silent = true; desc = "Delete Surrounding"; };
     }
     {
       mode = ["n"];
       key = "gsf";
-      action = "<cmd>lua require('mini.surround').find_right()<CR>";
+      action = {
+          __raw = "function() require('mini.surround').find_right()end";
+        };
       options = { silent = true; desc = "Find Right Surrounding"; };
     }
     {
       mode = ["n"];
       key = "gsF";
-      action = "<cmd>lua require('mini.surround').find_left()<CR>";
+      action = {
+          __raw = "function() require('mini.surround').find_left()end";
+        };
       options = { silent = true; desc = "Find Left Surrounding"; };
     }
     {
       mode = ["n"];
       key = "gsh";
-      action = "<cmd>lua require('mini.surround').highlight()<CR>";
+      action = {
+          __raw = "function() require('mini.surround').highlight()end";
+        };
       options = { silent = true; desc = "Highlight Surrounding"; };
     }
     {
       mode = ["n"];
       key = "gsn";
-      action = "<cmd>lua require('mini.surround').update_config({ n_lines = 3 })<CR>";  # Change n_lines as needed
+      action = {
+          __raw = "function() require('mini.surround').update_config({ n_lines = 3 })end";
+        };
       options = { silent = true; desc = "Update MiniSurround.config.n_lines"; };
     }
     {
       mode = ["n" "v"];
       key = "gsr";
-      action = "<cmd>lua require('mini.surround').replace()<CR>";
+      action = {
+          __raw = "function() require('mini.surround').replace()end";
+        };
       options = { silent = true; desc = "Replace Surrounding"; };
     }
   ];

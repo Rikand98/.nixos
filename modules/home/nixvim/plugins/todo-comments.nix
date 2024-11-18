@@ -7,7 +7,9 @@
     {
       mode = "n";
       key = "]t";
-      action = "<cmd>lua require(todo-comments).jump_next()<cr>";
+      action = {
+          __raw = "function() require(todo-comments).jump_next()end";
+        };
       options = {
         desc = "Next TODO Comments";
       };
@@ -15,7 +17,9 @@
     {
       mode = "n";
       key = "[t";
-      action = "<cmd>lua require(todo-comments).jump_prev()<cr>";
+      action = {
+          __raw = "function() require(todo-comments).jump_prev()end";
+        };
       options = {
         desc = "Previous TODO Comments";
       };
