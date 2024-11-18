@@ -4,6 +4,7 @@
 	./barbar.nix
 	./conform-nvim.nix
 	./coq-nvim.nix
+  ./dashboard.nix
 	./fidget.nix
 	./fzf-lua.nix
 	./harpoon.nix

@@ -3,7 +3,7 @@
         plugins.dashboard = {
             enable = true;
             settings = {
-              change_to_vcs_root = true;
+              theme = "doom";
               config = {
                 footer = [
                   "Neovim ❤️"
@@ -15,62 +15,54 @@
                   "██╔══██╗██║██╔═██╗░██╔══██║██║╚████║██║░░██║"
                   "██║░░██║██║██║░╚██╗██║░░██║██║░╚███║██████╔╝"
                   "╚═╝░░╚═╝╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝╚═════╝░"
+                  "                                            "
+                  "                                            "
+                  "                                            "
+                  "                                            "
+                  "                                            "
+
                 ];
-                mru = {
-                  limit = 20;
-                };
-                project = {
-                  enable = false;
-                };
-                shortcut = [
+                center = [
                   {
                     action = {
                       __raw = "function(path) vim.cmd('FzfLua files') end";
                     };
                     desc = " Files";
-                    group = "Label";
-                    icon = "";
-                    icon_hl = "@variable";
+                    icon = " ";
                     key = "f";
                   }
                   {
                     action = {
                       __raw = "function(path) vim.cmd('FzfLua oldfiles') end";
                     };
-                    desc ="Recent Files";
-                    icon = "";
-                    icon_hl = "@variable";
-                    group = "Label";
+                    desc =" Recent Files";
+                    icon = " ";
                     key = "r";
                   }
                   {
                     action = {
                       __raw = "function() require('persistence').load({ last = true }) end";
                     };
-                    desc ="Restore Session";
-                    icon = "";
+                    desc =" Restore Session";
+                    icon = " ";
                     key = "s";
                   }
                   {
                     action = "Yazi";
-                    desc ="Files";
-                    icon = "";
+                    desc =" Files";
+                    icon = " ";
                     key = "e";
                   }
                   {
                     action = {
                       __raw = "function(path) vim.api.nvim_input('<cmd>qa<cr>')  end";
                     };
-                    desc ="Quit";
-                    icon = "";
+                    desc =" Quit";
+                    icon = " ";
                     key = "q";
                   }
                 ];
-                week_header = {
-                  enable = true;
-                };
               };
-              theme = "hyper";
             };
         };
     };
