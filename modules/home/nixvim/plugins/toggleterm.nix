@@ -6,7 +6,7 @@
     };
     keymaps = [
     {
-      mode = "n";
+      mode = ["n" "t"];
       key = "<C-t>";
       action = "<cmd>ToggleTerm<cr>";
       options = {

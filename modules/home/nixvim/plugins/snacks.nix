@@ -4,22 +4,28 @@
 		enable = true;
 		settings = {
       bigfile = {
-          enabled = true;
-        };
-        notifier = {
-          enabled = true;
-          timeout = 3000;
-        };
-        quickfile = {
+        enabled = true;
+      };
+      bufdelete = {
           enabled = false;
         };
-        statuscolumn = {
+      notifier = {
+        enabled = true;
+        timeout = 3000;
+      };
+      quickfile = {
+        enabled = true;
+      };
+      statuscolumn = {
+        enabled = true;
+      };
+      terminal = {
           enabled = false;
         };
-        words = {
-          debounce = 100;
-          enabled = true;
-        };
+      words = {
+        debounce = 100;
+        enabled = true;
+      };
       };
     };
     keymaps = [
