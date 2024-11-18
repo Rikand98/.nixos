@@ -2,6 +2,17 @@
     programs.nixvim = {
         plugins.persistence = {
             enable = true;
+            dir = {
+              __raw = "vim.fn.expand(vim.fn.stdpath(\"state\") .. \"/sessions/\")";
+            };
+            options =
+                [
+                  "buffers"
+                  "curdir"
+                  "tabpages"
+                  "winsize"
+                  "skiprtp"
+                ];
         };
     keymaps = [
       {
