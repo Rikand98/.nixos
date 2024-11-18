@@ -36,7 +36,7 @@ programs.nixvim = {
 
       # Clearing Search Highlight
       { mode = ["n" "i" "x"]; key = "<esc>"; action = "<cmd>noh<CR><esc>"; options = { silent = true; desc = "Escape and Clear hlsearch"; }; }
-      { mode = ["t"]; key = "<esc>"; action = "<C-\><C-n>"; options = { silent = true; desc = "Exit Terminal Mode"; }; }
+      { mode = ["t"]; key = "<esc>"; action = "<C-\\><C-n>"; options = { silent = true; desc = "Exit Terminal Mode"; }; }
 
       # Search Navigation
       { mode = ["n" "x" "o"]; key = "n"; action = "nzzzv"; options = { silent = true; desc = "Next Search Result"; }; }
