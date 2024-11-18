@@ -27,6 +27,7 @@
                   "                                            "
                   "                                            "
                   "                                            "
+
                 ];
                 center = [
                   {
@@ -47,7 +48,7 @@
                   }
                   {
                     action = {
-                      __raw = "function() require('persistence').load({ last = true }) end";
+                      __raw = "function() load({ last = true }) end";
                     };
                     desc =" Restore Session";
                     icon = " ";

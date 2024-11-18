@@ -8,7 +8,7 @@
       mode = "n";
       key = "]t";
       action = {
-          __raw = "function() require(todo-comments).jump_next()end";
+          __raw = "function() jump_next()end";
         };
       options = {
         desc = "Next TODO Comments";
@@ -18,7 +18,7 @@
       mode = "n";
       key = "[t";
       action = {
-          __raw = "function() require(todo-comments).jump_prev()end";
+          __raw = "function() jump_prev()end";
         };
       options = {
         desc = "Previous TODO Comments";

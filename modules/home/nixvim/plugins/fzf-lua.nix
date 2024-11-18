@@ -16,7 +16,7 @@
       mode = ["n"];
       key = "<leader>/";
       action = {
-          __raw ="function() require('fzf-lua').live_grep({ cwd = '/'}) end";
+          __raw ="function() live_grep({ cwd = '/'}) end";
       };
       options = {
         desc = "Grep (Root Dir)";
@@ -58,7 +58,7 @@
       mode = ["n"];
       key = "<leader>fF";
       action = {
-          __raw = "function() require('fzf-lua').files({ cwd = '/'})end";
+          __raw = "function() files({ cwd = '/'})end";
         };
       options = {
         desc = "Find Files (Root Dir)";
@@ -84,7 +84,7 @@
       mode = ["n"];
       key = "<leader>fR";
       action = {
-          __raw = "function() require('fzf-lua').oldfiles({ cwd = '/'}) end";
+          __raw = "function() oldfiles({ cwd = '/'}) end";
         };
       options = {
         desc = "Recent";
@@ -174,7 +174,7 @@
       mode = ["n"];
       key = "<leader>sG";
       action = {
-          __raw = "function()require('fzf-lua').live_grep({ cwd = '/'}) end";
+          __raw = "function() live_grep({ cwd = '/'}) end";
         };
       options = {
         desc = "Grep (Root Dir)";
@@ -264,7 +264,7 @@
       mode = ["n"];
       key = "<leader>sW";
       action = {
-          __raw = "function() require('fzf-lua').grep_cword({ cwd = '/'}) end";
+          __raw = "function() grep_cword({ cwd = '/'}) end";
         };
       options = {
         desc = "Word (Root Dir)";
@@ -282,7 +282,7 @@
       mode = ["v"];
       key = "<leader>sW";
       action = {
-          __raw = "function()require('fzf-lua').grep_visual({ cwd = '/'}) end";
+          __raw = "function() grep_visual({ cwd = '/'}) end";
         };
       options = {
         desc = "Selection (Root Dir)";
@@ -300,10 +300,9 @@
       mode = ["n"];
       key = "<leader>ss";
       action = {
-          __raw = "function()
-        require(fzf-lua).lsp_document_symbols({
-          regex_filter = symbols_filter,
-        })end";
+          __raw = "function() lsp_document_symbols({
+                  regex_filter = symbols_filter,
+                  })end";
         };
       options = {
         desc = "Goto Symbol";
@@ -314,9 +313,9 @@
       key = "<leader>sS";
       action = {
           __raw = "function()
-        require(fzf-lua).lsp_live_workspace_symbols({
-          regex_filter = symbols_filter,
-        })end";
+                  lsp_live_workspace_symbols({
+                  regex_filter = symbols_filter,
+                  })end";
         };
       options = {
         desc = "Goto Symbol (Workspace)";
