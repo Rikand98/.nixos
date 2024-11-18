@@ -5,14 +5,14 @@
       settings = { open_mapping = "[[<c-t>]]"; auto_scroll = false;};
     };
     keymaps = [
-    {
-      mode = ["n" "t"];
-      key = "<C-t>";
-      action = "<cmd>ToggleTerm<cr>";
-      options = {
-        desc = "Toggle Terminal Window";
-      };
-    }
+    # {
+    #   mode = ["n" "t"];
+    #   key = "<C-t>";
+    #   action = "<cmd>ToggleTerm<cr>";
+    #   options = {
+    #     desc = "Toggle Terminal Window";
+    #   };
+    # }
     {
       mode = "n";
       key = "<leader>tv";
