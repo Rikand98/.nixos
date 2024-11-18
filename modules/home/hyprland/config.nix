@@ -61,7 +61,7 @@
 
       dwindle = {
         # no_gaps_when_only = false;
-        force_split = 0;
+
         special_scale_factor = 1.0;
         split_width_multiplier = 1.0;
         use_active_for_splits = true;
@@ -150,6 +150,7 @@
         "$mainMod SHIFT, B, exec, toggle_waybar"
         "$mainMod, C ,exec, hyprpicker -a"
     	  "$mainMod, N, exec, nixvim"
+    	  "$mainMod, M, exec, wezterm -e spotify"
     	  "$mainMod, Y, exec, yazi-open"
         "$mainMod, S, exec, swaync-client -t -sw"
         "$mainMod SHIFT, W, exec, vm-start"
@@ -294,11 +295,12 @@
         "opacity 1.0 override 1.0 override, class:(zen)"
         "opacity 1.0 override 1.0 override, class:(evince)"
         "workspace 1, class:^(zen)$"
+        "workspace 2, class:^(nixvim)$"
         "workspace 3, class:^(evince)$"
         "workspace 4, class:^(Gimp-2.10)$"
         "workspace 4, class:^(Aseprite)$"
         "workspace 5, class:^(Audacious)$"
-        "workspace 5, class:^(Spotify)$"
+        "workspace 7, class:^(Spotify)$"
         "workspace 8, class:^(com.obsproject.Studio)$"
         "workspace 10, class:^(discord)$"
         "workspace 10, class:^(WebCord)$"
