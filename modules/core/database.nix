@@ -1,7 +1,7 @@
-{pkgs, ...}:
+{pkgs, lib, ...}:
 {
   services.postgresql = {
-    enable = false;
+    enable = true;
     package = pkgs.postgresql_17;
     extraPlugins = with pkgs; [
       postgresql17Packages.postgis
@@ -26,15 +26,13 @@
       # IPv4 localhost connections (trust)
       host    all       postgres  127.0.0.1/32 trust
     '';
+  };
 
-    # Optionally, you can set the authentication method to 'md5' for more security
-    # authentication = pkgs.lib.mkOverride 10 ''
-    #   local   all       all       md5
-    # '';
+  systemd.services.postgresql = {
+    wantedBy = lib.mkForce [];
   };
 
   environment.systemPackages = with pkgs; [
-    postgresql_17
     sqlite
     mariadb
   ];
