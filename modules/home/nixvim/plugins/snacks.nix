@@ -80,22 +80,6 @@
         };
       }
       {
-        mode = "n";
-        key = "<c-t>";
-        action = { __raw = "function() Snacks.terminal() end"; };
-        options = {
-          desc = "Toggle Terminal";
-        };
-      }
-      {
-        mode = "n";
-        key = "<c-_>";
-        action = { __raw = "function() Snacks.terminal() end"; };
-        options = {
-          desc = "which_key_ignore";
-        };
-      }
-      {
         mode = [ "n" "t" ];
         key = "]]";
         action = { __raw = "function() Snacks.words.jump(vim.v.count1) end"; };

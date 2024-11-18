@@ -19,7 +19,7 @@
 	./project-nvim.nix
 	./scope.nix
   ./todo-comments.nix
-	# ./toggleterm.nix
+	./toggleterm.nix
   ./trouble.nix
 	./treesitter.nix
   ./snacks.nix
