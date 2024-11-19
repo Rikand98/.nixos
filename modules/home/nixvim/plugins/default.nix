@@ -16,6 +16,7 @@
 	./none-ls.nix
   ./nui.nix
 	./nvim-bqf.nix
+  ./persistence.nix
 	./project-nvim.nix
 	./scope.nix
   ./todo-comments.nix

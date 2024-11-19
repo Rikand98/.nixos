@@ -15,9 +15,7 @@
     {
       mode = ["n"];
       key = "<leader>/";
-      action = {
-          __raw ="function() live_grep({ cwd = '/'}) end";
-      };
+      action = "<cmd>FzfLua live_grep cwd =/<cr>";
       options = {
         desc = "Grep (Root Dir)";
       };
@@ -57,9 +55,7 @@
     {
       mode = ["n"];
       key = "<leader>fF";
-      action = {
-          __raw = "function() files({ cwd = '/'})end";
-        };
+      action = "<cmd>FzfLua files cwd = /<cr>";
       options = {
         desc = "Find Files (Root Dir)";
       };
@@ -83,9 +79,7 @@
     {
       mode = ["n"];
       key = "<leader>fR";
-      action = {
-          __raw = "function() oldfiles({ cwd = '/'}) end";
-        };
+      action = "<cmd>FzfLua oldfiles cwd = /<cr>";
       options = {
         desc = "Recent";
       };
@@ -173,9 +167,7 @@
     {
       mode = ["n"];
       key = "<leader>sG";
-      action = {
-          __raw = "function() live_grep({ cwd = '/'}) end";
-        };
+      action = "<cmd>FzfLua live_grep cwd = /<cr>";
       options = {
         desc = "Grep (Root Dir)";
       };
@@ -263,9 +255,7 @@
     {
       mode = ["n"];
       key = "<leader>sW";
-      action = {
-          __raw = "function() grep_cword({ cwd = '/'}) end";
-        };
+      action = "<cmd>FzfLua grep_cword cwd = /<cr>";
       options = {
         desc = "Word (Root Dir)";
       };
@@ -281,9 +271,7 @@
     {
       mode = ["v"];
       key = "<leader>sW";
-      action = {
-          __raw = "function() grep_visual({ cwd = '/'}) end";
-        };
+      action = "<cmd>FzfLua grep_visual cwd = /<cr>";
       options = {
         desc = "Selection (Root Dir)";
       };
@@ -299,11 +287,9 @@
     {
       mode = ["n"];
       key = "<leader>ss";
-      action = {
-          __raw = "function() lsp_document_symbols({
-                  regex_filter = symbols_filter,
-                  })end";
-        };
+      action = "<cmd>FzfLua
+                lsp_document_symbols
+                regex_filter=symbols_filter<cr>";
       options = {
         desc = "Goto Symbol";
       };
@@ -311,12 +297,9 @@
     {
       mode = ["n"];
       key = "<leader>sS";
-      action = {
-          __raw = "function()
-                  lsp_live_workspace_symbols({
-                  regex_filter = symbols_filter,
-                  })end";
-        };
+      action = "<cmd>FzfLua
+                lsp_live_workspace_symbols
+                regex_filter = symbols_filter<cr>";
       options = {
         desc = "Goto Symbol (Workspace)";
       };
@@ -324,7 +307,10 @@
     {
       mode = ["n"];
       key = "gd";
-      action = "<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>";
+      action = "<cmd>FzfLua
+                lsp_definitions
+                jump_to_single_result=true
+                ignore_current_line=true<cr>";
       options = {
         desc = "Goto Definition";
     };
@@ -332,7 +318,10 @@
     {
       mode = ["n"];
       key = "gr";
-      action = "<cmd>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<cr>";
+      action = "<cmd>FzfLua
+                lsp_references
+                jump_to_single_result=true
+                ignore_current_line=true<cr>";
       options = {
         desc = "References";
         nowait = true;
@@ -341,7 +330,10 @@
     {
       mode = ["n"];
       key = "gI";
-      action = "<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>";
+      action = "<cmd>FzfLua
+                lsp_implementations
+                jump_to_single_result=true
+                ignore_current_line=true<cr>";
       options = {
         desc = "Goto Implementation";
       };
@@ -349,7 +341,10 @@
     {
       mode = ["n"];
       key = "gy";
-      action = "<cmd>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<cr>";
+      action = "<cmd>FzfLua
+                lsp_typedefs
+                jump_to_single_result=true
+                ignore_current_line=true<cr>";
       options = {
         desc = "Goto T[y]pe Definition";
       };
