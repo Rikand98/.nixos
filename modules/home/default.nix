@@ -4,12 +4,12 @@
     ./bat.nix                         # better cat command
     ./btop.nix                        # resouces monitor
     ./bottom.nix                      # resouces monitor
-    # ./cava.nix                        # audio visualizer
+    ./cava.nix                        # audio visualizer
     ./dev.nix                         # dev packags
     ./discord                         # discord with gruvbox
     ./fastfetch.nix                   # fetch tool
     ./fzf.nix                         # fuzzy finder
-   # ./gaming.nix                      # packages related to gaming
+   ./gaming.nix                      # packages related to gaming
     ./git.nix                         # version control
     ./gnome.nix                       # gnome apps
     ./gtk.nix                         # gtk theme

@@ -32,14 +32,14 @@
       package = pkgs.gruvbox-plus-icons;
     };
     cursorTheme = {
-      name = "Capitaine-Cursors";
+      name = "Capitaine Cursors (Gruvbox)";
       package = pkgs.capitaine-cursors-themed;
       size = 24;
     };
   };
 
   home.pointerCursor = {
-    name = "Capitaine-Cursors";
+    name = "Capitaine Cursors (Gruvbox)";
     package = pkgs.capitaine-cursors-themed;
     size = 24;
   };
