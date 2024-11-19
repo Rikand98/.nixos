@@ -19,7 +19,6 @@
 
     # Android Development
     android-studio
-    android-tools
     firebase-tools
     google-cloud-sdk
 
