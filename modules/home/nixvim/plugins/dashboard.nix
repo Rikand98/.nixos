@@ -48,7 +48,7 @@
                   }
                   {
                     action = {
-                        __raw = "require(\"persistence\").load()";
+                        __raw = "function(path) require('persistence').load() end";
                         };
                     desc =" Restore Session";
                     icon = " ";
