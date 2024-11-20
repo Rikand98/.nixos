@@ -5,6 +5,20 @@
     };
     keymaps = [
     {
+      mode = ["t"];
+      key = "<C-j>";
+      action = "<C-j>";
+      nowait = true;
+      ft = "fzf";
+    }
+    {
+      mode = ["t"];
+      key = "<C-k>";
+      action = "<C-k>";
+      nowait = true;
+      ft = "fzf";
+    }
+    {
       mode = ["n"];
       key = "<leader>,";
       action = "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>";
@@ -15,7 +29,7 @@
     {
       mode = ["n"];
       key = "<leader>/";
-      action = "<cmd>FzfLua live_grep cwd =/<cr>";
+      action = "<cmd>FzfLua live_grep cwd=/<cr>";
       options = {
         desc = "Grep (Root Dir)";
       };
@@ -55,7 +69,7 @@
     {
       mode = ["n"];
       key = "<leader>fF";
-      action = "<cmd>FzfLua files cwd = /<cr>";
+      action = "<cmd>FzfLua files cwd=/<cr>";
       options = {
         desc = "Find Files (Root Dir)";
       };
@@ -79,7 +93,7 @@
     {
       mode = ["n"];
       key = "<leader>fR";
-      action = "<cmd>FzfLua oldfiles cwd = /<cr>";
+      action = "<cmd>FzfLua oldfiles cwd=/<cr>";
       options = {
         desc = "Recent";
       };
@@ -167,7 +181,7 @@
     {
       mode = ["n"];
       key = "<leader>sG";
-      action = "<cmd>FzfLua live_grep cwd = /<cr>";
+      action = "<cmd>FzfLua live_grep cwd=/<cr>";
       options = {
         desc = "Grep (Root Dir)";
       };
@@ -255,7 +269,7 @@
     {
       mode = ["n"];
       key = "<leader>sW";
-      action = "<cmd>FzfLua grep_cword cwd = /<cr>";
+      action = "<cmd>FzfLua grep_cword cwd=/<cr>";
       options = {
         desc = "Word (Root Dir)";
       };
@@ -271,7 +285,7 @@
     {
       mode = ["v"];
       key = "<leader>sW";
-      action = "<cmd>FzfLua grep_visual cwd = /<cr>";
+      action = "<cmd>FzfLua grep_visual cwd=/<cr>";
       options = {
         desc = "Selection (Root Dir)";
       };
