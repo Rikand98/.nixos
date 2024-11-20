@@ -8,15 +8,11 @@
       mode = ["t"];
       key = "<C-j>";
       action = "<C-j>";
-      nowait = true;
-      ft = "fzf";
     }
     {
       mode = ["t"];
       key = "<C-k>";
       action = "<C-k>";
-      nowait = true;
-      ft = "fzf";
     }
     {
       mode = ["n"];
