@@ -101,6 +101,18 @@
           desc = "Prev Reference";
         };
       }
+      {
+        mode = ["n"];
+        key = "<A-n>";
+        action = { __raw = "function() Snacks.words.jump(vim.v.count1, true) end"; };
+        options = { nowait = true; silent = true; desc = "Next Reference"; };
+      }
+      {
+        mode = ["n"];
+        key = "<A-p>";
+        action = { __raw = "function() Snacks.words.jump(-vim.v.count1, true) end"; };
+        options = { nowait = true; silent = true; desc = "Prev Reference"; };
+      }
     ];
 	};
 }

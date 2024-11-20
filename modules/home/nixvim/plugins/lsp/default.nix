@@ -33,30 +33,6 @@
     }
     {
       mode = ["n"];
-      key = "gd";
-      action = "<cmd>lua vim.lsp.buf.definition()<cr>";
-      options = { nowait = true; silent = true; desc = "Goto Definition"; };
-    }
-    {
-      mode = ["n"];
-      key = "gr";
-      action = "<cmd>lua vim.lsp.buf.references()<cr>";
-      options = { nowait = true; silent = true; desc = "References"; };
-    }
-    {
-      mode = ["n"];
-      key = "gI";
-      action = "<cmd>lua vim.lsp.buf.implementation()<cr>";
-      options = { nowait = true; silent = true; desc = "Goto Implementation"; };
-    }
-    {
-      mode = ["n"];
-      key = "gy";
-      action = "<cmd>lua vim.lsp.buf.type_definition()<cr>";
-      options = { nowait = true; silent = true; desc = "Goto Type Definition"; };
-    }
-    {
-      mode = ["n"];
       key = "gD";
       action = "<cmd>lua vim.lsp.buf.declaration()<cr>";
       options = { nowait = true; silent = true; desc = "Goto Declaration"; };
@@ -64,19 +40,19 @@
     {
       mode = ["n"];
       key = "K";
-      action = "<cmd>lua vim.lsp.buf.hover()<cr>";
+      action = {__raw = "function() return vim.lsp.buf.hover() end";};
       options = { nowait = true; silent = true; desc = "Hover"; };
     }
     {
       mode = ["n"];
       key = "gK";
-      action = "<cmd>lua vim.lsp.buf.signature_help()<cr>";
+      action = {__raw = "function() return vim.lsp.buf.signature_help() end";};
       options = { nowait = true; silent = true; desc = "Signature Help"; };
     }
     {
       mode = ["i"];
       key = "<C-k>";
-      action = "<cmd>lua vim.lsp.buf.signature_help()<cr>";
+      action = {__raw = "function() return vim.lsp.buf.signature_help() end";};
       options = { nowait = true; silent = true; desc = "Signature Help"; };
     }
     {
@@ -115,30 +91,7 @@
       action = "<cmd>lua vim.lsp.buf.execute_command()<cr>";
       options = { nowait = true; silent = true; desc = "Source Action"; };
     }
-    {
-      mode = ["n"];
-      key = "]]";
-      action = "<cmd>lua vim.lsp.buf.references()<cr>";
-      options = { nowait = true; silent = true; desc = "Next Reference"; };
-    }
-    {
-      mode = ["n"];
-      key = "[[";
-      action = "<cmd>lua vim.lsp.buf.references()<cr>";
-      options = { nowait = true; silent = true; desc = "Prev Reference"; };
-    }
-    {
-      mode = ["n"];
-      key = "<A-n>";
-      action = "<cmd>lua vim.lsp.buf.references()<cr>";
-      options = { nowait = true; silent = true; desc = "Next Reference"; };
-    }
-    {
-      mode = ["n"];
-      key = "<A-p>";
-      action = "<cmd>lua vim.lsp.buf.references()<cr>";
-      options = { nowait = true; silent = true; desc = "Prev Reference"; };
-    }
-                ];
+    #See more lsp related keybinds under snacks.nix and fzf-lua.nix
+    ];
     };
 }
