@@ -338,16 +338,16 @@
       monitor = DVI-D-2,preferred,auto,auto
       monitor = HDMI-A-1,1920x1080@60,-1920x0,auto
 
-      workspace=1 monitor:HDMI-A-1
-      workspace=2 monitor:DVI-D-2
-      workspace=3 monitor:HDMI-A-1
-      workspace=4 monitor:DVI-D-2
-      workspace=5 monitor:HDMI-A-1
-      workspace=6 monitor:DVI-D-2
-      workspace=7 monitor:HDMI-A-1
-      workspace=8 monitor:DVI-D-2
-      workspace=9 monitor:HDMI-A-1
-      workspace=0 monitor:DVI-D-2
+      workspace=1, monitor:HDMI-A-1, default:true
+      workspace=2, monitor:DVI-D-2, default:true
+      workspace=3, monitor:HDMI-A-1
+      workspace=4, monitor:DVI-D-2
+      workspace=5, monitor:HDMI-A-1
+      workspace=6, monitor:DVI-D-2
+      workspace=7, monitor:HDMI-A-1
+      workspace=8, monitor:DVI-D-2
+      workspace=9, monitor:HDMI-A-1
+      workspace=0, monitor:DVI-D-2
 
       xwayland {
         force_zero_scaling = true
