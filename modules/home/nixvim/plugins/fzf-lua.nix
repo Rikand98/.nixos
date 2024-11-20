@@ -298,8 +298,7 @@
       mode = ["n"];
       key = "<leader>ss";
       action = "<cmd>FzfLua
-                lsp_document_symbols
-                regex_filter=symbols_filter<cr>";
+                lsp_document_symbols<cr>";
       options = {
         desc = "Goto Symbol";
       };
@@ -308,8 +307,7 @@
       mode = ["n"];
       key = "<leader>sS";
       action = "<cmd>FzfLua
-                lsp_live_workspace_symbols
-                regex_filter = symbols_filter<cr>";
+                lsp_live_workspace_symbols<cr>";
       options = {
         desc = "Goto Symbol (Workspace)";
       };
