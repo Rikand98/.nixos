@@ -297,8 +297,7 @@
     {
       mode = ["n"];
       key = "<leader>ss";
-      action = "<cmd>FzfLua
-                lsp_document_symbols<cr>";
+      action = "<cmd>FzfLua lsp_document_symbols<cr>";
       options = {
         desc = "Goto Symbol";
       };
@@ -306,8 +305,7 @@
     {
       mode = ["n"];
       key = "<leader>sS";
-      action = "<cmd>FzfLua
-                lsp_live_workspace_symbols<cr>";
+      action = "<cmd>FzfLua lsp_live_workspace_symbols<cr>";
       options = {
         desc = "Goto Symbol (Workspace)";
       };
@@ -315,10 +313,7 @@
     {
       mode = ["n"];
       key = "gd";
-      action = "<cmd>FzfLua
-                lsp_definitions
-                jump_to_single_result=true
-                ignore_current_line=true<cr>";
+      action = "<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>";
       options = {
         desc = "Goto Definition";
     };
@@ -326,10 +321,7 @@
     {
       mode = ["n"];
       key = "gr";
-      action = "<cmd>FzfLua
-                lsp_references
-                jump_to_single_result=true
-                ignore_current_line=true<cr>";
+      action = "<cmd>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<cr>";
       options = {
         desc = "References";
         nowait = true;
@@ -338,10 +330,7 @@
     {
       mode = ["n"];
       key = "gI";
-      action = "<cmd>FzfLua
-                lsp_implementations
-                jump_to_single_result=true
-                ignore_current_line=true<cr>";
+      action = "<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>";
       options = {
         desc = "Goto Implementation";
       };
@@ -349,10 +338,7 @@
     {
       mode = ["n"];
       key = "gy";
-      action = "<cmd>FzfLua
-                lsp_typedefs
-                jump_to_single_result=true
-                ignore_current_line=true<cr>";
+      action = "<cmd>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<cr>";
       options = {
         desc = "Goto T[y]pe Definition";
       };

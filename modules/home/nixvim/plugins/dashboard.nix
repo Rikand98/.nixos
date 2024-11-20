@@ -48,8 +48,8 @@
                   }
                   {
                     action = {
-                      __raw = "function() load({ last = true }) end";
-                    };
+                        __raw = "require(\"persistence\").load()";
+                        };
                     desc =" Restore Session";
                     icon = " ";
                     key = "s";
