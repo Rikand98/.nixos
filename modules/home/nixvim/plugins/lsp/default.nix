@@ -37,12 +37,12 @@
       action = "<cmd>lua vim.lsp.buf.declaration()<cr>";
       options = { nowait = true; silent = true; desc = "Goto Declaration"; };
     }
-    # {
-    #   mode = ["n"];
-    #   key = "K";
-    #   action = {__raw = "vim.lsp.buf.hover()"; };
-    #   options = { nowait = true; silent = true; desc = "Hover"; };
-    # }
+    {
+      mode = ["n"];
+      key = "K";
+      action = "<cmd>lua vim.lsp.buf.hover()<cr>";
+      options = { nowait = true; silent = true; desc = "Hover"; };
+    }
     {
       mode = ["n"];
       key = "gk";

@@ -11,8 +11,10 @@
 
     # Python
     python3
-    # python312Packages.gdal
     poetry
+
+    # GoLang
+    go
 
     # Flutter & Dart
     flutter

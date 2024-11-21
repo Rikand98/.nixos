@@ -3,7 +3,7 @@
   services.postgresql = {
     enable = true;
     package = pkgs.postgresql_17;
-    extraPlugins = with pkgs; [
+    extensions  = with pkgs; [
       postgresql17Packages.postgis
     ];
 

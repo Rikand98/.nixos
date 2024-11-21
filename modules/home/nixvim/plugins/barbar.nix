@@ -24,7 +24,7 @@
     }
     {
       mode = "n";
-      key = "<S-j>";
+      key = "<S-A-h>";
       action = "<cmd>BufferMovePrevious<CR>";
       options = {
         silent = true;
@@ -33,7 +33,7 @@
     }
     {
       mode = "n";
-      key = "<S-k>";
+      key = "<S-A-l>";
       action = "<cmd>BufferMoveNext<CR>";
       options = {
         silent = true;

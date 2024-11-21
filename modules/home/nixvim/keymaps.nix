@@ -45,6 +45,9 @@ programs.nixvim = {
       # Saving
       { mode = ["n" "x" "i" "s"]; key = "<C-s>"; action = "<cmd>w<CR><esc>"; options = { silent = true; desc = "Save File"; }; }
 
+      #Redo
+      { mode = ["n"]; key = "U"; action = "<C-r>"; options = { silent = true; desc = "Redo"; }; }
+
       # Various Tools
       { mode = ["n"]; key = "<leader>fn"; action = "<cmd>enew<CR>"; options = { silent = true; desc = "New File"; }; }
       { mode = ["n"]; key = "<leader>xl"; action = "<cmd>lopen<CR>"; options = { silent = true; desc = "Location List"; }; }
