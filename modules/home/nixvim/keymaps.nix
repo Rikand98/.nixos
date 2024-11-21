@@ -46,14 +46,11 @@ programs.nixvim = {
       { mode = ["n" "x" "i" "s"]; key = "<C-s>"; action = "<cmd>w<CR><esc>"; options = { silent = true; desc = "Save File"; }; }
 
       # Various Tools
-      { mode = ["n"]; key = "<leader>K"; action = "<cmd>lua vim.lsp.buf.hover()<CR>"; options = { silent = true; desc = "Keywordprg"; }; }
       { mode = ["n"]; key = "<leader>fn"; action = "<cmd>enew<CR>"; options = { silent = true; desc = "New File"; }; }
       { mode = ["n"]; key = "<leader>xl"; action = "<cmd>lopen<CR>"; options = { silent = true; desc = "Location List"; }; }
       { mode = ["n"]; key = "<leader>xq"; action = "<cmd>copen<CR>"; options = { silent = true; desc = "Quickfix List"; }; }
       { mode = ["n"]; key = "[q"; action = "<cmd>cprev<CR>"; options = { silent = true; desc = "Previous Quickfix"; }; }
       { mode = ["n"]; key = "]q"; action = "<cmd>cnext<CR>"; options = { silent = true; desc = "Next Quickfix"; }; }
-      { mode = ["n"]; key = "<leader>cf"; action = "<cmd>lua vim.lsp.buf.formatting()<CR>"; options = { silent = true; desc = "Format"; }; }
-      { mode = ["n"]; key = "<leader>cd"; action = "<cmd>lua vim.diagnostic.open_float()<CR>"; options = { silent = true; desc = "Line Diagnostics"; }; }
 
       # Diagnostics Navigation
       { mode = ["n"]; key = "]d"; action = "<cmd>lua vim.diagnostic.goto_next()<CR>"; options = { silent = true; desc = "Next Diagnostic"; }; }
@@ -62,6 +59,7 @@ programs.nixvim = {
       { mode = ["n"]; key = "[e"; action = "<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR})<CR>"; options = { silent = true; desc = "Prev Error"; }; }
       { mode = ["n"]; key = "]w"; action = "<cmd>lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.WARN})<CR>"; options = { silent = true; desc = "Next Warning"; }; }
       { mode = ["n"]; key = "[w"; action = "<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.WARN})<CR>"; options = { silent = true; desc = "Prev Warning"; }; }
+      { mode = ["n"]; key = "<leader>cd"; action = "<cmd>lua vim.diagnostic.open_float()<CR>"; options = { silent = true; desc = "Line Diagnostics"; }; }
 
       # Toggles
       { mode = ["n"]; key = "<leader>us"; action = "<cmd>set spell!<CR>"; options = { silent = true; desc = "Toggle Spelling"; }; }

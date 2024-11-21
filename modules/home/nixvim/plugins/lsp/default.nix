@@ -37,22 +37,22 @@
       action = "<cmd>lua vim.lsp.buf.declaration()<cr>";
       options = { nowait = true; silent = true; desc = "Goto Declaration"; };
     }
+    # {
+    #   mode = ["n"];
+    #   key = "K";
+    #   action = {__raw = "vim.lsp.buf.hover()"; };
+    #   options = { nowait = true; silent = true; desc = "Hover"; };
+    # }
     {
       mode = ["n"];
-      key = "K";
-      action = {__raw = "function() return vim.lsp.buf.hover() end";};
-      options = { nowait = true; silent = true; desc = "Hover"; };
-    }
-    {
-      mode = ["n"];
-      key = "gK";
-      action = {__raw = "function() return vim.lsp.buf.signature_help() end";};
+      key = "gk";
+      action = "<cmd>lua vim.lsp.buf.signature_help()<cr>";
       options = { nowait = true; silent = true; desc = "Signature Help"; };
     }
     {
       mode = ["i"];
       key = "<C-k>";
-      action = {__raw = "function() return vim.lsp.buf.signature_help() end";};
+      action = "<cmd>lua vim.lsp.buf.signature_help()<cr>";
       options = { nowait = true; silent = true; desc = "Signature Help"; };
     }
     {
