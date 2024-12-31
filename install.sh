@@ -132,6 +132,25 @@ install() {
         sleep 0.2
     fi
 
+    if [[ "$SYSTEM" == "darwin" ]]; then
+        # Check if Nix is installed
+        if ! command -v nix &>/dev/null; then
+        echo "Installing Nix package manager..."
+        sh <(curl -L https://nixos.org/nix/install)
+        . ~/.nix-profile/etc/profile.d/nix.sh
+    fi
+
+    # Clone the repository
+    echo "Cloning configuration repository..."
+    nix-shell -p git
+    git clone https://github.com/Rikardp98/.nixos ~/nixos-config
+    cd ~/nixos-config
+
+    # Build the system using the flake
+    echo "Building and applying configuration..."
+    darwin-rebuild switch --flake .#${HOST}
+    fi
+
     # Last Confirmation
     echo -en "You are about to start the system build, do you want to process? "
     confirm
@@ -139,9 +158,9 @@ install() {
     # Build the system (flakes + home manager)
     echo -e "\nBuilding the system...\n"
     if [[ "$SYSTEM" == "nixos" ]]; then
-        sudo nixos-rebuild switch --flake .#nixos
+        sudo nixos-rebuild switch --flake .#nixos --experimental-features "nix-command flakes"
     elif [[ "$SYSTEM" == "darwin" ]]; then
-        sudo darwin-rebuild switch --flake .#darwin
+        sudo darwin-rebuild switch --flake .#darwin --experimental-features "nix-command flakes"
     else
         echo "Invalid system type selected."
         exit 1
