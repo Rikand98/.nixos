@@ -34,9 +34,6 @@
 
 -   [flake.nix](flake.nix) base of the configuration
 -   [hosts](hosts) 🌳 per-host configurations that contain machine specific configurations
-- [desktop](hosts/desktop/) 🖥️ Desktop specific configuration
-- [laptop](hosts/laptop/) 💻 Laptop specific configuration
-- [vm](hosts/vm/) 🗄️ VM specific configuration
 -   [modules](modules) 🍱 modularized NixOS configurations
 -   [core](modules/core/) ⚙️ Core NixOS configuration
 -   [homes](modules/home/) 🏠 my [Home-Manager](https://github.com/nix-community/home-manager) config
@@ -50,7 +47,7 @@
 | **Bar**                     | [Waybar][Waybar] |
 | **Application Launcher**    | [rofi][rofi] |
 | **Notification Daemon**     | [swaync][swaync] |
-| **Terminal Emulator**       | [Wezterm][Wezterm] |
+| **Terminal Emulator**       | [Ghostty][Ghostty] |
 | **Shell**                   | [fish][fish] |
 | **Text Editor**             | [Neovim][Neovim] |
 | **Browser**                 | [Zen][Zen] |
@@ -113,9 +110,8 @@ After rebooting, the config should be applied, you'll be greeted by hyprlock pro
 #### 5. **Manual config**
 
 Even though I use home manager, there is still a little bit of manual configuration to do:
-- Set Aseprite theme (they are in the folder `./.nixos/modules/home/aseprite/themes`).
 - Enable Discord theme (in Discord settings under VENCORD > Themes).
-- Configure the browser (for now, all browser configuration is done manually).
+- Configure hardware specific settings in hosts/hostname/hardware.nix
 - Change the git account information in `./modules/home/git.nix`
 ```nix
 programs.git = {
@@ -128,39 +124,80 @@ programs.git = {
 
 ## Install script walkthrough
 
-A brief walkthrough of what the install script does.
+This section provides a detailed walkthrough of what the `install.sh` script does during the installation process.
 
-#### 1. **Get username**
+### 1. **Get username**
 
-You will receive a prompt to enter your username, with a confirmation check.
+The script will prompt you to enter your desired username. After entering your username, it will ask for confirmation to ensure the provided username is correct.
 
-#### 2. **Set username**
+### 2. **Set username**
 
-The script will replace all occurancies of the default usename ```CURRENT_USERNAME``` by the given one stored in ```$username```
+Once you've confirmed the username, the script will replace all occurrences of the default username `CURRENT_USERNAME` in the following files with the username you provided:
+- `flake.nix`
+- `install.sh`
 
-#### 3. Create basic directories
+This ensures that the configurations are personalized for the correct username.
 
-The following directories will be created:
-- ```~/Music```
-- ```~/Video```
-- ```~/Documents```
-- ```~/Pictures/wallpapers/others```
+### 3. **Set system type**
 
-#### 4. Copy the wallpapers
+The script will ask you to choose between two system types:
+- **NixOS**: Select this if you are installing NixOS.
+- **Darwin**: Select this if you are installing macOS (for example, if you are setting up a macOS environment using Nix).
 
-Then the wallpapers will be copied into ```~/Pictures/wallpapers/others``` which is the folder in which the ```wallpaper-picker.sh``` script will be looking for them.
+### 4. **Set host type**
 
-#### 5. Get the hardware configuration
+The script will then prompt you to choose your system's host type:
+- **Desktop**: Choose this if you're using a desktop computer.
+- **Laptop**: Choose this if you're using a laptop.
+- **VM**: Choose this if you're setting up a virtual machine.
 
-It will also automatically copy the hardware configuration from ```/etc/nixos/hardware-configuration.nix``` to ```./hosts/${host}/hardware-configuration.nix``` so that the hardware configuration used is yours and not the default one.
+This allows the script to generate specific configurations based on your system’s hardware.
 
-#### 6. Choose a host (desktop / laptop)
+### 5. **Set hostname**
 
-Now you will need to choose the host you want. It depend on whether you are using a desktop or laptop (or a VM altho it can be realy buggy).
+The script will prompt you to enter a custom hostname for your system. After you provide the hostname, it will ask for confirmation. Once confirmed, the script will replace all occurrences of the default hostname `CURRENT_HOSTNAME` in the following files:
+- `flake.nix`
+- `install.sh`
 
-#### 7. Build the system
+This ensures that the configurations are personalized for the correct hostname.
 
-Lastly, it will build the system, which includes both the flake config and home-manager config.
+### 6. **Generate host template**
+
+The script will generate a host-specific template for configuration:
+- It will create a target directory for your host inside the `hosts` directory.
+- The template will be copied from the `templates` directory based on the system and host type you selected.
+
+This allows for a customized NixOS or macOS setup based on your specific hardware and preferences.
+
+### 7. **Create basic directories**
+
+For NixOS installations, the script will create a few basic directories if they don't already exist:
+- `~/Music`
+- `~/Video`
+- `~/Documents`
+- `~/Pictures/wallpapers/others`
+
+These directories will be used to store music, videos, documents, and wallpapers for your setup.
+
+### 8. **Copy wallpapers**
+
+The script will copy the wallpapers into the `~/Pictures/wallpapers/others` directory. These wallpapers will be used by any wallpaper-setting scripts (e.g., `wallpaper-picker.sh`).
+
+### 9. **Get hardware configuration**
+
+The script will automatically copy the hardware configuration from `/etc/nixos/hardware-configuration.nix` to `./hosts/${HOST}/hardware-configuration.nix`. This ensures that your specific hardware configuration is included and not the default one.
+
+### 10. **Confirm before proceeding**
+
+Before the final system build, the script will prompt you to confirm whether you want to proceed with the installation.
+
+### 11. **Build the system**
+
+Finally, the script will start the process of rebuilding the system using the flake configuration. Depending on the system type you selected (NixOS or Darwin), it will run the appropriate rebuild command:
+- For NixOS, it will run `sudo nixos-rebuild switch --flake .#nixos`.
+- For macOS (Darwin), it will run `sudo darwin-rebuild switch --flake .#darwin`.
+
+This builds and applies the configuration to your system.
 
 # 👥 Credits
 
@@ -183,7 +220,7 @@ Other dotfiles that I learned / copy from:
 
 <!-- Links -->
 [Hyprland]: https://github.com/hyprwm/Hyprland
-[Wezterm]: https://wezfurlong.org/wezterm/index.html
+[Ghostty]: https://github.com/ghostty-org/ghostty
 [Starship]: https://github.com/starship/starship
 [Waybar]: https://github.com/Alexays/Waybar
 [rofi]: https://github.com/lbonn/rofi

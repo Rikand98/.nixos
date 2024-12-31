@@ -8,6 +8,8 @@
     hypr-contrib.url = "github:hyprwm/contrib";
     hyprpicker.url = "github:hyprwm/hyprpicker";
 
+    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
+
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
@@ -34,6 +36,10 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
     zen-browser.url = "github:fufexan/zen-browser-flake";
+
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
 
   outputs = { nixpkgs, self, ...} @ inputs:
@@ -52,7 +58,7 @@
       nixos = lib.nixosSystem {
         inherit system;
         modules = [ ./hosts/${hostname} ];
-        specialArgs = { host="${hostname}"; inherit self inputs username ; };
+        specialArgs = { hostname="${hostname}"; inherit self inputs username ; };
       };
     };
   };

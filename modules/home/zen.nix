@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 {
   home.packages = (with pkgs; [
-      inputs.zen-browser.packages."${system}".specific
+      inputs.zen-browser.packages."${system}".zen
   ]);
 }
