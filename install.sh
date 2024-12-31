@@ -144,11 +144,6 @@ install() {
         exit 1
     fi
 
-    # Clone the repository
-    echo "Cloning configuration repository..."
-    nix-shell -p git --run "git clone https://github.com/Rikardp98/.nixos ~/.nixos"
-    cd ~/.nixos
-
     # Confirmation before system build
     echo -en "You are about to start the system build, do you want to proceed? "
     confirm
@@ -156,9 +151,9 @@ install() {
     # Build the system (flakes + home manager)
     echo -e "\nBuilding the system...\n"
     if [[ "$SYSTEM" == "nixos" ]]; then
-        sudo nixos-rebuild switch --flake .#nixos --experimental-features "nix-command flakes"
+        sudo nixos-rebuild switch --flake .#nixos 
     elif [[ "$SYSTEM" == "darwin" ]]; then
-        sudo darwin-rebuild switch --flake .#darwin --experimental-features "nix-command flakes"
+        sudo darwin-rebuild switch --flake .#darwin
     fi
 }
 
