@@ -115,10 +115,7 @@ install() {
         echo -e "    - ${MAGENTA}~/Video${NORMAL}"
         echo -e "    - ${MAGENTA}~/Documents${NORMAL}"
         echo -e "    - ${MAGENTA}~/Pictures/wallpapers/others${NORMAL}"
-        mkdir -p ~/Music
-        mkdir -p ~/Video
-        mkdir -p ~/Documents
-        mkdir -p ~/Pictures/wallpapers/others
+        mkdir -p ~/Music ~/Video ~/Documents ~/Pictures/wallpapers/others
         sleep 0.2
 
         # Copy the wallpapers
@@ -127,32 +124,33 @@ install() {
         cp -r wallpapers/otherWallpaper/gruvbox/* ~/Pictures/wallpapers/others/
         cp -r wallpapers/otherWallpaper/nixos/* ~/Pictures/wallpapers/others/
         sleep 0.2
-        echo -e "Copying ${MAGENTA}/etc/nixos/hardware-configuration.nix${NORMAL} to ${MAGENTA}./hosts/${HOST}/${NORMAL}\n"
-        cp /etc/nixos/hardware-configuration.nix hosts/${HOST}/hardware-configuration.nix
-        sleep 0.2
-    fi
 
-    if [[ "$SYSTEM" == "darwin" ]]; then
+        # Copy the hardware configuration
+        echo -e "Copying ${MAGENTA}/etc/nixos/hardware-configuration.nix${NORMAL} to ${MAGENTA}./hosts/${hostname}/${NORMAL}\n"
+        cp /etc/nixos/hardware-configuration.nix hosts/${hostname}/hardware-configuration.nix
+        sleep 0.2
+
+    elif [[ "$SYSTEM" == "darwin" ]]; then
         # Check if Nix is installed
         if ! command -v nix &>/dev/null; then
-        echo "Installing Nix package manager..."
-        sh <(curl -L https://nixos.org/nix/install)
-        . ~/.nix-profile/etc/profile.d/nix.sh
+            echo "Installing Nix package manager..."
+            sh <(curl -L https://nixos.org/nix/install)
+            . ~/.nix-profile/etc/profile.d/nix.sh
+            mkdir -p ~/.config/nix
+            echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+        fi
+    else
+        echo "Invalid system type selected."
+        exit 1
     fi
 
     # Clone the repository
     echo "Cloning configuration repository..."
-    nix-shell -p git
-    git clone https://github.com/Rikardp98/.nixos ~/nixos-config
-    cd ~/nixos-config
+    nix-shell -p git --run "git clone https://github.com/Rikardp98/.nixos ~/.nixos"
+    cd ~/.nixos
 
-    # Build the system using the flake
-    echo "Building and applying configuration..."
-    darwin-rebuild switch --flake .#${HOST}
-    fi
-
-    # Last Confirmation
-    echo -en "You are about to start the system build, do you want to process? "
+    # Confirmation before system build
+    echo -en "You are about to start the system build, do you want to proceed? "
     confirm
 
     # Build the system (flakes + home manager)
@@ -161,9 +159,6 @@ install() {
         sudo nixos-rebuild switch --flake .#nixos --experimental-features "nix-command flakes"
     elif [[ "$SYSTEM" == "darwin" ]]; then
         sudo darwin-rebuild switch --flake .#darwin --experimental-features "nix-command flakes"
-    else
-        echo "Invalid system type selected."
-        exit 1
     fi
 }
 
