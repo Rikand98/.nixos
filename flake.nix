@@ -50,7 +50,7 @@
   {
     nixosConfigurations = nixpkgs.lib.genAttrs nixosSystems (system: {
       system = system;
-      configuration = nixpkgs.lib.nixosSystem {
+      nixos = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [ ./hosts/nixos/${hostname} ];
         specialArgs = { hostname = "${hostname}"; inherit self inputs username; };
@@ -58,7 +58,7 @@
     });
     darwinConfigurations = nixpkgs.lib.genAttrs darwinSystems (system: {
       system = system;
-      configuration = pkgs.system {
+      darwin = pkgs.system {
         inherit system;
         modules = [ ./hosts/darwin/${hostname} ];
         specialArgs = { hostname = "${hostname}"; inherit self inputs username; };

@@ -139,9 +139,9 @@ install() {
     # Build the system (flakes + home manager)
     echo -e "\nBuilding the system...\n"
     if [[ "$SYSTEM" == "nixos" ]]; then
-        sudo nixos-rebuild switch --flake
+        sudo nixos-rebuild switch --flake .#nixos
     elif [[ "$SYSTEM" == "darwin" ]]; then
-        sudo darwin-rebuild switch --flake
+        sudo darwin-rebuild switch --flake .#darwin
     else
         echo "Invalid system type selected."
         exit 1
