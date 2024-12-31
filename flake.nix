@@ -8,10 +8,6 @@
     hypr-contrib.url = "github:hyprwm/contrib";
     hyprpicker.url = "github:hyprwm/hyprpicker";
 
-    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
-
-    nix-gaming.url = "github:fufexan/nix-gaming";
-
     hyprland = {
       type = "git";
       url = "https://github.com/hyprwm/Hyprland";
@@ -30,11 +26,6 @@
 
     hyprmag.url = "github:SIMULATAN/hyprmag";
 
-    wezterm = {
-      url = "github:wez/wezterm/main?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -48,30 +39,30 @@
   outputs = { nixpkgs, self, ...} @ inputs:
   let
     username = "rikand";
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
+    hostname = "home-desktop";
+    nixosSystems = [ "x86_64-linux" "aarch64-linux" ];
+    darwinSystems = [ "aarch64-darwin" "x86_64-darwin" ];  # Darwin system
+    pkgs = system: import nixpkgs {
       inherit system;
       config.allowUnfree = true;
     };
-    lib = nixpkgs.lib;
   in
   {
-    nixosConfigurations = {
-      desktop = lib.nixosSystem {
+    nixosConfigurations = nixpkgs.lib.genAttrs nixosSystems (system: {
+      system = system;
+      configuration = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ ./hosts/desktop ];
-        specialArgs = { host="desktop"; inherit self inputs username ; };
+        modules = [ ./hosts/nixos/${hostname} ];
+        specialArgs = { hostname = "${hostname}"; inherit self inputs username; };
       };
-      laptop = lib.nixosSystem {
+    });
+    darwinConfigurations = nixpkgs.lib.genAttrs darwinSystems (system: {
+      system = system;
+      configuration = pkgs.system {
         inherit system;
-        modules = [ ./hosts/laptop ];
-        specialArgs = { host="laptop"; inherit self inputs username ; };
+        modules = [ ./hosts/darwin/${hostname} ];
+        specialArgs = { hostname = "${hostname}"; inherit self inputs username; };
       };
-       vm = lib.nixosSystem {
-        inherit system;
-        modules = [ ./hosts/vm ];
-        specialArgs = { host="vm"; inherit self inputs username ; };
-      };
-    };
+    });
   };
 }

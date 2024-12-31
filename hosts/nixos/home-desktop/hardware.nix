@@ -1,5 +1,4 @@
 { pkgs, ... }:
-#TODO#
 # These are settings for my old amd gpu (r390x)
 {
   hardware = {

@@ -1,8 +1,8 @@
-{ pkgs, config, ... }: 
+{ pkgs, config, ... }:
 {
   imports = [
     ./hardware-configuration.nix
-    ./../../modules/core
+    ./../../modules/core/nixos
   ];
 
   environment.systemPackages = with pkgs; [
@@ -11,10 +11,10 @@
     cpupower-gui
     powertop
   ];
-  
-  services = {    
+
+  services = {
     power-profiles-daemon.enable = true;
- 
+
     upower = {
       enable = true;
       percentageLow = 20;
@@ -35,20 +35,11 @@
 
       PLATFORM_PROFILE_ON_AC = "performance";
       PLATFORM_PROFILE_ON_BAT = "performance";
-
-      INTEL_GPU_MIN_FREQ_ON_AC=500;
-      INTEL_GPU_MIN_FREQ_ON_BAT=500;
-      # INTEL_GPU_MAX_FREQ_ON_AC=0;
-      # INTEL_GPU_MAX_FREQ_ON_BAT=0;
-      # INTEL_GPU_BOOST_FREQ_ON_AC=0;
-      # INTEL_GPU_BOOST_FREQ_ON_BAT=0;
-
-      # PCIE_ASPM_ON_AC = "default";
-      # PCIE_ASPM_ON_BAT = "powersupersave";
     };
   };
 
   powerManagement.cpuFreqGovernor = "performance";
+  powerManagement.enableACPI = true;
 
   boot = {
     kernelModules = ["acpi_call"];

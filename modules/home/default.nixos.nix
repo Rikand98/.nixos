@@ -1,6 +1,5 @@
 {
   imports = [
-    ./audacious.nix                   # music player
     ./bat.nix                         # better cat command
     ./btop.nix                        # resouces monitor
     ./bottom.nix                      # resouces monitor
@@ -9,13 +8,12 @@
     ./discord                         # discord with gruvbox
     ./fastfetch.nix                   # fetch tool
     ./fzf.nix                         # fuzzy finder
-   ./gaming.nix                      # packages related to gaming
+    ./ghostty.nix                     # feature-rich terminal emulator
     ./git.nix                         # version control
     ./gnome.nix                       # gnome apps
     ./gtk.nix                         # gtk theme
     ./gui.nix                         # gui packages
     ./hyprland                        # window manager
-    ./kitty.nix                       # terminal
     ./swayosd.nix                     # brightness / volume wiget
     ./swaync                          # notification deamon
     ./micro.nix                       # nano replacement
@@ -30,7 +28,6 @@
     ./utilities.nix                   # utilities
     ./viewnior.nix                    # image viewer
     ./waybar                          # status bar
-    ./wezterm.nix                     # terminal
     ./xdg-mimes.nix                   # xdg config
     ./yazi                            # terminal filesystem
     ./zen.nix

@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 init() {
-    # Vars
-    CURRENT_USERNAME='frostphoenix'
-
+    CURRENT_USERNAME="rikand"
+    CURRENT_HOSTNAME="home-desktop"
+    TEMPLATE_DIR="templates"
+    HOST_DIR="hosts"
     # Colors
     NORMAL=$(tput sgr0)
     WHITE=$(tput setaf 7)
@@ -29,94 +30,122 @@ confirm() {
 }
 
 print_header() {
-    echo -E "$CYAN
-      _____              _   ____  _                      _
-     |  ___| __ ___  ___| |_|  _ \| |__   ___   ___ _ __ (_)_  __
-     | |_ | '__/ _ \/ __| __| |_) | '_ \ / _ \ / _ \ '_ \| \ \/ /
-     |  _|| | | (_) \__ \ |_|  __/| | | | (_) |  __/ | | | |>  <
-     |_|  |_|  \___/|___/\__|_|   |_| |_|\___/ \___|_| |_|_/_/\_\
-     _   _ _       ___        ___           _        _ _
-    | \ | (_)_  __/ _ \ ___  |_ _|_ __  ___| |_ __ _| | | ___ _ __
-    |  \| | \ \/ / | | / __|  | || '_ \/ __| __/ _' | | |/ _ \ '__|
-    | |\  | |>  <| |_| \__ \  | || | | \__ \ || (_| | | |  __/ |
-    |_| \_|_/_/\_\\\\___/|___/ |___|_| |_|___/\__\__,_|_|_|\___|_|
-
-                  $BLUE https://github.com/Frost-Phoenix $RED
+    echo -E "
+                    $CYAN Rikand Nix installation
+                  $BLUE https://github.com/Rikardp98 $RED
       ! To make sure everything runs correctly DONT run as root ! $GREEN
                         -> '"./install.sh"' $NORMAL
 
     "
 }
 
-get_username() {
-    echo -en "Enter your$GREEN username$NORMAL : $YELLOW"
-    read username
-    echo -en "$NORMAL"
-    echo -en "Use$YELLOW "$username"$NORMAL as ${GREEN}username${NORMAL} ? "
-    confirm
-}
-
 set_username() {
-    sed -i -e "s/${CURRENT_USERNAME}/${username}/g" ./flake.nix
-    sed -i -e "s/${CURRENT_USERNAME}/${username}/g" ./modules/home/audacious.nix
+    echo -en "Enter your${GREEN} username${NORMAL}: $YELLOW"
+    read username
+    echo -e "${NORMAL}Use${YELLOW} $username${NORMAL} as ${GREEN}username${NORMAL}? "
+    confirm
+
+    # Perform a global search and replace for username in flake.nix and other relevant files
+    sed -i '' -e "s/${CURRENT_USERNAME}/${username}/g" ./flake.nix
+    sed -i '' -e "s/${CURRENT_USERNAME}/${username}/g" ./install.sh
+    echo "Username set to $username."
 }
 
-get_host() {
-    echo -en "Choose a ${GREEN}host${NORMAL} - [${YELLOW}D${NORMAL}]esktop, [${YELLOW}L${NORMAL}]aptop or [${YELLOW}V${NORMAL}]irtual machine: "
+set_system() {
+    echo -en "Choose the ${GREEN}system type${NORMAL} - [${YELLOW}N${NORMAL}]ixOS, [${YELLOW}D${NORMAL}]arwin: "
     read -n 1 -r
     echo
-
-    if [[ $REPLY =~ ^[Dd]$ ]]; then
-        HOST='desktop'
-    elif [[ $REPLY =~ ^[Ll]$ ]]; then
-        HOST='laptop'
-     elif [[ $REPLY =~ ^[Vv]$ ]]; then
-        HOST='vm'
+    if [[ $REPLY =~ ^[Nn]$ ]]; then
+        SYSTEM="nixos"
+    elif [[ $REPLY =~ ^[Dd]$ ]]; then
+        SYSTEM="darwin"
     else
-        echo "Invalid choice. Please select 'D' for desktop, 'L' for laptop or 'V' for virtual machine."
+        echo "Invalid choice. Please select 'N' for NixOS or 'D' for Darwin."
         exit 1
     fi
+    echo "System set to $SYSTEM."
+}
 
-    echo -en "$NORMAL"
-    echo -en "Use the$YELLOW "$HOST"$NORMAL ${GREEN}host${NORMAL} ? "
+set_host() {
+    echo -en "Choose the ${GREEN}host${NORMAL} - [${YELLOW}D${NORMAL}]esktop, [${YELLOW}L${NORMAL}]aptop, [${YELLOW}V${NORMAL}]M: "
+    read -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Dd]$ ]]; then
+        HOST="desktop"
+    elif [[ $REPLY =~ ^[Ll]$ ]]; then
+        HOST="laptop"
+    elif [[ $REPLY =~ ^[Vv]$ ]]; then
+        HOST="vm"
+    else
+        echo "Invalid choice. Please select 'D', 'L', or 'V'."
+        exit 1
+    fi
+    echo "Host set to $HOST."
+}
+
+set_hostname() {
+    echo -en "Enter your ${GREEN}hostname${NORMAL}: $YELLOW"
+    read hostname
+    echo -e "${NORMAL}Use${YELLOW} $hostname${NORMAL} as ${GREEN}hostname${NORMAL}? "
     confirm
+
+    sed -i -e "s/${CURRENT_HOSTNAME}/${hostname}/g" ./flake.nix
+    sed -i -e "s/${CURRENT_HOSTNAME}/${hostname}/g" ./install.sh
+}
+
+generate_host_template() {
+    TARGET_DIR="$HOST_DIR/$SYSTEM/$hostname"
+    TEMPLATE_FILE="$HOST_DIR/$TEMPLATE_DIR/$SYSTEM.$HOST.nix"
+
+    echo "Generating host template..."
+    mkdir -p "$TARGET_DIR"
+    cp "$TEMPLATE_FILE" "$TARGET_DIR/default.nix"
+
+    echo "Host template generated at $TARGET_DIR/default.nix."
 }
 
 install() {
     echo -e "\n${RED}START INSTALL PHASE${NORMAL}\n"
     sleep 0.2
 
-    # Create basic directories
-    echo -e "Creating folders:"
-    echo -e "    - ${MAGENTA}~/Music${NORMAL}"
-    echo -e "    - ${MAGENTA}~/Video${NORMAL}"
-    echo -e "    - ${MAGENTA}~/Documents${NORMAL}"
-    echo -e "    - ${MAGENTA}~/Pictures/wallpapers/others${NORMAL}"
-    mkdir -p ~/Music
-    mkdir -p ~/Video
-    mkdir -p ~/Documents
-    mkdir -p ~/Pictures/wallpapers/others
-    sleep 0.2
+    if [[ "$SYSTEM" == "nixos" ]]; then
+        # Create basic directories
+        echo -e "Creating folders:"
+        echo -e "    - ${MAGENTA}~/Music${NORMAL}"
+        echo -e "    - ${MAGENTA}~/Video${NORMAL}"
+        echo -e "    - ${MAGENTA}~/Documents${NORMAL}"
+        echo -e "    - ${MAGENTA}~/Pictures/wallpapers/others${NORMAL}"
+        mkdir -p ~/Music
+        mkdir -p ~/Video
+        mkdir -p ~/Documents
+        mkdir -p ~/Pictures/wallpapers/others
+        sleep 0.2
 
-    # Copy the wallpapers
-    echo -e "Copying all ${MAGENTA}wallpapers${NORMAL}"
-    cp -r wallpapers/wallpaper.png ~/Pictures/wallpapers
-    cp -r wallpapers/otherWallpaper/gruvbox/* ~/Pictures/wallpapers/others/
-    cp -r wallpapers/otherWallpaper/nixos/* ~/Pictures/wallpapers/others/
-    sleep 0.2
-
-    # Get the hardware configuration
-    echo -e "Copying ${MAGENTA}/etc/nixos/hardware-configuration.nix${NORMAL} to ${MAGENTA}./hosts/${HOST}/${NORMAL}\n"
-    cp /etc/nixos/hardware-configuration.nix hosts/${HOST}/hardware-configuration.nix
-    sleep 0.2
+        # Copy the wallpapers
+        echo -e "Copying all ${MAGENTA}wallpapers${NORMAL}"
+        cp -r wallpapers/wallpaper.png ~/Pictures/wallpapers
+        cp -r wallpapers/otherWallpaper/gruvbox/* ~/Pictures/wallpapers/others/
+        cp -r wallpapers/otherWallpaper/nixos/* ~/Pictures/wallpapers/others/
+        sleep 0.2
+        echo -e "Copying ${MAGENTA}/etc/nixos/hardware-configuration.nix${NORMAL} to ${MAGENTA}./hosts/${HOST}/${NORMAL}\n"
+        cp /etc/nixos/hardware-configuration.nix hosts/${HOST}/hardware-configuration.nix
+        sleep 0.2
+    fi
 
     # Last Confirmation
-    echo -en "You are about to start the system build, do you want to process ? "
+    echo -en "You are about to start the system build, do you want to process? "
     confirm
 
     # Build the system (flakes + home manager)
     echo -e "\nBuilding the system...\n"
-    sudo nixos-rebuild switch --flake .#${HOST}
+    if [[ "$SYSTEM" == "nixos" ]]; then
+        sudo nixos-rebuild switch --flake
+    elif [[ "$SYSTEM" == "darwin" ]]; then
+        sudo darwin-rebuild switch --flake
+    else
+        echo "Invalid system type selected."
+        exit 1
+    fi
 }
 
 main() {
@@ -124,9 +153,11 @@ main() {
 
     print_header
 
-    get_username
     set_username
-    get_host
+    set_system
+    set_host
+    set_hostname
+    generate_host_template
 
     install
 }

@@ -1,9 +1,10 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
-    ./../../modules/core
+    ./../../modules/core/nixos
   ];
 
   powerManagement.cpuFreqGovernor = "performance";
+  networking.useDHCP = true;
 }

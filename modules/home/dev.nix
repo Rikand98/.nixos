@@ -7,7 +7,6 @@
     gdb
     gnumake
     valgrind
-    libstdcxx5
 
     # Python
     python3
