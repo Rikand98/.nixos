@@ -40,29 +40,38 @@
   let
     username = "rikand";
     hostname = "home-desktop";
-    nixosSystems = [ "x86_64-linux" "aarch64-linux" ];
-    darwinSystems = [ "aarch64-darwin" "x86_64-darwin" ];  # Darwin system
+    nixosSystems = [ "x86_64-linux" "aarch64-linux"];
+    darwinSystems = [ "aarch64-darwin" "x86_64-darwin" ];
+
     pkgs = system: import nixpkgs {
       inherit system;
       config.allowUnfree = true;
     };
+
+    # Function to generate system configurations
+    createSystemConfiguration = system: modules: specialArgs: {
+      system = system;
+      specialArgs = specialArgs;
+      modules = modules;
+    };
+
   in
   {
-    nixosConfigurations = nixpkgs.lib.genAttrs nixosSystems (system: {
+  # NixOS configurations
+   nixosConfigurations = nixpkgs.lib.genAttrs nixosSystems (system: {
       system = system;
       nixos = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ ./hosts/nixos/${hostname} ];
-        specialArgs = { hostname = "${hostname}"; inherit self inputs username; };
+        modules = [ ./hosts/${hostname} ];
+        specialArgs = { hostname = hostname; inherit self inputs username; };
       };
     });
+
+    # Darwin configurations
     darwinConfigurations = nixpkgs.lib.genAttrs darwinSystems (system: {
-      system = system;
-      darwin = pkgs.system {
-        inherit system;
-        modules = [ ./hosts/darwin/${hostname} ];
-        specialArgs = { hostname = "${hostname}"; inherit self inputs username; };
-      };
+      darwin = createSystemConfiguration system
+        [ ./hosts/${hostname} ]  # Modules for Darwin
+        { hostname = hostname; inherit self inputs username; };
     });
   };
 }

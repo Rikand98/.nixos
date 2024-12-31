@@ -1,10 +1,10 @@
-{ pkgs, inputs, username, host, ...}:
+{ pkgs, inputs, username, hostname, ...}:
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs username host; };
+    extraSpecialArgs = { inherit inputs username hostname; };
     users.${username} = {
       imports = [ ./../home/default.nixos.nix ];
       home.username = "${username}";

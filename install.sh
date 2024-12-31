@@ -94,7 +94,7 @@ set_hostname() {
 }
 
 generate_host_template() {
-    TARGET_DIR="$HOST_DIR/$SYSTEM/$hostname"
+    TARGET_DIR="$HOST_DIR/$hostname"
     TEMPLATE_FILE="$HOST_DIR/$TEMPLATE_DIR/$SYSTEM.$HOST.nix"
 
     echo "Generating host template..."
