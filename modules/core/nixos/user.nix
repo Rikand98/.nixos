@@ -6,7 +6,7 @@
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs username hostname; };
     users.${username} = {
-      imports = [ ./../home/default.nixos.nix ];
+      imports = [ ./../../home/default.nixos.nix ];
       home.username = "${username}";
       home.homeDirectory = "/home/${username}";
       programs.home-manager.enable = true;

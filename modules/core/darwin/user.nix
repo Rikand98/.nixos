@@ -7,7 +7,7 @@
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs username hostname; };
     users.${username} = {
-      imports =[ ./../home/default.darwin.nix ];
+      imports =[ ./../../home/default.darwin.nix ];
       home.username = "${username}";
       home.homeDirectory = "/Users/${username}";
       programs.home-manager.enable = true;
