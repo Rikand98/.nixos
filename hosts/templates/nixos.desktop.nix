@@ -6,5 +6,4 @@
   ];
 
   powerManagement.cpuFreqGovernor = "performance";
-  networking.useDHCP = true;
 }
