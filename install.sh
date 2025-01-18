@@ -2,7 +2,7 @@
 
 init() {
     CURRENT_USERNAME="rikand"
-    CURRENT_HOSTNAME="home-desktop"
+    CURRENT_HOSTNAME="asus-laptop"
     TEMPLATE_DIR="templates"
     HOST_DIR="hosts"
     # Colors
@@ -98,7 +98,7 @@ generate_host_template() {
     TEMPLATE_FILE="$HOST_DIR/$TEMPLATE_DIR/$SYSTEM.$HOST.nix"
 
     echo "Generating host template..."
-    mkdir -p "$TARGET_DIR"
+    sudo mkdir -p "$TARGET_DIR"
     cp "$TEMPLATE_FILE" "$TARGET_DIR/default.nix"
 
     echo "Host template generated at $TARGET_DIR/default.nix."
