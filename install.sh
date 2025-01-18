@@ -123,6 +123,9 @@ set_ssh() {
         echo -en "Enter your ${GREEN}github email${NORMAL}: $YELLOW"
         read github_email
 
+        git config --global user.name "$username"
+        git config --global user.email "$github_email"
+
         ssh-keygen -t ed25519 -C "$github_email"
 
         ssh-add ~/.ssh/id_ed25519
@@ -206,6 +209,8 @@ main() {
     set_host
     set_hostname
     generate_host_template
+    set_github
+    set_ssh
 
     install
 }
