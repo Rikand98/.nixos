@@ -2,8 +2,10 @@
     programs.nixvim = {
         plugins.persistence = {
             enable = true;
-            dir = {
-              __raw = "vim.fn.expand(vim.fn.stdpath(\"state\") .. \"/sessions/\")";
+            settings = {
+                dir = {
+                  __raw = "vim.fn.expand(vim.fn.stdpath(\"state\") .. \"/sessions/\")";
+                };
             };
         };
     keymaps = [
