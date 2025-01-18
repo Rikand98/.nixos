@@ -20,7 +20,7 @@ init() {
 }
 
 confirm() {
-    echo -en "[${GREEN}y${NORMAL}/${RED}n${NORMAL}]: "
+    echo -en "[${GREEN}y${NORMAL}/${RED}n${NORMAL}]:"
     read -n 1 -r
     echo
     if [[ ! $REPLY =~ ^[Yy]$ ]]
@@ -113,6 +113,29 @@ set_github() {
     confirm
 
     git remote set-url origin git@github.com:$github_username/$github_reponame
+}
+set_ssh() {
+    echo -en "Do you need a new ${GREEN}SSH${NORMAL}key?[${GREEN}y${NORMAL}/${RED}n${NORMAL}]:"
+    read -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]
+    then
+        echo -en "Enter your ${GREEN}github email${NORMAL}: $YELLOW"
+        read github_email
+
+        ssh-keygen -t ed25519 -C "$github_email"
+
+        ssh-add ~/.ssh/id_ed25519
+
+        echo ~/.ssh/id_ed25519.pub
+        echo -en "Have you added your new ${GREEN}SSH${NORMAL}key?[${GREEN}y${NORMAL}/${RED}n${NORMAL}]:"
+        read -n 1 -r
+        echo
+        if [[ ! $REPLY =~ ^[Yy]$ ]]
+        then
+            exit 0
+        fi
+    fi
 }
 
 install() {

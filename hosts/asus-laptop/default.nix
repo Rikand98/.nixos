@@ -7,6 +7,9 @@
 
   nixpkgs.config.permittedInsecurePackages =["electron-31.7.7"];
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
   environment.systemPackages = with pkgs; [
     acpi
     brightnessctl
