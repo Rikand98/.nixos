@@ -1,9 +1,11 @@
-{ pkgs, config, ... }:
+{ pkgs, config, nixpkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
     ./../../modules/core/nixos
   ];
+
+  nixpkgs.config.permittedInsecurePackages =["electron-31.7.7"];
 
   environment.systemPackages = with pkgs; [
     acpi
@@ -39,7 +41,7 @@
   };
 
   powerManagement.cpuFreqGovernor = "performance";
-  powerManagement.enableACPI = true;
+ # powerManagement.enableACPI = true;
 
   boot = {
     kernelModules = ["acpi_call"];

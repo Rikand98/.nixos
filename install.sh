@@ -100,8 +100,19 @@ generate_host_template() {
     echo "Generating host template..."
     sudo mkdir -p "$TARGET_DIR"
     cp "$TEMPLATE_FILE" "$TARGET_DIR/default.nix"
-
     echo "Host template generated at $TARGET_DIR/default.nix."
+}
+set_github() {
+    echo -en "Enter your ${GREEN}github username${NORMAL}: $YELLOW"
+    read github_username
+    echo -e "${NORMAL}Is${YELLOW} $github_username${NORMAL} your ${GREEN}github username${NORMAL}? "
+    confirm
+    echo -en "Enter your ${GREEN}github repo name${NORMAL}: $YELLOW"
+    read github_reponame
+    echo -e "${NORMAL}Is${YELLOW} $github_reponame${NORMAL} your ${GREEN}github repo name${NORMAL}? "
+    confirm
+
+    git remote set-url origin git@github.com:$github_username/$github_reponame
 }
 
 install() {
@@ -148,10 +159,15 @@ install() {
     echo -en "You are about to start the system build, do you want to proceed? "
     confirm
 
+    echo -e "push to your GitHub Repo"
+    git add .
+    git commit -m "new host"
+    git push
+
     # Build the system (flakes + home manager)
     echo -e "\nBuilding the system...\n"
     if [[ "$SYSTEM" == "nixos" ]]; then
-        sudo nixos-rebuild switch --flake .#nixos 
+        sudo nixos-rebuild switch --flake .#nixos
     elif [[ "$SYSTEM" == "darwin" ]]; then
         sudo darwin-rebuild switch --flake .#darwin
     fi
