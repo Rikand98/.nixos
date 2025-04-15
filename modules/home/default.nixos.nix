@@ -24,6 +24,7 @@
     ./spicetify.nix                   # spotify client
     ./starship.nix                    # shell prompt
     ./swaylock.nix                    # lock screen
+    ./tmux                            # terminal multiplier
     ./terminal.nix                    # terminal packages
     ./utilities.nix                   # utilities
     ./viewnior.nix                    # image viewer
