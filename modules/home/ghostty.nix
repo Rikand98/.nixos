@@ -7,7 +7,7 @@ in
 
   xdg.configFile."ghostty/config".text = ''
     # Font
-    font-family = "Maple Mono"
+    font-family = "JetBrainsMono Nerd Font"
     font-size = 17
     font-thicken = true
     font-feature = ss01
