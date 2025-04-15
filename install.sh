@@ -2,7 +2,7 @@
 
 init() {
     CURRENT_USERNAME="rikand"
-    CURRENT_HOSTNAME="asus-laptop"
+    CURRENT_HOSTNAME="home-desktop"
     TEMPLATE_DIR="templates"
     HOST_DIR="hosts"
     # Colors

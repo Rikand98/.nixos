@@ -45,7 +45,7 @@
   outputs = { nixpkgs, self, ...} @ inputs:
   let
     username = "rikand";
-    hostname = "asus-laptop";
+    hostname = "home-desktop";
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
