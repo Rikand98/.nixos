@@ -7,7 +7,6 @@
     twemoji-color-font
     noto-fonts-emoji
     fantasque-sans-mono
-    maple-mono
   ];
 
   gtk = {
