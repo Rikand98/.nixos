@@ -7,7 +7,7 @@
   ./dashboard.nix
 	./fidget.nix
 	./fzf-lua.nix
-	./harpoon.nix
+	#./harpoon.nix
 	./inc-rename.nix
   ./indent-o-matic.nix
 	./lualine.nix
