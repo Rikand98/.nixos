@@ -149,7 +149,7 @@ install() {
         # Create basic directories
         echo -e "Creating folders:"
         echo -e "    - ${MAGENTA}~/Music${NORMAL}"
-        echo -e "    - ${MAGENTA}~/Video${NORMAL}"
+        echo -e "    - ${MAGENTA}~/Videos${NORMAL}"
         echo -e "    - ${MAGENTA}~/Documents${NORMAL}"
         echo -e "    - ${MAGENTA}~/Pictures/wallpapers/others${NORMAL}"
         mkdir -p ~/Music ~/Video ~/Documents ~/Pictures/wallpapers/others
