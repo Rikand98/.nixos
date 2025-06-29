@@ -24,7 +24,6 @@
     google-cloud-sdk
 
     # Git & Git-related utilities
-    lazygit
     onefetch
     nix-prefetch-github
 

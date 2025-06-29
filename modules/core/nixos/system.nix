@@ -18,6 +18,7 @@
   environment.systemPackages = with pkgs; [
     wget
     git
+    lazygit
   ];
 
   time.timeZone = "Europe/Stockholm";
