@@ -2,7 +2,7 @@
 {
    programs.tmux = {
     enable = true;
-    prefix = "C- ";
+    prefix = "C-Space";
     shell = "${pkgs.fish}/bin/fish";
     terminal = "tmux-256color";
     historyLimit = 100000;
