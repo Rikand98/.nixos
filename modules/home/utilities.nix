@@ -32,5 +32,5 @@
     wineWowPackages.wayland           # Wine for Wayland
 
     inputs.alejandra.defaultPackage.${system}
-  ]);
+ ]);
 }
