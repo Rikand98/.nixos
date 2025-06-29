@@ -23,7 +23,7 @@
     bleachbit                         # Cache cleaner
     pavucontrol                       # PulseAudio control
     soundwireserver                   # Sound server tools
-    # rivalcfg                          # SteelSeries mouse program
+    rivalcfg                          # SteelSeries mouse program
     deskflow                          # Software kvm
 
 
