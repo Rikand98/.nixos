@@ -1,6 +1,7 @@
 { inputs, nixpkgs, self, username, host, ...}:
 {
   imports = [
+    ./gaming.nix
     ./bootloader.nix
     ./database.nix
     ./xserver.nix

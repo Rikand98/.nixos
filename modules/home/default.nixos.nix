@@ -7,7 +7,6 @@
     ./discord                         # discord with gruvbox
     ./fastfetch.nix                   # fetch tool
     ./fzf.nix                         # fuzzy finder
-    ./gaming                          # gaming pkgs
     ./ghostty.nix                     # feature-rich terminal emulator
     ./git.nix                         # version control
     ./gnome.nix                       # gnome apps
