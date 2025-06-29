@@ -24,8 +24,6 @@
     pavucontrol                       # PulseAudio control
     soundwireserver                   # Sound server tools
     # rivalcfg                          # SteelSeries mouse program
-    piper
-    libratbag
     deskflow                          # Software kvm
 
 
