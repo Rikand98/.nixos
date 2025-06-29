@@ -1,5 +1,6 @@
-{pkgs, ...}: {
-  programs.protonplus = {
-    enable = true;
-  };
+{inputs, pkgs, ... }:
+{
+  home.packages = (with pkgs; [
+    proton
+  ]);
 }

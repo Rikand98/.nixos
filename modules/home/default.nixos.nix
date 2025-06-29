@@ -4,8 +4,6 @@
     ./btop.nix                        # resouces monitor
     ./bottom.nix                      # resouces monitor
     ./cava.nix                        # audio visualizer
-    ./deskflow.nix                    # Software kvm
-    ./dev.nix                         # dev packags
     ./discord                         # discord with gruvbox
     ./fastfetch.nix                   # fetch tool
     ./fzf.nix                         # fuzzy finder
@@ -21,7 +19,6 @@
     ./micro.nix                       # nano replacement
     ./nemo.nix                        # file manager
     ./nixvim                          # nixvim editor
-    ./rivalcfg                        # SteelSeries mouse program
     ./rofi.nix                        # launcher
     ./scripts                         # personal scripts
     ./spicetify.nix                   # spotify client
