@@ -15,14 +15,16 @@
       opencl.enable = true;
     };
   };
+  services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "amdgpu" ];
   hardware.enableRedistributableFirmware = true;
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelParams = [
   "amdgpu.dc=1"
   "amdgpu.dpm=1"
-  "amdgpu.si_support=1"
-  "amdgpu.cik_support=1"
   ];
   environment.systemPackages = with pkgs; [
+    lact
     amdgpu_top
     lm_sensors          #system/hardware monitor
   ];
