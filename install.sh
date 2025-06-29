@@ -118,7 +118,7 @@ set_ssh() {
     echo -en "Do you need a new ${GREEN}SSH${NORMAL}key?[${GREEN}y${NORMAL}/${RED}n${NORMAL}]:"
     read -n 1 -r
     echo
-    if [[ ! $REPLY =~ ^[Yy]$ ]]
+    if [[ $REPLY =~ ^[Yy]$ ]]
     then
         echo -en "Enter your ${GREEN}github email${NORMAL}: $YELLOW"
         read github_email

@@ -3,7 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     ./../../modules/core/nixos
-    ./hardawre.nix
+    ./hardware.nix
   ];
 
   powerManagement.cpuFreqGovernor = "performance";
