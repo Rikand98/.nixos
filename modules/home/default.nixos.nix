@@ -5,6 +5,7 @@
     ./bottom.nix                      # resouces monitor
     ./cava.nix                        # audio visualizer
     ./discord                         # discord with gruvbox
+    ./dev.nix
     ./fastfetch.nix                   # fetch tool
     ./fzf.nix                         # fuzzy finder
     ./ghostty.nix                     # feature-rich terminal emulator
