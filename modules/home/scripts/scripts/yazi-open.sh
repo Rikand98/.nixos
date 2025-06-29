@@ -7,4 +7,4 @@ if ! command -v yazi &> /dev/null; then
 fi
 
 # Start yazi with optional arguments
-wezterm -e yazi
+ghostty -e yazi

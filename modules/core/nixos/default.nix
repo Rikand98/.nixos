@@ -3,7 +3,7 @@
   imports = [
     ./gaming.nix
     ./bootloader.nix
-    ./database.nix
+    # ./database.nix
     ./xserver.nix
     ./network.nix
     ./nh.nix
