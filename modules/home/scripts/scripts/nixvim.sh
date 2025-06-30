@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# Check if yazi is installed
+# Check if Neovimis installed
 if ! command -v nvim &> /dev/null; then
-  echo "Nvim is not installed. Please install nvim and try again."
+  echo "Neovim is not installed. Please install Neovim and try again."
   exit 1
 fi
 
-# Start yazi with optional arguments
+# Start Neovim with optional arguments
 ghostty -e nvim

@@ -129,6 +129,7 @@
 
         # keybindings
         "$mainMod, G, exec, ghostty -e tmux"
+        "$mainMod SHIFT, G, exec, ghostty"
         "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1] zen'"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
@@ -146,10 +147,9 @@
         "$mainMod, E, exec, nemo"
         "$mainMod SHIFT, B, exec, toggle_waybar"
         "$mainMod, C ,exec, hyprpicker -a"
-    	  "$mainMod, N, exec, hyprctl dispatch exec '[workspace 10] nixvim'"
     	  "$mainMod, M, exec, hyprctl dispatch exec '[workspace 9 silent] spicetify'"
     	  "$mainMod, Y, exec, yazi-open"
-        "$mainMod, W, exec, swaync-client -t -sw"
+        "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod, S, exec, hyprctl dispatch exec '[workspace 2] steam'"
         "$mainMod, L, exec, hyprctl dispatch exec '[workspace 2] lutris'"
         # "$mainMod SHIFT, W, exec, vm-start"
