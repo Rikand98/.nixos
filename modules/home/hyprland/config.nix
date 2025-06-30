@@ -43,7 +43,7 @@
         border_size = 2;
         "col.active_border" = "rgb(98971A)";
         "col.inactive_border" = "0x00000000";
-        border_part_of_window = false;
+        # border_part_of_window = false;
         no_border_on_floating = false;
       };
 
@@ -72,7 +72,6 @@
       master = {
         new_status = "master";
         special_scale_factor = 1;
-        # no_gaps_when_only = false;
       };
 
       decoration = {
@@ -130,8 +129,6 @@
 
         # keybindings
         "$mainMod, G, exec, ghostty -e tmux"
-        "ALT, Return, exec, [float; center; size 950 650] ghostty"
-        "$mainMod SHIFT, Return, exec, [fullscreen] ghostty"
         "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1] zen'"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
@@ -149,13 +146,13 @@
         "$mainMod, E, exec, nemo"
         "$mainMod SHIFT, B, exec, toggle_waybar"
         "$mainMod, C ,exec, hyprpicker -a"
-    	  "$mainMod, N, exec, hyprctl dispatch exec '[workspace 0] nixvim'"
+    	  "$mainMod, N, exec, hyprctl dispatch exec '[workspace 10] nixvim'"
     	  "$mainMod, M, exec, hyprctl dispatch exec '[workspace 9 silent] spicetify'"
     	  "$mainMod, Y, exec, yazi-open"
         "$mainMod, W, exec, swaync-client -t -sw"
         "$mainMod, S, exec, hyprctl dispatch exec '[workspace 2] steam'"
         "$mainMod, L, exec, hyprctl dispatch exec '[workspace 2] lutris'"
-        "$mainMod SHIFT, W, exec, vm-start"
+        # "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
         ",Print, exec, screenshot --copy"
@@ -262,31 +259,13 @@
 
       # windowrule
       windowrule = [
-        "float,Viewnior"
-        "center,Viewnior"
-        "size 1200 800,Viewnior"
-        "float,imv"
-        "center,imv"
-        "size 1200 725,imv"
-        "float,mpv"
-        "center,mpv"
-        "tile,Aseprite"
-        "size 1200 725,mpv"
-        "float,audacious"
-        "pin,rofi"
-        "tile, neovide"
-        "idleinhibit focus,mpv"
-        "float,udiskie"
-        "float,title:^(Transmission)$"
-        "float,title:^(Volume Control)$"
-        "float,title:^(Firefox — Sharing Indicator)$"
-        "move 0 0,title:^(Firefox — Sharing Indicator)$"
-        "size 700 450,title:^(Volume Control)$"
-        "move 40 55%,title:^(Volume Control)$"
-      ];
-
-      # windowrulev2
-      windowrulev2 = [
+        "float,class:^(Viewnior)$"
+        "float,class:^(imv)$"
+        "float,class:^(mpv)$"
+        "tile,class:^(Aseprite)$"
+        "float,class:^(Audacious)$"
+        "pin,class:^(rofi)$"
+        "pin,class:^(waypaper)$"
         "float, title:^(Picture-in-Picture)$"
         "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
         "pin, title:^(Picture-in-Picture)$"
@@ -296,11 +275,11 @@
         "opacity 1.0 override 1.0 override, class:(evince)"
         "workspace 1, class:^(Zen)$"
         "workspace 2, class:^(nixvim)$"
-        "workspace 7, class:^(Audacious)$"
-        "workspace 7, class:^(Spotify)$"
-        "workspace 8, class:^(com.obsproject.Studio)$"
-        "workspace 10, class:^(discord)$"
-        "workspace 10, class:^(WebCord)$"
+        "workspace 6, class:^(Audacious)$"
+        "workspace 7, class:^(com.obsproject.Studio)$"
+        "workspace 8, class:^(discord)$"
+        "workspace 8, class:^(WebCord)$"
+        "workspace 9, class:^(Spotify)$"
         "idleinhibit focus, class:^(mpv)$"
         "idleinhibit fullscreen, class:^(firefox)$"
         "float,class:^(zenity)$"
@@ -337,19 +316,19 @@
     };
     #TODO#
     extraConfig = "
-      monitor = DVI-D-2,preferred,auto,auto
+      monitor = DP-1,preferred,auto,auto
       monitor = HDMI-A-1,1920x1080@60,-1920x0,auto
 
       workspace=1, monitor:HDMI-A-1, default:true
-      workspace=2, monitor:DVI-D-2, default:true
+      workspace=2, monitor:DP-1, default:true
       workspace=3, monitor:HDMI-A-1
-      workspace=4, monitor:DVI-D-2
+      workspace=4, monitor:DP-1
       workspace=5, monitor:HDMI-A-1
-      workspace=6, monitor:DVI-D-2
+      workspace=6, monitor:DP-1
       workspace=7, monitor:HDMI-A-1
-      workspace=8, monitor:DVI-D-2
+      workspace=8, monitor:DP-1
       workspace=9, monitor:HDMI-A-1
-      workspace=0, monitor:DVI-D-2
+      workspace=0, monitor:DP-1
 
       xwayland {
         force_zero_scaling = true

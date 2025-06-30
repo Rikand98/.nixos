@@ -11,10 +11,11 @@
         gruvbox
         ];
     extraConfig = ''
-     # Remove C-b because that just sucks
+      set -g mouse on
       unbind C-b
       set -g prefix C-Space
       bind-key C-Space send-prefix
+      set -g focus-events on
     '';
   };
 }
