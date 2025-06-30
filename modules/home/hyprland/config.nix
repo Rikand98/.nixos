@@ -129,10 +129,10 @@
         "$mainMod, F1, exec, show-keybinds"
 
         # keybindings
-        "$mainMod, G, exec, ghostty"
-        "ALT, Return, exec, [float; center; size 950 650] wezterm"
-        "$mainMod SHIFT, Return, exec, [fullscreen] wezterm"
-        "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] zen'"
+        "$mainMod, G, exec, ghostty -e tmux"
+        "ALT, Return, exec, [float; center; size 950 650] ghostty"
+        "$mainMod SHIFT, Return, exec, [fullscreen] ghostty"
+        "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1] zen'"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
@@ -149,10 +149,12 @@
         "$mainMod, E, exec, nemo"
         "$mainMod SHIFT, B, exec, toggle_waybar"
         "$mainMod, C ,exec, hyprpicker -a"
-    	  "$mainMod, N, exec, hyprctl dispatch exec '[workspace 2 silent] nixvim'"
-    	  "$mainMod, M, exec, hyprctl dispatch exec '[workspace 7 silent] spicetify'"
+    	  "$mainMod, N, exec, hyprctl dispatch exec '[workspace 0] nixvim'"
+    	  "$mainMod, M, exec, hyprctl dispatch exec '[workspace 9 silent] spicetify'"
     	  "$mainMod, Y, exec, yazi-open"
-        "$mainMod, S, exec, swaync-client -t -sw"
+        "$mainMod, W, exec, swaync-client -t -sw"
+        "$mainMod, S, exec, hyprctl dispatch exec '[workspace 2] steam'"
+        "$mainMod, L, exec, hyprctl dispatch exec '[workspace 2] lutris'"
         "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot

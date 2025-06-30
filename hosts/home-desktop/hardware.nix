@@ -1,5 +1,4 @@
 { pkgs, ... }:
-# These are settings for my old amd gpu (r390x)
 {
   hardware = {
     graphics = {
@@ -26,6 +25,6 @@
   environment.systemPackages = with pkgs; [
     lact
     amdgpu_top
-    lm_sensors          #system/hardware monitor
+    mission-center
   ];
 }
