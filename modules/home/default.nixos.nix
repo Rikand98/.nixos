@@ -4,7 +4,7 @@
     ./btop.nix                        # resouces monitor
     ./bottom.nix                      # resouces monitor
     ./cava.nix                        # audio visualizer
-    ./discord                         # discord with gruvbox
+    ./communication                   # discord with gruvbox + teamspeak6
     ./dev.nix
     ./fastfetch.nix                   # fetch tool
     ./fzf.nix                         # fuzzy finder
