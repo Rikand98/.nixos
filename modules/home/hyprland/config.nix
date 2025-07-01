@@ -152,6 +152,7 @@
         "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod, S, exec, hyprctl dispatch exec '[workspace 4] steam'"
         "$mainMod, A, exec, hyprctl dispatch exec '[workspace 4] lutris'"
+        "$mainMod, D, exec, hyprctl dispatch exec '[workspace 5] webcord'"
         # "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
@@ -276,7 +277,6 @@
         "workspace 1, class:^(Zen)$"
         "workspace 4, class:^(steam)$"
         "workspace 4, class:^(lutris)$"
-        "workspace 5, class:^(discord)$"
         "workspace 5, class:^(WebCord)$"
         "workspace 7, class:^(com.obsproject.Studio)$"
         "workspace 9, class:^(Spotify)$"
