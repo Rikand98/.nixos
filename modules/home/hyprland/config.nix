@@ -39,7 +39,7 @@
         "$mainMod" = "SUPER";
         layout = "dwindle";
         gaps_in = 0;
-        gaps_out = 2;
+        gaps_out = 0;
         border_size = 2;
         "col.active_border" = "rgb(98971A)";
         "col.inactive_border" = "0x00000000";
@@ -263,7 +263,6 @@
         "float,class:^(Viewnior)$"
         "float,class:^(imv)$"
         "float,class:^(mpv)$"
-        "tile,class:^(Aseprite)$"
         "float,class:^(Audacious)$"
         "pin,class:^(rofi)$"
         "pin,class:^(waypaper)$"
