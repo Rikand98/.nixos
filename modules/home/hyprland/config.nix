@@ -24,7 +24,7 @@
 
       input = {
         kb_layout = "se";
-        kb_options ="grp:alt_caps_toggle";
+        kb_options = "grp:alt_caps_toggle";
         numlock_by_default = true;
         follow_mouse = 0;
         float_switch_override_focus = 0;
@@ -38,8 +38,8 @@
       general = {
         "$mainMod" = "SUPER";
         layout = "dwindle";
-        gaps_in = 5;
-        gaps_out = 10;
+        gaps_in = 0;
+        gaps_out = 2;
         border_size = 2;
         "col.active_border" = "rgb(98971A)";
         "col.inactive_border" = "0x00000000";
@@ -109,15 +109,15 @@
           # Windows
           "windowsIn,   0, 4, easeOutCubic,  popin 20%" # window open
           "windowsOut,  0, 4, fluent_decel,  popin 80%" # window close.
-          "windowsMove, 1, 2, fluent_decel, slide"     # everything in between, moving, dragging, resizing.
+          "windowsMove, 1, 2, fluent_decel, slide" # everything in between, moving, dragging, resizing.
 
           # Fade
-          "fadeIn,      1, 3,   fade_curve"   # fade in (open) -> layers and windows
-          "fadeOut,     1, 3,   fade_curve"   # fade out (close) -> layers and windows
-          "fadeSwitch,  0, 1,   easeOutCirc"  # fade on changing activewindow and its opacity
-          "fadeShadow,  1, 10,  easeOutCirc"  # fade on changing activewindow for shadows
+          "fadeIn,      1, 3,   fade_curve" # fade in (open) -> layers and windows
+          "fadeOut,     1, 3,   fade_curve" # fade out (close) -> layers and windows
+          "fadeSwitch,  0, 1,   easeOutCirc" # fade on changing activewindow and its opacity
+          "fadeShadow,  1, 10,  easeOutCirc" # fade on changing activewindow for shadows
           "fadeDim,     1, 4,   fluent_decel" # the easing of the dimming of inactive windows
-          "border,      1, 2.7, easeOutCirc"  # for animating the border's color switch speed
+          "border,      1, 2.7, easeOutCirc" # for animating the border's color switch speed
           "borderangle, 1, 30,  fluent_decel, once" # for animating the border's gradient angle - styles: once (default), loop
           "workspaces,  1, 4,   easeOutCubic, fade" # styles: slide, slidevert, fade, slidefade, slidefadevert
         ];
@@ -147,8 +147,8 @@
         "$mainMod, E, exec, nemo"
         "$mainMod SHIFT, B, exec, toggle_waybar"
         "$mainMod, C ,exec, hyprpicker -a"
-    	  "$mainMod, M, exec, hyprctl dispatch exec '[workspace 9 silent] spicetify'"
-    	  "$mainMod, Y, exec, yazi-open"
+        "$mainMod, M, exec, hyprctl dispatch exec '[workspace 9 silent] spicetify'"
+        "$mainMod, Y, exec, yazi-open"
         "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod, S, exec, hyprctl dispatch exec '[workspace 4] steam'"
         "$mainMod, A, exec, hyprctl dispatch exec '[workspace 4] lutris'"
@@ -281,9 +281,6 @@
         "workspace 7, class:^(com.obsproject.Studio)$"
         "workspace 9, class:^(Spotify)$"
         "idleinhibit focus, class:^(mpv)$"
-        "float,class:^(zenity)$"
-        "center,class:^(zenity)$"
-        "size 850 500,class:^(zenity)$"
         "float,class:^(org.gnome.FileRoller)$"
         "center,class:^(org.gnome.FileRoller)$"
         "size 850 500,class:^(org.gnome.FileRoller)$"
@@ -310,7 +307,6 @@
         "maxsize 1 1,class:^(xwaylandvideobridge)$"
         "noblur,class:^(xwaylandvideobridge)$"
       ];
-
 
     };
     #TODO#
