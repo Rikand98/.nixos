@@ -1,25 +1,33 @@
-{ stdenv, fetchFromGitHub, ... }:
+{ config, pkgs, ... }:
 
-stdenv.mkDerivation {
-  pname = "wago.io";
-  version = "1.0.0";
+let
+  wago = pkgs.stdenv.mkDerivation {
+    pname = "wago.io";
+    version = "1.0.0";
 
-  src = fetchFromGitHub {
-    owner = "methodgg";
-    repo = "wago.io";
-    rev = "c5e2824ab19c46c5160374e516ab4e81f67d1447";
-    sha256 = "sha256-c5e2824ab19c46c5160374e516ab4e81f67d1447";
-  };
+    src = pkgs.fetchFromGitHub {
+      owner = "methodgg";
+      repo = "wago.io";
+      rev = "c5e2824ab19c46c5160374e516ab4e81f67d1447";
+      sha256 = "sha256-c5e2824ab19c46c5160374e516ab4e81f67d1447";
+    };
 
-  buildInputs = [ ];
+    buildInputs = [ ];
 
-  buildPhase = ''
-    make release
-  '';
+    buildPhase = ''
+      make release
+    '';
 
-  installPhase = ''
-    mkdir -p $out/bin
-    make install INSTALL_DIR=$out/bin
-    chmod +x $out/bin/2048
-  '';
-  }
+    installPhase = ''
+      mkdir -p $out/bin
+      make install INSTALL_DIR=$out/bin
+      chmod +x $out/bin/2048
+    '';
+    };
+in
+{
+  environment.systemPackages = with pkgs; [
+    wago
+  ];
+
+}
