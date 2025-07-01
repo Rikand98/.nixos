@@ -1,6 +1,5 @@
 {
   imports = [
-    ./../../pkgs/wago
     ./bat.nix                         # better cat command
     ./btop.nix                        # resouces monitor
     ./bottom.nix                      # resouces monitor
