@@ -151,7 +151,7 @@
     	  "$mainMod, Y, exec, yazi-open"
         "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod, S, exec, hyprctl dispatch exec '[workspace 4] steam'"
-        "$mainMod, L, exec, hyprctl dispatch exec '[workspace 4] lutris'"
+        "$mainMod, A, exec, hyprctl dispatch exec '[workspace 4] lutris'"
         # "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
