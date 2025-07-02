@@ -149,7 +149,7 @@
         "$mainMod SHIFT, B, exec, toggle_waybar"
         "$mainMod, C ,exec, hyprpicker -a"
         "$mainMod ALT, W,exec, wallpaper-picker"
-        "$mainMod, M, exec, hyprctl dispatch exec '[workspace 9 silent] spicetify'"
+        "$mainMod, M, exec, hyprctl dispatch exec '[workspace 9 silent] spotify'"
         "$mainMod, Y, exec, yazi-open"
         "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod, S, exec, hyprctl dispatch exec '[workspace 4] steam'"
