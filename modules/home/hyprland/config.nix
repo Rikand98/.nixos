@@ -128,6 +128,8 @@
         "$mainMod, F1, exec, show-keybinds"
 
         # keybindings
+        "$mainMod, W, exec, hyprctl dispatch exec '[workspace 2] wezterm'"
+        "$mainMod SHIFT, W, exec, wezterm"
         "$mainMod, G, exec, ghostty -e tmux"
         "$mainMod SHIFT, G, exec, ghostty"
         "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1] zen'"
