@@ -3,4 +3,5 @@
     plugins.wezterm = {
       enable = true;
     };
+  };
 }
