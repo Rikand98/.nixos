@@ -21,7 +21,7 @@
       config.check_for_updates = false
       config.automatically_reload_config = false
       config.font = wezterm.font("JetBrainsMono Nerd Font")
-      config.font_size = ${if (host == "laptop") then "10" else "12"}
+      config.font_size ="10"
       config.cell_width = 1
       config.underline_thickness = 2
       config.default_prog = { 'fish' }
