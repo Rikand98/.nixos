@@ -7,4 +7,4 @@ if ! command -v nvim &> /dev/null; then
 fi
 
 # Start Neovim with optional arguments
-ghostty -e nvim
+wezterm -e nvim

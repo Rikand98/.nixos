@@ -7,4 +7,4 @@ if ! command -v lutris &> /dev/null; then
 fi
 
 # Start lutris with optional arguments
-ghostty -e lutris
+wezterm -e lutris

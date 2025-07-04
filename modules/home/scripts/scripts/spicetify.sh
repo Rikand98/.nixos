@@ -7,4 +7,4 @@ if ! command -v spotify &> /dev/null; then
 fi
 
 # Start spotify with optional arguments
-ghostty -e spotify
+wezterm -e spotify

@@ -7,4 +7,4 @@ if ! command -v steam &> /dev/null; then
 fi
 
 # Start steam with optional arguments
-ghostty -e steam
+wezterm -e steam
