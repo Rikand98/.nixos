@@ -29,6 +29,7 @@
     ./utilities.nix # utilities
     ./viewnior.nix # image viewer
     ./waybar # status bar
+    ./waypaper.nix # GUI wallpaper setter for Wayland
     ./wezterm.nix
     ./xdg-mimes.nix # xdg config
     ./yazi # terminal filesystem
