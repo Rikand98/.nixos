@@ -1,11 +1,9 @@
-{ inputs, pkgs, ...}:
+{ inputs, pkgs, ... }:
 {
   home.packages = with pkgs; [
     swww
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
-    hyprpicker
-    hyprpaper
-    inputs.hyprmag.packages.${pkgs.system}.hyprmag
+    inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
     grim
     slurp
     wl-clip-persist

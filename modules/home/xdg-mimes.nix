@@ -12,7 +12,7 @@ let
     pdf = [ "org.pwmt.zathura.desktop" ];
     terminal = [ "wezterm.desktop" ];
     archive = [ "org.gnome.FileRoller.desktop" ];
-    discord = [ "webcord.desktop" ];
+    discord = [ "discord.desktop" ];
   };
 
   mimeMap = {

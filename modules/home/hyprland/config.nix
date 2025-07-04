@@ -5,9 +5,9 @@
 
       # autostart
       exec-once = [
-        "systemctl --user import-environment &"
-        "hash dbus-update-activation-environment 2>/dev/null &"
+        # "hash dbus-update-activation-environment 2>/dev/null &"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
+        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 
         "nm-applet &"
         "poweralertd &"
@@ -16,7 +16,8 @@
         "waybar &"
         "swaync &"
         "hyprctl  setcursor 'Capitaine Cursors (Gruvbox)' 24&"
-        "swww init && swww img $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) --transition-type none &"
+        "swww-demon &"
+        # "swww init && swww img $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) --transition-type none &"
 
         "hyprlock"
 
