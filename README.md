@@ -112,15 +112,6 @@ After rebooting, the config should be applied, you'll be greeted by hyprlock pro
 Even though I use home manager, there is still a little bit of manual configuration to do:
 - Enable Discord theme (in Discord settings under VENCORD > Themes).
 - Configure hardware specific settings in hosts/hostname/hardware.nix
-- Change the git account information in `./modules/home/git.nix`
-```nix
-programs.git = {
-    ...
-    userName = "Rikand";
-    userEmail = "test@gmail.com";
-    ...
-};
-```
 
 ## Install script walkthrough
 
@@ -173,15 +164,15 @@ This allows for a customized NixOS or macOS setup based on your specific hardwar
 
 For NixOS installations, the script will create a few basic directories if they don't already exist:
 - `~/Music`
-- `~/Video`
+- `~/Videos`
 - `~/Documents`
-- `~/Pictures/wallpapers/others`
+- `~/Pictures/wallpapers`
 
 These directories will be used to store music, videos, documents, and wallpapers for your setup.
 
 ### 8. **Copy wallpapers**
 
-The script will copy the wallpapers into the `~/Pictures/wallpapers/others` directory. These wallpapers will be used by any wallpaper-setting scripts (e.g., `wallpaper-picker.sh`).
+The script will copy the wallpapers into the `~/Pictures/wallpapers` directory.
 
 ### 9. **Get hardware configuration**
 

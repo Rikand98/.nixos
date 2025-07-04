@@ -151,15 +151,13 @@ install() {
         echo -e "    - ${MAGENTA}~/Music${NORMAL}"
         echo -e "    - ${MAGENTA}~/Videos${NORMAL}"
         echo -e "    - ${MAGENTA}~/Documents${NORMAL}"
-        echo -e "    - ${MAGENTA}~/Pictures/wallpapers/others${NORMAL}"
-        mkdir -p ~/Music ~/Video ~/Documents ~/Pictures/wallpapers/others
+        echo -e "    - ${MAGENTA}~/Pictures/wallpapers${NORMAL}"
+        mkdir -p ~/Music ~/Video ~/Documents ~/Pictures/wallpapers
         sleep 0.2
 
         # Copy the wallpapers
         echo -e "Copying all ${MAGENTA}wallpapers${NORMAL}"
-        cp -r wallpapers/wallpaper.png ~/Pictures/wallpapers
-        cp -r wallpapers/otherWallpaper/gruvbox/* ~/Pictures/wallpapers/others/
-        cp -r wallpapers/otherWallpaper/nixos/* ~/Pictures/wallpapers/others/
+        cp -r wallpapers/* ~/Pictures/wallpapers
         sleep 0.2
 
         # Copy the hardware configuration
