@@ -7,7 +7,7 @@
     language = en
     folder = ~/Pictures/wallpapers
     monitors = All
-    wallpaper = ~/Pictures/wallpapers/nixos.png
+    wallpaper = ~/Pictures/wallpapers/ghibli_garden.png
     backend = swww
     fill = fill
     sort = name
