@@ -7,7 +7,7 @@
     language = en
     folder = ~/Pictures/wallpapers
     monitors = All
-    wallpaper = ~/Pictures/wallpapers/ghibli_garden.png
+    wallpaper = ~/Pictures/wallpapers/forest_pastel.png
     backend = swww
     fill = fill
     sort = name
@@ -21,7 +21,7 @@
     swww_transition_step = 90
     swww_transition_angle = 0
     swww_transition_duration = 2
-    swww_transition_fps = 60
+    swww_transition_fps = 200
     use_xdg_state = False
   '';
 }
