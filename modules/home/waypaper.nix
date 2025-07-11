@@ -1,13 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   home.packages = with pkgs; [ waypaper ];
 
   xdg.configFile."waypaper/config.ini".text = ''
     [Settings]
     language = en
-    folder = ~/Pictures/wallpapers
+    folder = ${config.home.homeDirectory}/Pictures/wallpapers
     monitors = All
-    wallpaper = ~/Pictures/wallpapers/forest_pastel.png
     backend = swww
     fill = fill
     sort = name
@@ -15,7 +14,6 @@
     subfolders = False
     show_hidden = False
     show_gifs_only = False
-    post_command = pkill .waypaper-wrapp
     number_of_columns = 3
     swww_transition_type = any
     swww_transition_step = 90

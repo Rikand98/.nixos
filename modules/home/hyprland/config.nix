@@ -17,7 +17,9 @@
         "swaync &"
         "hyprctl  setcursor 'Capitaine Cursors (Gruvbox)' 24&"
         "swww-demon &"
-        # "swww init && swww img $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) --transition-type none &"
+        "swww init && swww img $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) --transition-type none &"
+        # "waypaper --restore"
+        "waypaper --wallpaper ~/Pictures/wallpapers/forest_pastel.png"
 
         "hyprlock"
 
