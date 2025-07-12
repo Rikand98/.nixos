@@ -147,7 +147,7 @@
         "$mainMod SHIFT, Escape, exec, power-menu"
         "$mainMod, P, pseudo,"
         "$mainMod, X, togglesplit,"
-        "$mainMod, T, exec, toggle_oppacity"
+        "$mainMod SHIFT, T, exec, toggle_oppacity"
         "$mainMod, E, exec, nemo"
         "$mainMod SHIFT, B, exec, toggle_waybar"
         "$mainMod, C ,exec, hyprpicker -a"
@@ -158,6 +158,7 @@
         "$mainMod, S, exec, hyprctl dispatch exec '[workspace 4] steam'"
         "$mainMod, A, exec, hyprctl dispatch exec '[workspace 4] lutris'"
         "$mainMod, D, exec, hyprctl dispatch exec '[workspace 5] webcord'"
+        "$mainMod, T, exec, hyprctl dispatch exec '[workspace 6] thunderbird'"
         # "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
