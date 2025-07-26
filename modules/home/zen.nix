@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 {
-  programs.wezterm = {
+  programs.zen-browser = {
     enable = true;
 
   };
