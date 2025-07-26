@@ -8,7 +8,6 @@
     ./dev.nix
     ./fastfetch.nix # fetch tool
     ./fzf.nix # fuzzy finder
-    ./ghostty.nix # feature-rich terminal emulator
     ./git.nix # version control
     ./gnome.nix # gnome apps
     ./gtk.nix # gtk theme
