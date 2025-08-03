@@ -3,7 +3,7 @@
   services = {
     xserver = {
       enable = true;
-	      xkb.layout = "se";
+      xkb.layout = "se";
     };
 
     displayManager.autoLogin = {
@@ -18,5 +18,5 @@
     };
   };
   # To prevent getting stuck at shutdown
-  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
+  # systemd.extraConfig = "DefaultTimeoutStopSec=10s";
 }
