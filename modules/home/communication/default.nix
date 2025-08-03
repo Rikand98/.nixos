@@ -1,9 +1,10 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    teamspeak6-client
-    webcord-vencord
+    # teamspeak6-client
+    # webcord-vencord
+    discord
     # discordo
   ];
-  xdg.configFile."Vencord/themes/gruvbox.theme.css".source = ./gruvbox.css;
+  # xdg.configFile."Vencord/themes/gruvbox.theme.css".source = ./gruvbox.css;
 }
