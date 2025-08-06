@@ -3,7 +3,7 @@
   programs = {
     fish = {
       enable = true;
-      config = ''set -Ux EDITOR nvim'';
+      # config = ''set -Ux EDITOR nvim'';
       loginShellInit = ''
         export EDITOR=nvim \n
         starship init fish | source
@@ -45,7 +45,7 @@
         }
         {
           name = "fzf.fish";
-          src = pkgs.fzf.fish.src;
+          src = pkgs.fishPlugins.fzf-fish.src;
         }
       ];
 
