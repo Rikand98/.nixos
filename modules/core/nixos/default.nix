@@ -8,18 +8,20 @@
 }:
 {
   imports = [
-    ./gaming.nix
     ./bootloader.nix
     # ./database.nix
+    ./flatpak.nix
+    ./gaming.nix
     ./network.nix
     ./nh.nix
     ./pipewire.nix
     ./program.nix
-    ./security.nix
     ./services.nix
-    ./flatpak.nix
+    ./security.nix
+    ./system.nix
     ./user.nix
-    ./wayland.nix
     ./virtualization.nix
+    ./wayland.nix
+    ./xserver.nix
   ];
 }
