@@ -11,16 +11,12 @@
     ./gaming.nix
     ./bootloader.nix
     # ./database.nix
-    ./fish.nix
-    ./xserver.nix
     ./network.nix
     ./nh.nix
     ./pipewire.nix
     ./program.nix
     ./security.nix
     ./services.nix
-    ./starship.nix
-    ./system.nix
     ./flatpak.nix
     ./user.nix
     ./wayland.nix
