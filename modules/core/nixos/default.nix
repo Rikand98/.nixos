@@ -1,9 +1,17 @@
-{ inputs, nixpkgs, self, username, host, ...}:
+{
+  inputs,
+  nixpkgs,
+  self,
+  username,
+  host,
+  ...
+}:
 {
   imports = [
     ./gaming.nix
     ./bootloader.nix
     # ./database.nix
+    ./fish.nix
     ./xserver.nix
     ./network.nix
     ./nh.nix
@@ -11,6 +19,7 @@
     ./program.nix
     ./security.nix
     ./services.nix
+    ./starship.nix
     ./system.nix
     ./flatpak.nix
     ./user.nix

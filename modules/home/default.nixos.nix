@@ -6,7 +6,6 @@
     ./cava.nix # audio visualizer
     ./communication # discord with gruvbox + teamspeak6
     ./fastfetch.nix # fetch tool
-    ./fish.nix
     ./fzf.nix # fuzzy finder
     ./git.nix # version control
     ./gnome.nix # gnome apps
@@ -22,7 +21,6 @@
     ./rofi.nix # launcher
     ./scripts # personal scripts
     ./spicetify.nix # spotify client
-    ./starship.nix # shell prompt
     ./swaylock.nix # lock screen
     ./tmux.nix # terminal multiplier
     ./viewnior.nix # image viewer
