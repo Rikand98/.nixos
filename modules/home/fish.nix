@@ -3,7 +3,6 @@
   programs = {
     fish = {
       enable = true;
-      # config = ''set -Ux EDITOR nvim'';
       loginShellInit = ''
         export EDITOR=nvim \n
         starship init fish | source
@@ -12,7 +11,6 @@
       interactiveShellInit = ''
         ${pkgs.pfetch}/bin/pfetch
 
-               # don't greet
                function fish_greeting; end
 
                # Map '-' to cd back to previous directory
@@ -29,8 +27,6 @@
                set fish_cursor_insert line
                # Set the replace mode cursors to an underscore
                set fish_cursor_replace_one underscore set fish_cursor_replace underscore
-
-               function multicd echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../); end
 
                abbr --add dotdot --regex '^\.\.+$' --function multicd
       '';
