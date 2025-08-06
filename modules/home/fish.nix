@@ -30,8 +30,9 @@
                # Set the replace mode cursors to an underscore
                set fish_cursor_replace_one underscore set fish_cursor_replace underscore
 
-               function multicd echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
-               end abbr --add dotdot --regex '^\.\.+$' --function multicd
+               function multicd echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../); end
+
+               abbr --add dotdot --regex '^\.\.+$' --function multicd
       '';
 
       plugins = [
