@@ -5,6 +5,7 @@
     ./bottom.nix # Resource monitor
     ./cava.nix # Audio visualizer
     ./fastfetch.nix # Fetch tool
+    ./fish.nix
     ./fzf.nix # Fuzzy finder
     ./git.nix # Version control
     ./micro.nix # Nano replacement

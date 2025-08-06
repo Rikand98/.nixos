@@ -6,6 +6,7 @@
     ./cava.nix # audio visualizer
     ./communication # discord with gruvbox + teamspeak6
     ./fastfetch.nix # fetch tool
+    ./fish.nix
     ./fzf.nix # fuzzy finder
     ./git.nix # version control
     ./gnome.nix # gnome apps
