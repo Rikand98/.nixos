@@ -32,5 +32,6 @@
     ./xdg-mimes.nix # xdg config
     ./yazi # terminal filesystem
     ./zen.nix
+    ./zoxide.nix # cd replacement
   ];
 }
