@@ -4,6 +4,7 @@
     with pkgs;
     [
       # File Management & System utils
+      duf # disk information
       eza # ls replacement
       fd # find replacement
       file # File info
@@ -33,7 +34,6 @@
       winetricks # Helper for Wine installation
       wineWowPackages.wayland # Wine for Wayland
 
-      inputs.alejandra.defaultPackage.${system}
     ]
   );
 }
