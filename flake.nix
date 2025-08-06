@@ -29,7 +29,6 @@
     };
 
     nur.url = "github:nix-community/NUR";
-    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
 
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -48,9 +47,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
   };
 
   outputs =
