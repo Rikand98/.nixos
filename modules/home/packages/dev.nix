@@ -1,36 +1,39 @@
 { pkgs, ... }:
 {
-  home.packages = (with pkgs; [
-    # C/C++ Development
-    ninja
-    gcc
-    gdb
-    gnumake
-    valgrind
+  home.packages = (
+    with pkgs;
+    [
+      # C/C++ Development
+      ninja
+      gcc
+      gdb
+      gnumake
+      valgrind
 
-    # Python
-    python3
-    poetry
+      # Python
+      python3
+      poetry
 
-    # GoLang
-    go
+      # GoLang
+      go
 
-    # Flutter & Dart
-    flutter
+      # Flutter & Dart
+      flutter
 
-    # Android Development
-    android-studio
-    firebase-tools
-    google-cloud-sdk
+      # Android Development
+      android-studio
+      firebase-tools
+      google-cloud-sdk
 
-    # Git & Git-related utilities
-    onefetch
-    nix-prefetch-github
+      # Git & Git-related utilities
+      onefetch
+      nix-prefetch-github
 
-    # LaTeX for typesetting
-    texliveFull
+      # LaTeX for typesetting
+      texliveFull
 
-    #geo data
-    gdal
-  ]);
+      #geo data
+      gdal
+    ]
+  );
 }

@@ -6,10 +6,6 @@
       extraPackages = with pkgs; [ mesa ];
     };
     amdgpu = {
-      amdvlk = {
-        enable = true;
-        support32Bit.enable = true;
-      };
       initrd.enable = true;
       opencl.enable = true;
     };
@@ -19,8 +15,8 @@
   hardware.enableRedistributableFirmware = true;
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelParams = [
-  "amdgpu.dc=1"
-  "amdgpu.dpm=1"
+    "amdgpu.dc=1"
+    "amdgpu.dpm=1"
   ];
   environment.systemPackages = with pkgs; [
     lact

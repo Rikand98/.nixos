@@ -5,9 +5,8 @@
     gnome.gnome-keyring.enable = true;
     dbus.enable = true;
     fstrim.enable = true;
+    logind.settings.Login = {
+      HandlePowerKey = "ignore";
+    };
   };
-  services.logind.extraConfig = ''
-    # don’t shutdown when power button is short-pressed
-    HandlePowerKey=ignore
-  '';
 }
