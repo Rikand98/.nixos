@@ -26,7 +26,8 @@
       bleachbit # Cache cleaner
       pavucontrol # PulseAudio control
       soundwireserver # Sound server tools
-      deskflow # Software kvm
+      # deskflow # Software kvm
+      input-leap
       libei # For deskflow
       libportal # For deskflow
 
