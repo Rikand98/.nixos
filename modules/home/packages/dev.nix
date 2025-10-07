@@ -12,7 +12,7 @@
 
       # Python
       python3
-      poetry
+      uv
 
       # GoLang
       go
