@@ -4,7 +4,7 @@
   ...
 }:
 let
-  user_info = import .../user_info.nix;
+  user_info = import ./user_info.nix;
 in
 {
   programs.git = {
