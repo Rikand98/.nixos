@@ -10,7 +10,13 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs username hostname; };
+    extraSpecialArgs = {
+      inherit
+        inputs
+        username
+        hostname
+        ;
+    };
     users.${username} = {
       imports = [ ./../../home/default.nixos.nix ];
       home.username = "${username}";

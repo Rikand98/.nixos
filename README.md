@@ -47,7 +47,7 @@
 | **Bar**                     | [Waybar][Waybar] |
 | **Application Launcher**    | [rofi][rofi] |
 | **Notification Daemon**     | [swaync][swaync] |
-| **Terminal Emulator**       | [Ghostty][Ghostty] |
+| **Terminal Emulator**       | [Wezterm][Wezterm] |
 | **Shell**                   | [fish][fish] |
 | **Text Editor**             | [Neovim][Neovim] |
 | **Browser**                 | [Zen][Zen] |
@@ -88,7 +88,7 @@ First install nixos using any [graphical ISO image](https://nixos.org/download.h
 
 ```bash
 nix-shell -p git
-git clone https://github.com/Rikardp98/.nixos
+git clone https://github.com/Rikand98/.nixos
 cd nixos-config
 ```
 #### 3. **Install script**
@@ -211,7 +211,7 @@ Other dotfiles that I learned / copy from:
 
 <!-- Links -->
 [Hyprland]: https://github.com/hyprwm/Hyprland
-[Ghostty]: https://github.com/ghostty-org/ghostty
+[Wezterm]: https://github.com/wezterm/wezterm
 [Starship]: https://github.com/starship/starship
 [Waybar]: https://github.com/Alexays/Waybar
 [rofi]: https://github.com/lbonn/rofi
