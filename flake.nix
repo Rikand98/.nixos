@@ -52,8 +52,6 @@
   outputs =
     { nixpkgs, self, ... }@inputs:
     let
-      github-username = "Rikand98";
-      github-email = "Rikard@rikand.com";
       username = "rikand";
       hostname = "home-desktop";
       system = "x86_64-linux";
@@ -74,8 +72,6 @@
               self
               inputs
               username
-              github-username
-              github-email
               ;
           };
         };

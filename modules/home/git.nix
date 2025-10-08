@@ -1,17 +1,13 @@
 {
-  config,
   pkgs,
   ...
 }:
-let
-  user_info = import ./user_info.nix;
-in
 {
   programs.git = {
     enable = true;
 
-    userName = user_info.github-username;
-    userEmail = user_info.github-email;
+    userName = "Rikand98";
+    userEmail = "Rikard@rikand.com";
 
     extraConfig = {
       init.defaultBranch = "main";

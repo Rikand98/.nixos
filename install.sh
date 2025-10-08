@@ -114,7 +114,7 @@ set_github() {
     echo -e "${NORMAL}Is${YELLOW} $github_reponame${NORMAL} your ${GREEN}github repo name${NORMAL}? "
     confirm
 
-    sed -i '' -e "s/${CURRENT_GITHUB_USERNAME}/${github_username}/g" ./flake.nix
+    sed -i '' -e "s/${CURRENT_GITHUB_USERNAME}/${github_username}/g" ./modules/home/git.nix
     sed -i '' -e "s/${CURRENT_GITHUB_USERNAME}/${github_username}/g" ./install.sh
     git remote set-url origin git@github.com:$github_username/$github_reponame
 }
@@ -127,7 +127,7 @@ set_ssh() {
         echo -en "Enter your ${GREEN}github email${NORMAL}: $YELLOW"
         read github_email
 
-        sed -i '' -e "s/${CURRENT_GITHUB_EMAIL}/${github_email}/g" ./flake.nix
+        sed -i '' -e "s/${CURRENT_GITHUB_EMAIL}/${github_email}/g" ./modules/home/git.nix
         sed -i '' -e "s/${CURRENT_GITHUB_EMAIL}/${github_email}/g" ./install.sh
 
         git config --global user.name "$username"
