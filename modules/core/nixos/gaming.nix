@@ -4,7 +4,7 @@
     steam
     protonplus
     rivalcfg
-    lutris
+    # lutris
   ];
   services.udev.packages = [
     (pkgs.writeTextFile {

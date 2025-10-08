@@ -3,7 +3,7 @@
   hardware = {
     graphics = {
       enable = true;
-      extraPackages = with pkgs; [ mesa ];
+      enable32Bit = true;
     };
     amdgpu = {
       initrd.enable = true;
@@ -22,5 +22,6 @@
     lact
     amdgpu_top
     mission-center
+    mesa
   ];
 }
