@@ -5,7 +5,7 @@
     protonplus
     rivalcfg
     dxvk
-    lutris-unwrapped
+    lutris
   ];
   services.udev.packages = [
     (pkgs.writeTextFile {

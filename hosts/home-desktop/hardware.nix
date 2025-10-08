@@ -4,6 +4,9 @@
     graphics = {
       enable = true;
       enable32Bit = true;
+      extraPackages = with pkgs; [
+        rocmPackages.clr.icd
+      ];
     };
     amdgpu = {
       initrd.enable = true;
@@ -19,9 +22,12 @@
     "amdgpu.dpm=1"
   ];
   environment.systemPackages = with pkgs; [
+    freetype
+    (pkgsi686Linux.freetype) # 32-bit FreeType for Wine
     lact
     amdgpu_top
     mission-center
     mesa
+    clinfo
   ];
 }
