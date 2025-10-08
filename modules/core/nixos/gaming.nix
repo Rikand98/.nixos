@@ -4,7 +4,8 @@
     steam
     protonplus
     rivalcfg
-    # lutris
+    dxvk
+    lutris-unwrapped
   ];
   services.udev.packages = [
     (pkgs.writeTextFile {
