@@ -17,6 +17,7 @@
     ./spicetify.nix # spotify client
     ./starship.nix # Shell prompt
     ./yazi # Terminal filesystem
+    ./wezterm.nix
     ./zen.nix
     ./zoxide.nix # cd replacement
   ];
