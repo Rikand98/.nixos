@@ -4,49 +4,35 @@
     ./../../modules/core/darwin
   ];
 
+  # Packages relevant for macOS
   environment.systemPackages = with pkgs; [
-    acpi
-    brightnessctl
-    cpupower-gui
-    powertop
-    tlp
+    smcfancontrol  # Optional: For fan control on older Macs; limited use on Apple Silicon
+    # Add macOS-compatible tools, e.g., for monitoring
+    htop
+    neofetch
   ];
 
-  services = {
-    power-profiles-daemon.enable = true;
-
-    upower = {
-      enable = true;
-      percentageLow = 20;
-      percentageCritical = 5;
-      percentageAction = 3;
-      criticalPowerAction = "PowerOff";
-    };
-
-    tlp.settings = {
-      CPU_ENERGY_PERF_POLICY_ON_AC = "power";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-
-      CPU_BOOST_ON_AC = 1;
-      CPU_BOOST_ON_BAT = 1;
-
-      CPU_HWP_DYN_BOOST_ON_AC = 1;
-      CPU_HWP_DYN_BOOST_ON_BAT = 1;
-
-      PLATFORM_PROFILE_ON_AC = "performance";
-      PLATFORM_PROFILE_ON_BAT = "performance";
-    };
+  # UPower for battery monitoring (optional, minimal effect on macOS)
+  services.upower = {
+    enable = true;
+    percentageLow = 20;
+    percentageCritical = 5;
+    percentageAction = 3;
+    criticalPowerAction = "Hibernate";  # macOS supports Sleep/Hibernate, not PowerOff
   };
 
-  powerManagement.cpuFreqGovernor = "performance";
+  # macOS-specific power management settings (minimal, as Apple Silicon is firmware-driven)
+  powerManagement = {
+    enable = true;  # Enables basic nix-darwin power management hooks
+    # No CPU governor settings; macOS handles this internally
+  };
 
+  # No kernel modules needed for macOS
   boot = {
-    kernelModules = ["acpi_call"];
-    extraModulePackages = with config.boot.kernelPackages;
-      [
-        acpi_call
-        cpupower
-      ]
-      ++ [pkgs.cpupower-gui];
+    # Remove Linux-specific kernelModules and extraModulePackages
+    # Add any macOS-specific boot settings if needed (rare for Apple Silicon)
   };
+
+  # Optional: Enable nix-darwin-specific optimizations
+  nixpkgs.hostPlatform = "aarch64-darwin";  # Ensure native ARM builds
 }

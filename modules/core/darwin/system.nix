@@ -1,4 +1,4 @@
-{ self, pkgs, lib, inputs, ...}:
+{ self, pkgs, lib, inputs, ... }:
 {
   nix = {
     settings = {
@@ -6,18 +6,19 @@
       experimental-features = [ "nix-command" "flakes" ];
     };
   };
+
   nixpkgs = {
     overlays = [
-      inputs.nur.overlays.default
+      inputs.nur.overlays.default # Ensure `nur` is defined in flake.nix inputs
     ];
+    config.allowUnfree = true; # Allow proprietary packages
   };
 
   environment.systemPackages = with pkgs; [
-    wget
-    git
+    git # Essential for repo management
+    # wget moved to network.nix to avoid redundancy
   ];
 
   time.timeZone = "Europe/Stockholm";
   i18n.defaultLocale = "en_US.UTF-8";
-  nixpkgs.config.allowUnfree = true;
 }

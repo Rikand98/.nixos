@@ -6,7 +6,7 @@
       enable = true;
       extraArgs = "--keep-since 7d --keep 5";
     };
-    flake = "/home/${username}/.nixos";
+    flake = "/Users/${username}/.nixos"; # Use macOS home directory
   };
 
   environment.systemPackages = with pkgs; [
