@@ -83,6 +83,8 @@
 First install nixos using any [graphical ISO image](https://nixos.org/download.html#nixos-iso).
 > [!NOTE]
 > Only been tested using the Gnome graphical installer and choosing the ```No desktop``` option durring instalation.
+##### 1.5 Darwin
+If you plan on this on a Mac, please make sure you have [Darwin][Darwin] installed! Follow the steps here: https://github.com/nix-darwin/nix-darwin
 
 #### 2. **Clone the repo**
 
@@ -238,3 +240,4 @@ Other dotfiles that I learned / copy from:
 [Capitaine-Cursors]: https://github.com/sainnhe/capitaine-cursors
 [maxfetch]: https://github.com/jobcmax/maxfetch
 [Zen]: https://zen-browser.app/
+[Darwin]: https://github.com/nix-darwin/nix-darwin
