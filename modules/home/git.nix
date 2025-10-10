@@ -1,13 +1,14 @@
 {
   pkgs,
+  secrets,
   ...
 }:
 {
   programs.git = {
     enable = true;
 
-    userName = "Rikand98";
-    userEmail = "Rikard@rikand.com";
+    userName = secrets.gitUserName;
+    userEmail = secrets.gitEmail;
 
     extraConfig = {
       init.defaultBranch = "main";

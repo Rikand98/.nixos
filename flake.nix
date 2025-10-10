@@ -1,14 +1,19 @@
 {
-  description = "Rikand's nixos configuration";
+  description = "Rikand's nixos/darwin configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
 
+    # Linux-only inputs (Hyprland ecosystem) - ignored on Darwin
+    hyprland.url = "github:hyprwm/Hyprland";
     hypr-contrib = {
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "hyprland/nixpkgs";
@@ -47,34 +52,73 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs =
-    { nixpkgs, self, ... }@inputs:
+  outputs = { nixpkgs, nix-darwin, home-manager, flake-utils, self, ... }@inputs:
     let
-      username = "rikand";
-      hostname = "home-desktop";
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
-      lib = nixpkgs.lib;
+      secrets = import ./secrets.nix;
+      username = secrets.username;
+      hostname = secrets.hostname;
     in
-    {
-      nixosConfigurations = {
-        nixos = lib.nixosSystem {
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs {
           inherit system;
-          modules = [ ./hosts/${hostname} ];
+          config.allowUnfree = true;
+        };
+      in
+      {
+        devShells.default = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            (import nixpkgs { inherit system; }).darwin.apple_sdk.frameworks.SystemConfiguration
+            just
+            nil
+            nixpkgs-fmt
+          ];
+        };
+      }
+    )
+    // {
+      # NixOS configurations (Linux) - e.g., for home-desktop
+      nixosConfigurations = {
+        ${secrets.hostname} = lib.nixosSystem {
+          system = "x86_64-linux"; 
+          modules = [
+            ./hosts/${secrets.hostname}  
+            home-manager.nixosModules.home-manager  
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs username secrets; };  
+            }
+          ];
           specialArgs = {
-            hostname = "${hostname}";
-            inherit
-              self
-              inputs
-              username
-              ;
+            inherit inputs username secrets;
+            hostname = secrets.hostname; 
           };
         };
       };
+
+      # Darwin configurations (macOS)
+      darwinConfigurations = {
+        ${hostname} = nix-darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          modules = [
+            ./hosts/${hostname}
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs username hostname secrets; };
+            }
+          ];
+          specialArgs = {
+            inherit inputs username hostname secrets system = "aarch64-darwin";
+          };
+        };
+      };
+
+      formatter = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
     };
 }
