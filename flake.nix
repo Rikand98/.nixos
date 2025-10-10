@@ -59,7 +59,8 @@
     let
       user_info = import ./user_info.nix;
       username = user_info.username;
-      hostname = user_info.hostname;
+      hostname_1 = user_info.hostname_1;
+      hostname_2 = user_info.hostname_2;
     in
     flake-utils.lib.eachDefaultSystem (system:
       let
@@ -82,10 +83,10 @@
     // {
       # NixOS configurations (Linux) - e.g., for home-desktop
       nixosConfigurations = {
-        ${user_info.hostname} = nixpkgs.lib.nixosSystem {
+        home-desktop = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux"; 
           modules = [
-            ./hosts/${user_info.hostname}  
+            ./hosts/${hostname_1}  
             home-manager.nixosModules.home-manager  
             {
               home-manager.useGlobalPkgs = true;
@@ -95,26 +96,27 @@
           ];
           specialArgs = {
             inherit inputs username user_info;
-            hostname = user_info.hostname; 
+            hostname = hostname_1; 
           };
         };
       };
 
       # Darwin configurations (macOS)
       darwinConfigurations = {
-        ${hostname} = nix-darwin.lib.darwinSystem {
+        lysio-macbook = nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           modules = [
-            ./hosts/${hostname}
+            ./hosts/${hostname_2}
             home-manager.darwinModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs username hostname user_info; };
+              home-manager.extraSpecialArgs = { hostname = hostname_2; inherit inputs username  user_info; };
             }
           ];
           specialArgs = {
-            inherit inputs username hostname user_info ;
+            hostname = user_info.hostname_2; 
+            inherit inputs username user_info ;
           };
         };
       };

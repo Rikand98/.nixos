@@ -10,11 +10,10 @@
       imports = [ ./../../home/default.darwin.nix ];
       home.username = "${username}";
       home.homeDirectory = "/Users/${username}";
-      # home.stateVersion = "24.05"; # Set to match nixpkgs version (check flake.lock)
+      home.stateVersion = "25.05"; # Set to match nixpkgs version (check flake.lock)
       programs.home-manager.enable = true;
     };
   };
-
   users.users.${username} = {
     name = "${username}";
     home = "/Users/${username}";

@@ -2,9 +2,9 @@
 {
   imports = [
     ./network.nix
-    ./nh.nix
+    # ./nh.nix
     ./program.nix
-    ./services.nix
+    # ./services.nix
     ./system.nix
     ./user.nix
   ];

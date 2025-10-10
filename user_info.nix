@@ -1,7 +1,8 @@
 # Private configuration - not committed to git
 {
   username = "rikand";
-  hostname = "lysio-macbook";
+  hostname_1 = "home-desktop";
+  hostname_2 = "lysio-macbook";
   gitUserName = "Rikand98";
   gitEmail = "rikard@rikand.com";
 }

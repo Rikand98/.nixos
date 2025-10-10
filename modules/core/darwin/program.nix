@@ -4,7 +4,7 @@
   programs.fish.enable = true;
 
   # Enable Starship prompt (integrates with Fish)
-  programs.starship.enable = true;
+  # programs.starship.enable = true;
 
   # Enable GnuPG agent with SSH support
   programs.gnupg.agent = {

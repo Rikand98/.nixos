@@ -1,11 +1,14 @@
-{ self, pkgs, lib, inputs, ... }:
+{ self, pkgs, lib, inputs,username, ... }:
 {
   nix = {
     settings = {
-      auto-optimise-store = true; # Optimize the Nix store for performance
+      nix.optimise.automatic = true;
       experimental-features = [ "nix-command" "flakes" ];
     };
   };
+
+  system.stateVersion = 6;
+  system.primaryUser = "${username}";
 
   nixpkgs = {
     overlays = [
@@ -20,5 +23,4 @@
   ];
 
   time.timeZone = "Europe/Stockholm";
-  i18n.defaultLocale = "en_US.UTF-8";
 }
