@@ -322,8 +322,8 @@ install() {
 			exit 1
 		}
 	elif [[ "$SYSTEM" == "darwin" ]]; then
-		sudo nix run github:lnl7/nix-darwin#darwin-rebuild -- switch --flake .
-		sudo darwin-rebuild switch --flake . || {
+		sudo nix run github:lnl7/nix-darwin#darwin-rebuild -- switch --flake .#${hostname}
+		sudo darwin-rebuild switch --flake .#${hostname} || {
 			echo "${RED}Darwin rebuild failed (try with sudo if needed).${NORMAL}"
 			exit 1
 		}
