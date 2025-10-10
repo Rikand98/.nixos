@@ -316,12 +316,13 @@ install() {
 	# Build the system (flakes + home manager)
 	echo -e "\nBuilding the system...\n"
 	if [[ "$SYSTEM" == "nixos" ]]; then
-		sudo nixos-rebuild switch --flake .#${hostname} || {
+		sudo nixos-rebuild switch --flake . || {
 			echo "${RED}NixOS rebuild failed.${NORMAL}"
 			exit 1
 		}
 	elif [[ "$SYSTEM" == "darwin" ]]; then
-		sudo darwin-rebuild switch --flake .#${hostname} || {
+		sudo nix run github:lnl7/nix-darwin#darwin-rebuild -- switch --flake .
+		sudo darwin-rebuild switch --flake . || {
 			echo "${RED}Darwin rebuild failed (try with sudo if needed).${NORMAL}"
 			exit 1
 		}

@@ -114,7 +114,7 @@
             }
           ];
           specialArgs = {
-            inherit inputs username hostname secrets system = "aarch64-darwin";
+            inherit inputs username hostname secrets system ;
           };
         };
       };

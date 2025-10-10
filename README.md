@@ -83,16 +83,15 @@
 First install nixos using any [graphical ISO image](https://nixos.org/download.html#nixos-iso).
 > [!NOTE]
 > Only been tested using the Gnome graphical installer and choosing the ```No desktop``` option durring instalation.
-##### 1.5 Darwin
-If you plan on this on a Mac, please make sure you have [Darwin][Darwin] installed! Follow the steps here: https://github.com/nix-darwin/nix-darwin
 
 #### 2. **Clone the repo**
 
 ```bash
 nix-shell -p git
 git clone https://github.com/Rikand98/.nixos
-cd nixos-config
+cd .nixos
 ```
+
 #### 3. **Install script**
 > [!CAUTION]
 > For some computers, the default rebuild command might get stuck due to CPU cores running out of RAM. To fix that modify the install script line: ```sudo nixos-rebuild switch --flake .#${HOST}``` to ```sudo nixos-rebuild switch --cores <less than your max number of cores> --flake .#${HOST}```
@@ -240,4 +239,3 @@ Other dotfiles that I learned / copy from:
 [Capitaine-Cursors]: https://github.com/sainnhe/capitaine-cursors
 [maxfetch]: https://github.com/jobcmax/maxfetch
 [Zen]: https://zen-browser.app/
-[Darwin]: https://github.com/nix-darwin/nix-darwin
