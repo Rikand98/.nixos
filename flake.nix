@@ -57,9 +57,9 @@
 
   outputs = { nixpkgs, nix-darwin, home-manager, flake-utils, self, ... }@inputs:
     let
-      secrets = import ./secrets.nix;
-      username = secrets.username;
-      hostname = secrets.hostname;
+      user_info = import ./user_info.nix;
+      username = user_info.username;
+      hostname = user_info.hostname;
     in
     flake-utils.lib.eachDefaultSystem (system:
       let
@@ -82,20 +82,20 @@
     // {
       # NixOS configurations (Linux) - e.g., for home-desktop
       nixosConfigurations = {
-        ${secrets.hostname} = lib.nixosSystem {
+        ${user_info.hostname} = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux"; 
           modules = [
-            ./hosts/${secrets.hostname}  
+            ./hosts/${user_info.hostname}  
             home-manager.nixosModules.home-manager  
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs username secrets; };  
+              home-manager.extraSpecialArgs = { inherit inputs username user_info; };  
             }
           ];
           specialArgs = {
-            inherit inputs username secrets;
-            hostname = secrets.hostname; 
+            inherit inputs username user_info;
+            hostname = user_info.hostname; 
           };
         };
       };
@@ -110,11 +110,11 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs username hostname secrets; };
+              home-manager.extraSpecialArgs = { inherit inputs username hostname user_info; };
             }
           ];
           specialArgs = {
-            inherit inputs username hostname secrets system ;
+            inherit inputs username hostname user_info ;
           };
         };
       };

@@ -1,4 +1,7 @@
+# Private configuration - not committed to git
 {
-  github-username = "Rikand98";
-  github-email = "Rikard@rikand.com";
+  username = "rikand";
+  hostname = "lysio-macbook";
+  gitUserName = "Rikand98";
+  gitEmail = "rikard@rikand.com";
 }

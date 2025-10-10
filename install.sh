@@ -215,14 +215,15 @@ set_ssh() {
 	git config --global user.email "$github_email"
 }
 
-create_secrets() {
-	if [[ -f secrets.nix ]]; then
-		echo "${YELLOW}secrets.nix already exists. Overwrite?${NORMAL} "
+create_user_info() {
+	if [[ -f user_info.nix ]]; then
+		echo "${YELLOW}user_info.nix already exists. Overwrite?${NORMAL} "
 		confirm
+
 	fi
 
-	echo "Creating secrets.nix..."
-	cat <<EOF >secrets.nix
+	echo "Creating user_info.nix..."
+	cat <<EOF >user_info.nix
 # Private configuration - not committed to git
 {
   username = "$username";
@@ -231,13 +232,13 @@ create_secrets() {
   gitEmail = "$github_email";
 }
 EOF
-	echo "secrets.nix created."
+	echo "user_info.nix created."
 
-	# Ensure secrets.nix is ignored by git
+	# Ensure user_info.nix is ignored by git
 	if [ ! -f .gitignore ]; then
-		echo "secrets.nix" >.gitignore
+		echo "user_info.nix" >.gitignore
 	else
-		grep -q "secrets.nix" .gitignore || echo "secrets.nix" >>.gitignore
+		grep -q "user_info.nix" .gitignore || echo "user_info.nix" >>.gitignore
 	fi
 }
 
@@ -341,7 +342,7 @@ main() {
 	generate_host_template
 	set_github
 	set_ssh
-	create_secrets
+	create_user_info
 	install
 }
 
