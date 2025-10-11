@@ -17,6 +17,9 @@
       # GoLang
       go
 
+      #Zig
+      zig
+
       # Flutter & Dart
       flutter
 
