@@ -17,17 +17,6 @@
       # GoLang
       go
 
-      #Zig
-      zig
-      libgl-dev
-      libasound2-dev
-      libx11-dev
-      libxcursor-dev
-      libxrandr-dev
-      libxinerama-dev
-      libxext-dev
-      libxi-dev
-
       # Flutter & Dart
       flutter
 
