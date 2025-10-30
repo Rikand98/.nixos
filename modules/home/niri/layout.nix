@@ -33,7 +33,7 @@
   }
 
   layout {
-      gaps 9
+      gaps 1
 
       center-focused-column "never"
       always-center-single-column
@@ -47,10 +47,10 @@
       default-column-width { proportion 0.5; }
 
       border {
-          width 2
-          active-color "#cba6f7"
+          width 1
+          active-color "#98971A"
           inactive-color "#45475a"
-          urgent-color "#f5c2e7"
+          urgent-color "#d65d0e"
       }
 
       focus-ring {

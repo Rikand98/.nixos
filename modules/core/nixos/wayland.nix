@@ -19,7 +19,4 @@
       pkgs.xdg-desktop-portal-gtk
     ];
   };
-  environment.systemPackages = with pkgs; [
-    niri # Ensure the binary is available
-  ];
 }

@@ -22,16 +22,12 @@
     #   url = "github:hyprwm/hyprpicker";
     #   inputs.nixpkgs.follows = "hyprland/nixpkgs";
     # };
-    # hyprlock = {
-    #   url = "github:hyprwm/hyprlock";
-    #   inputs = {
-    #     hyprgraphics.follows = "hyprland/hyprgraphics";
-    #     hyprlang.follows = "hyprland/hyprlang";
-    #     hyprutils.follows = "hyprland/hyprutils";
-    #     nixpkgs.follows = "hyprland/nixpkgs";
-    #     systems.follows = "hyprland/systems";
-    #   };
-    # };
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
 
     niri = {
       url = "github:YaLTeR/niri";
