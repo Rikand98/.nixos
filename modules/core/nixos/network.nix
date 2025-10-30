@@ -1,8 +1,8 @@
 { pkgs, hostname, ... }:
 {
-  imports = [
-    ./wireguard.nix   
-  ];
+  # imports = [
+  #   ./wireguard.nix
+  # ];
   networking = {
     hostName = "${hostname}";
     networkmanager.enable = true;

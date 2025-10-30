@@ -11,11 +11,12 @@
     ./git.nix # version control
     ./gnome.nix # gnome apps
     ./gtk.nix # gtk theme
-    ./hyprland # window manager
+    # ./hyprland # window manager
     ./swayosd.nix # brightness / volume wiget
     ./swaync # notification deamon
     ./micro.nix # nano replacement
     ./nemo.nix # file manager
+    ./niri
     ./nix-search # TUI to search nixpkgs
     ./nixvim # nixvim editor
     ./packages
