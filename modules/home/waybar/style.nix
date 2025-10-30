@@ -23,6 +23,8 @@ in
 {
   programs.waybar.style = with custom; ''
     * {
+      border: none;
+      border-radius: 0px;
       padding: 0;
       margin: 0;
       font-family: ${font};
