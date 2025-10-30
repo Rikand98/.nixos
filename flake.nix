@@ -53,55 +53,55 @@
     };
 
     flake-utils.url = "github:numtide/flake-utils";
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, nix-darwin, home-manager, flake-utils, self, ... }@inputs:
+  outputs = { nixpkgs, nix-darwin, home-manager, flake-utils, self, sops-nix, ... }@inputs:
     let
       user_info = import ./user_info.nix;
-      username = user_info.username;
+      username  = user_info.username;
       hostname_1 = user_info.hostname_1;
       hostname_2 = user_info.hostname_2;
     in
     flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      in
-      {
+        pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
+      in {
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
-            (import nixpkgs { inherit system; }).darwin.apple_sdk.frameworks.SystemConfiguration
-            just
-            nil
-            nixpkgs-fmt
+            just nil nixpkgs-fmt
+            (lib.optionalAttrs (system == "aarch64-darwin")
+              darwin.apple_sdk.frameworks.SystemConfiguration)
           ];
         };
-      }
-    )
+      })
     // {
-      # NixOS configurations (Linux) - e.g., for home-desktop
+      # ── NixOS (Linux) ─────────────────────────────────────────────────────
       nixosConfigurations = {
         home-desktop = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux"; 
+          system = "x86_64-linux";
           modules = [
-            ./hosts/${hostname_1}  
-            home-manager.nixosModules.home-manager  
+            ./hosts/${hostname_1}
+            home-manager.nixosModules.home-manager
+            sops-nix.nixosModules.sops                     
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs username user_info; };  
+              home-manager.extraSpecialArgs = { inherit inputs username user_info; };
             }
           ];
           specialArgs = {
             inherit inputs username user_info;
-            hostname = hostname_1; 
+            hostname = hostname_1;
           };
         };
       };
 
-      # Darwin configurations (macOS)
+      # ── Darwin (macOS) ───────────────────────────────────────────────────
       darwinConfigurations = {
         lysio-macbook = nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
@@ -111,12 +111,12 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { hostname = hostname_2; inherit inputs username  user_info; };
+              home-manager.extraSpecialArgs = { hostname = hostname_2; inherit inputs username user_info; };
             }
           ];
           specialArgs = {
-            hostname = user_info.hostname_2; 
-            inherit inputs username user_info ;
+            hostname = hostname_2;
+            inherit inputs username user_info;
           };
         };
       };
