@@ -16,7 +16,7 @@ in
       Mod+R { spawn "rofi" "-show" "drun"; }  // Handles || pkill via rofi logic
       Mod+Shift+S { spawn "SoundWireServer"; }  // Plain spawn; for workspace 9 silent
       Mod+M { spawn "spotify"; }  // For workspace 9 silent
-      Mod+Y { spawn "yazi"; }
+      Mod+Y { spawn "wezterm" "yazi"; }
       Mod+S { spawn "steam"; }  // For workspace 4
       Mod+A { spawn "lutris"; }  // For workspace 4
       Mod+D { spawn "discord"; }  // For workspace 5
@@ -41,10 +41,9 @@ in
 
       // === Window Management ===
       Mod+Q { close-window; }
-      Mod+F { fullscreen-window; }  // Maps to Hyprland fullscreen,0
-      Mod+Shift+F { maximize-column; }  // Maps to Hyprland fullscreen,1
+      Mod+Shift+F { fullscreen-window; }  // Maps to Hyprland fullscreen,0
+      Mod+F { maximize-column; }  // Maps to Hyprland fullscreen,1
       Mod+Space { toggle-window-floating; }  // Approximate toggle_float
-      Mod+Shift+T { spawn "toggle_oppacity"; }
 
       // === Focus Navigation ===
       Mod+Ctrl+Left { focus-column-left; }
