@@ -13,7 +13,7 @@
       grammarPackages = pkgs.vimPlugins.nvim-treesitter.allGrammars;
     };
 
-    treesitter-refactor = {
+    treesitter-refactor.settings = {
       enable = true;
       highlightDefinitions = {
         enable = true;

@@ -7,25 +7,25 @@
   programs.git = {
     enable = true;
 
-    userName = user_info.gitUserName;
-    userEmail = user_info.gitEmail;
-
-    extraConfig = {
+    settings = {
       init.defaultBranch = "main";
       credential.helper = "store";
       merge.conflictstyle = "diff3";
       diff.colorMoved = "default";
+      user.name = user_info.gitUserName;
+      user.email = user_info.gitEmail;
     };
 
-    delta = {
+  };
+  programs.delta = {
       enable = true;
+      enableGitIntegration = true;
       options = {
         line-numbers = true;
         side-by-side = true;
         diff-so-fancy = true;
         navigate = true;
       };
-    };
   };
 
   home.packages = [ pkgs.gh ]; # pkgs.git-lfs

@@ -15,6 +15,7 @@
       inputs.nur.overlays.default # Ensure `nur` is defined in flake.nix inputs
     ];
     config.allowUnfree = true; # Allow proprietary packages
+    config.allowUnsupportedSystem = true;
   };
 
   environment.systemPackages = with pkgs; [

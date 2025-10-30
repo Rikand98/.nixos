@@ -16,7 +16,7 @@
       nitch # System info fetcher
       pipes # Pipe screensaver
       sl # Steam locomotive
-      tty-clock # CLI clock
+      # tty-clock # CLI clock
 
       # Multimedia
       ani-cli # CLI anime player

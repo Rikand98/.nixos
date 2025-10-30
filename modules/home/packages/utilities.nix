@@ -9,7 +9,7 @@
       fd # find replacement
       file # File info
       mimeo # Open files by MIME type
-      playerctl # Controller for media players
+      # playerctl # Controller for media players
       ripgrep # grep replacement
       gtrash # Trash manager (replacement for rm)
       wl-clipboard # Wayland clipboard utils
@@ -33,7 +33,6 @@
 
       # Windows
       winetricks # Helper for Wine installation
-      wineWowPackages.wayland # Wine for Wayland
 
     ]
   );
