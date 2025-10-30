@@ -47,7 +47,8 @@ in
     spawn-sh-at-startup "sh" "-c" "swww init && swww img $(find ~/Pictures/Wallpapers/ -maxdepth 1 -type f | shuf -n 1) --transition-type none";
     spawn-sh-at-startup "waypaper" "--wallpaper" "~/Pictures/Wallpapers/forest_pastel.png";
     spawn-sh-at-startup "swayidle" "timeout" "300" "swaylock -f";
-    spawn-sh-at-startuo "niri msg setcursor 'Capitaine Cursors (Gruvbox)' 24&"
+    spawn-sh-at-startup "niri msg setcursor 'Capitaine Cursors (Gruvbox)' 24&"
+    spawn-at-startup "hyprlock"
 
       ${hostOutputs}
 
