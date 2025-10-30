@@ -21,9 +21,9 @@
       flutter
 
       # Android Development
-      android-studio
-      firebase-tools
-      google-cloud-sdk
+      # android-studio
+      # firebase-tools
+      # google-cloud-sdk
 
       # Git & Git-related utilities
       onefetch

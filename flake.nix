@@ -33,6 +33,11 @@
       };
     };
 
+    niri = {
+      url = "github:YaLTeR/niri";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nur.url = "github:nix-community/NUR";
 
     nixvim = {
@@ -60,25 +65,41 @@
     };
   };
 
-  outputs = { nixpkgs, nix-darwin, home-manager, flake-utils, self, sops-nix, ... }@inputs:
+  outputs =
+    {
+      nixpkgs,
+      nix-darwin,
+      home-manager,
+      flake-utils,
+      self,
+      sops-nix,
+      ...
+    }@inputs:
     let
       user_info = import ./user_info.nix;
-      username  = user_info.username;
+      username = user_info.username;
       hostname_1 = user_info.hostname_1;
       hostname_2 = user_info.hostname_2;
     in
-    flake-utils.lib.eachDefaultSystem (system:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
-        pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
-      in {
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      in
+      {
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
-            just nil nixpkgs-fmt
-            (lib.optionalAttrs (system == "aarch64-darwin")
-              darwin.apple_sdk.frameworks.SystemConfiguration)
+            just
+            nil
+            nixpkgs-fmt
+            (lib.optionalAttrs (system == "aarch64-darwin") darwin.apple_sdk.frameworks.SystemConfiguration)
           ];
         };
-      })
+      }
+    )
     // {
       # ── NixOS (Linux) ─────────────────────────────────────────────────────
       nixosConfigurations = {
@@ -87,7 +108,7 @@
           modules = [
             ./hosts/${hostname_1}
             home-manager.nixosModules.home-manager
-            sops-nix.nixosModules.sops                     
+            sops-nix.nixosModules.sops
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -111,7 +132,10 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { hostname = hostname_2; inherit inputs username user_info; };
+              home-manager.extraSpecialArgs = {
+                hostname = hostname_2;
+                inherit inputs username user_info;
+              };
             }
           ];
           specialArgs = {
