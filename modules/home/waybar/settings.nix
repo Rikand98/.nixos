@@ -30,7 +30,7 @@ in
     margin-right = 0;
     modules-left = [
       "custom/launcher"
-      "hyprland/workspaces"
+      "niri/workspaces"
       "tray"
     ];
     modules-center = [
@@ -56,7 +56,7 @@ in
       tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
       format-alt = "  {:%d/%m} ";
     };
-    "hyprland/workspaces" = {
+    "niri/workspaces" = {
       active-only = false;
       disable-scroll = true;
       format = "{icon}";

@@ -51,7 +51,6 @@ label {
     /* background: @insensitive_bg_color; */
 }
 
-
 .notification-content {
     min-height: 64px;
     margin: 10px;
@@ -69,7 +68,6 @@ label {
     background: transparent;
     border: none;
 }
-
 
 .notification-default-action {
     border-radius: 4px;
@@ -194,7 +192,6 @@ label {
     box-shadow: none;
 }
 
-
 .notification-row {
     outline: none;
     transition: all 1s ease;
@@ -225,7 +222,6 @@ label {
 .control-center-list>row:last-child {
     padding: 5px 10px 10px 10px;
 }
-
 
 /* Window behind control center and on all other monitors */
 .blank-window {
@@ -369,7 +365,6 @@ label {
     border: none;
     box-shadow: none;
 }
-
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
     background: @mantle;
