@@ -19,7 +19,7 @@ in
       Mod+Y { spawn-sh "wezterm -e yazi"; }
       Mod+S { spawn "steam"; }
       Mod+A { spawn "lutris"; }
-      Mod+D { spawn "discord"; }
+      Mod+D { spawn "webcord"; }
       Mod+T { spawn "thunderbird"; }
       Mod+E { spawn "nemo"; }
       Mod+Shift+B { spawn "toggle_waybar"; }
@@ -41,9 +41,9 @@ in
 
       // === Window Management ===
       Mod+Q { close-window; }
-      Mod+Shift+F { fullscreen-window; }  // Maps to Hyprland fullscreen,0
-      Mod+F { maximize-column; }  // Maps to Hyprland fullscreen,1
-      Mod+Space { toggle-window-floating; }  // Approximate toggle_float
+      Mod+Shift+F { fullscreen-window; }
+      Mod+F { maximize-column; }
+      Mod+Space { toggle-window-floating; }
 
       // === Focus Navigation ===
       Mod+Ctrl+Left { focus-column-left; }

@@ -13,7 +13,7 @@
   }
 
   window-rule {
-      match app-id=r#"^discord"#
+      match app-id=r#"^webcord"#
       open-maximized true
       open-on-output "HDMI-A-1"
       opacity 0.98
