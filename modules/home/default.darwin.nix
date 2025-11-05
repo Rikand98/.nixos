@@ -12,8 +12,6 @@
     ./nix-search
     ./nixvim # Nixvim editor
     ./packages
-    ./rofi.nix # Launcher (if compatible)
-    ./scripts # Personal scripts
     ./spicetify.nix # spotify client
     ./starship.nix # Shell prompt
     ./yazi # Terminal filesystem
