@@ -48,6 +48,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stasis = {
+      url = "github:saltnpepper97/stasis";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -75,7 +79,9 @@
       user_info = import ./user_info.nix;
       username = user_info.username;
       hostname_1 = user_info.hostname_1;
+      system_1 = user_info.system_1;
       hostname_2 = user_info.hostname_2;
+      system_2 = user_info.system_2;
     in
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -100,7 +106,7 @@
       # ── NixOS (Linux) ─────────────────────────────────────────────────────
       nixosConfigurations = {
         home-desktop = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          system = system_1;
           modules = [
             ./hosts/${hostname_1}
             home-manager.nixosModules.home-manager
@@ -108,12 +114,23 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs username user_info; };
+              home-manager.extraSpecialArgs = {
+                inherit
+                  inputs
+                  username
+                  user_info
+                  ;
+              };
             }
           ];
           specialArgs = {
-            inherit inputs username user_info;
+            inherit
+              inputs
+              username
+              user_info
+              ;
             hostname = hostname_1;
+            system = system_1;
           };
         };
       };
@@ -121,7 +138,7 @@
       # ── Darwin (macOS) ───────────────────────────────────────────────────
       darwinConfigurations = {
         lysio-macbook = nix-darwin.lib.darwinSystem {
-          system = "aarch64-darwin";
+          system = system_2;
           modules = [
             ./hosts/${hostname_2}
             home-manager.darwinModules.home-manager
@@ -136,6 +153,7 @@
           ];
           specialArgs = {
             hostname = hostname_2;
+            system = system_2;
             inherit inputs username user_info;
           };
         };

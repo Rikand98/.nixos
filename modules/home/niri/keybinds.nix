@@ -3,7 +3,7 @@ let
   dmsPath = "${config.home.homeDirectory}/.local/bin/dms";
 
   # Determine launcher command based on barChoice
-  launcherCommand = ''"rofi" "-show" "drun"'';
+  launcherCommand = ''"fuzzel"'';
 in
 ''
   binds {
@@ -13,7 +13,7 @@ in
       // === Application Launchers ===
       Mod+W { spawn "wezterm"; }
       Mod+B { spawn "zen"; }
-      Mod+R { spawn-sh "rofi -show drun"; }
+      Mod+R { spawn-sh "fuzzel"; }
       Mod+Shift+S { spawn "SoundWireServer"; }
       Mod+M { spawn "spotify"; }
       Mod+Y { spawn-sh "wezterm -e yazi"; }
@@ -137,8 +137,7 @@ in
       Mod+Alt+P { power-off-monitors; }
 
       // === Custom Application Launchers ===
-      // (Add more as needed; adapted from Hyprland spawns)
-      Mod+V { spawn "cliphist" "list" "|" "rofi" "-dmenu" "-theme-str" "'window {width: 50%;}'" "|" "cliphist" "decode" "|" "wl-copy"; }  // Clipboard manager
+      Mod+V { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; } // Clipboard manager
 
       // === Color picker ===
       Mod+C { spawn-sh "niri msg pick-color | grep 'Hex:' | cut -d' ' -f2 | wl-copy"; }
