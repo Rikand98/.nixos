@@ -12,16 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Linux-only inputs (Hyprland ecosystem) - ignored on Darwin
-    # hyprland.url = "github:hyprwm/Hyprland";
-    # hypr-contrib = {
-    #   url = "github:hyprwm/contrib";
-    #   inputs.nixpkgs.follows = "hyprland/nixpkgs";
-    # };
-    # hyprpicker = {
-    #   url = "github:hyprwm/hyprpicker";
-    #   inputs.nixpkgs.follows = "hyprland/nixpkgs";
-    # };
     hyprlock = {
       url = "github:hyprwm/hyprlock";
       inputs = {
@@ -48,10 +38,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stasis = {
-      url = "github:saltnpepper97/stasis";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
