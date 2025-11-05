@@ -11,20 +11,20 @@ in
       Mod+Shift+Slash { show-hotkey-overlay; }
 
       // === Application Launchers ===
-      Mod+W { spawn "wezterm"; }  // Plain spawn; for workspace 2, use script if needed
-      Mod+B { spawn "zen"; }  // Plain spawn; for workspace 1
-      Mod+R { spawn "rofi" "-show" "drun"; }  // Handles || pkill via rofi logic
-      Mod+Shift+S { spawn "SoundWireServer"; }  // Plain spawn; for workspace 9 silent
-      Mod+M { spawn "spotify"; }  // For workspace 9 silent
-      Mod+Y { spawn "wezterm" "yazi"; }
-      Mod+S { spawn "steam"; }  // For workspace 4
-      Mod+A { spawn "lutris"; }  // For workspace 4
-      Mod+D { spawn "discord"; }  // For workspace 5
-      Mod+T { spawn "thunderbird"; }  // For workspace 6
+      Mod+W { spawn "wezterm"; }
+      Mod+B { spawn "zen"; }
+      Mod+R { spawn-sh "rofi -show drun"; }
+      Mod+Shift+S { spawn "SoundWireServer"; }
+      Mod+M { spawn "spotify"; }
+      Mod+Y { spawn-sh "wezterm -e yazi"; }
+      Mod+S { spawn "steam"; }
+      Mod+A { spawn "lutris"; }
+      Mod+D { spawn "discord"; }
+      Mod+T { spawn "thunderbird"; }
       Mod+E { spawn "nemo"; }
       Mod+Shift+B { spawn "toggle_waybar"; }
       Mod+Alt+W { spawn "wallpaper-picker"; }
-      Mod+N { spawn "swaync-client" "-t" "-sw"; }
+      Mod+N { spawn-sh "swaync-client -t -sw"; }
 
       // === Security ===
       Mod+Escape { spawn "swaylock"; }
@@ -98,11 +98,11 @@ in
       Mod+Ctrl+WheelScrollLeft { move-column-left; }
 
       // === Numbered Workspaces ===
-      Mod+1 { focus-workspace 1; }
-      Mod+2 { focus-workspace 2; }
-      Mod+3 { focus-workspace 3; }
-      Mod+4 { focus-workspace 4; }
-      Mod+5 { focus-workspace 5; }
+      Mod+1 { focus-workspace "Browser"; }
+      Mod+2 { focus-workspace "Terminal"; }
+      Mod+3 { focus-workspace "Chat"; }
+      Mod+4 { focus-workspace "Game"; }
+      Mod+5 { focus-workspace "Music"; }
       Mod+6 { focus-workspace 6; }
       Mod+7 { focus-workspace 7; }
       Mod+8 { focus-workspace 8; }
@@ -110,11 +110,11 @@ in
       Mod+0 { focus-workspace 10; }
 
       // === Move to Numbered Workspaces ===
-      Mod+Shift+1 { move-column-to-workspace 1; }
-      Mod+Shift+2 { move-column-to-workspace 2; }
-      Mod+Shift+3 { move-column-to-workspace 3; }
-      Mod+Shift+4 { move-column-to-workspace 4; }
-      Mod+Shift+5 { move-column-to-workspace 5; }
+      Mod+Shift+1 { move-column-to-workspace "Browser"; }
+      Mod+Shift+2 { move-column-to-workspace "Terminal"; }
+      Mod+Shift+3 { move-column-to-workspace "Chat"; }
+      Mod+Shift+4 { move-column-to-workspace "Game"; }
+      Mod+Shift+5 { move-column-to-workspace "Music"; }
       Mod+Shift+6 { move-column-to-workspace 6; }
       Mod+Shift+7 { move-column-to-workspace 7; }
       Mod+Shift+8 { move-column-to-workspace 8; }

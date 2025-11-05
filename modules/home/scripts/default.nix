@@ -4,7 +4,6 @@ let
   runbg = pkgs.writeShellScriptBin "runbg" (builtins.readFile ./scripts/runbg.sh);
   music = pkgs.writeShellScriptBin "music" (builtins.readFile ./scripts/music.sh);
   lofi = pkgs.writeScriptBin "lofi" (builtins.readFile ./scripts/lofi.sh);
-  spicetify = pkgs.writeScriptBin "spicetify" (builtins.readFile ./scripts/spicetify.sh);
 
   toggle_blur = pkgs.writeScriptBin "toggle_blur" (builtins.readFile ./scripts/toggle_blur.sh);
   toggle_oppacity = pkgs.writeScriptBin "toggle_oppacity" (
@@ -37,7 +36,6 @@ let
   );
   power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ./scripts/power-menu.sh);
   nixvim = pkgs.writeShellScriptBin "nixvim" (builtins.readFile ./scripts/nixvim.sh);
-  yazi-open = pkgs.writeShellScriptBin "yazi-open" (builtins.readFile ./scripts/yazi-open.sh);
 in
 {
   home.packages = with pkgs; [
@@ -45,7 +43,6 @@ in
     runbg
     music
     lofi
-    spicetify
 
     toggle_blur
     toggle_oppacity
@@ -74,6 +71,5 @@ in
 
     nixvim
 
-    yazi-open
   ];
 }

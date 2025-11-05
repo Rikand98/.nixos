@@ -43,7 +43,7 @@
 ## 📓 Components
 |                             | NixOS + Hyprland                                                                              |
 | --------------------------- | :---------------------------------------------------------------------------------------------:
-| **Window Manager**          | [Hyprland][Hyprland] |
+| **Window Manager**          | [Niri][Niri] |
 | **Bar**                     | [Waybar][Waybar] |
 | **Application Launcher**    | [rofi][rofi] |
 | **Notification Daemon**     | [swaync][swaync] |
@@ -211,7 +211,7 @@ Other dotfiles that I learned / copy from:
 </div>
 
 <!-- Links -->
-[Hyprland]: https://github.com/hyprwm/Hyprland
+[Niri]: https://github.com/YaLTeR/niri
 [Wezterm]: https://github.com/wezterm/wezterm
 [Starship]: https://github.com/starship/starship
 [Waybar]: https://github.com/Alexays/Waybar

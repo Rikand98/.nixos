@@ -57,11 +57,16 @@ in
       format-alt = "  {:%d/%m} ";
     };
     "niri/workspaces" = {
-      active-only = false;
+      active-only = true;
       disable-scroll = true;
       format = "{icon}";
       on-click = "activate";
       format-icons = {
+        "Browser" = "Browser";
+        "Terminal" = "Terminal";
+        "Chat" = "Chat";
+        "Game" = "Game";
+        "Music" = "Music";
         "1" = "I";
         "2" = "II";
         "3" = "III";
@@ -72,14 +77,14 @@ in
         "8" = "VIII";
         "9" = "IX";
         "10" = "X";
-        sort-by-number = true;
+        sort-by-number = false;
       };
       persistent-workspaces = {
-        "1" = [ ];
-        "2" = [ ];
-        "3" = [ ];
-        "4" = [ ];
-        "5" = [ ];
+        "Browser" = [ ];
+        "Terminal" = [ ];
+        "Chat" = [ ];
+        "Game" = [ ];
+        "Music" = [ ];
       };
     };
     cpu = {

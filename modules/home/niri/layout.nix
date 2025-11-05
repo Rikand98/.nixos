@@ -30,8 +30,23 @@
 
       focus-follows-mouse max-scroll-amount="0%"
       warp-mouse-to-focus
-  }
+    }
 
+  workspace "Terminal" {
+      open-on-output "DP-1"
+  }
+  workspace "Game" {
+      open-on-output "DP-1"
+  }
+  workspace "Browser" {
+      open-on-output "HDMI-A-1"
+  }
+  workspace "Chat" {
+      open-on-output "HDMI-A-1"
+  }
+  workspace "Music" {
+      open-on-output "HDMI-A-1"
+  }
   layout {
       gaps 1
 
@@ -66,6 +81,7 @@
           offset x=0 y=5
           color "#0007"
       }
+
 
       struts {
       }
