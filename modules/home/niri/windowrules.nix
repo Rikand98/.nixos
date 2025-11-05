@@ -1,12 +1,11 @@
 { ... }:
 ''
-  // Work around WezTerm's initial configure bug
   window-rule {
       match app-id=r#"^org\.wezfurlong\.wezterm$"#
-      default-column-width {}
+      open-maximized true
+      open-on-workspace "Terminal"
   }
 
-  // Global window styling
   window-rule {
       geometry-corner-radius 9
       clip-to-geometry true
@@ -15,33 +14,39 @@
 
   window-rule {
       match app-id=r#"^discord"#
-      default-column-width { proportion 1.0; }
+      open-maximized true
       open-on-output "HDMI-A-1"
       opacity 0.98
+      open-on-workspace "Chat"
   }
   window-rule {
       match app-id=r#"^spotify"#
-      default-column-width { proportion 1.0; }
+      open-maximized true
       open-on-output "HDMI-A-1"
       opacity 0.98
+      open-on-workspace "Music"
   }
 
   window-rule {
       match app-id=r#"^steam"#
       open-on-output "DP-1"
-      open-fullscreen true
+      open-maximized true
+      open-on-workspace "Game"
   }
   window-rule {
       match app-id=r#"^lutris"#
       open-on-output "DP-1"
-      open-fullscreen true
+      open-maximized true
+      open-on-workspace "Game"
   }
 
   // Zen Browser and Zed settings
   window-rule {
       match app-id=r#"^(zen-beta|dev\.zed\.Zed)$"#
       opacity 0.98
-      default-column-width { proportion 1.0; }
+      open-maximized true
+      open-on-output "HDMI-A-1"
+      open-on-workspace "Browser"
   }
 
 ''
