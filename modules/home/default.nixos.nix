@@ -23,6 +23,7 @@
     ./scripts # personal scripts
     ./spicetify.nix # spotify client
     ./starship.nix # Shell prompt
+    ./stasis.nix
     ./swaylock.nix # lock screen
     # ./swaync # notification deamon
     ./viewnior.nix # image viewer
