@@ -11,19 +11,19 @@ in
       Mod+Shift+Slash { show-hotkey-overlay; }
 
       // === Application Launchers ===
-      Mod+W { spawn "wezterm"; }
-      Mod+B { spawn "zen"; }
+      Mod+W { spawn-sh "wezterm"; }
+      Mod+B { spawn-sh "zen"; }
       Mod+R { spawn-sh "fuzzel"; }
       Mod+Shift+S { spawn "SoundWireServer"; }
       Mod+M { spawn "spotify"; }
       Mod+Y { spawn-sh "wezterm -e yazi"; }
-      Mod+S { spawn "steam"; }
-      Mod+A { spawn "lutris"; }
-      Mod+D { spawn "webcord"; }
-      Mod+T { spawn "thunderbird"; }
-      Mod+E { spawn "nemo"; }
-      Mod+Shift+B { spawn "toggle_waybar"; }
-      Mod+Alt+W { spawn "wallpaper-picker"; }
+      Mod+S { spawn-sh "steam"; }
+      Mod+A { spawn-sh "lutris"; }
+      Mod+D { spawn-sh "discord"; }
+      Mod+T { spawn-sh "thunderbird"; }
+      Mod+E { spawn-sh "nemo"; }
+      Mod+Shift+B { spawn-sh "toggle_waybar"; }
+      Mod+Alt+W { spawn-sh "wallpaper-picker"; }
       Mod+N { spawn-sh "swaync-client -t -sw"; }
 
       // === Security ===
