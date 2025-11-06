@@ -1,19 +1,24 @@
 { ... }:
 ''
   window-rule {
-      match app-id=r#"^org\.wezfurlong\.wezterm$"#
-      open-maximized true
-      open-on-workspace "Terminal"
-  }
-
-  window-rule {
       geometry-corner-radius 9
       clip-to-geometry true
       draw-border-with-background false
   }
-
+  window-rule {
+      match app-id=r#"^org\.wezfurlong\.wezterm$"#
+      open-maximized true
+      open-on-workspace "Terminal"
+  }
   window-rule {
       match app-id=r#"^webcord"#
+      open-maximized true
+      open-on-output "HDMI-A-1"
+      opacity 0.98
+      open-on-workspace "Chat"
+  }
+  window-rule {
+      match app-id=r#"^discord"#
       open-maximized true
       open-on-output "HDMI-A-1"
       opacity 0.98
@@ -26,7 +31,6 @@
       opacity 0.98
       open-on-workspace "Music"
   }
-
   window-rule {
       match app-id=r#"^steam"#
       open-on-output "DP-1"
