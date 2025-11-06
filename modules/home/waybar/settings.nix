@@ -67,6 +67,7 @@ in
         "Chat" = "Chat";
         "Game" = "Game";
         "Music" = "Music";
+        "Settings" = "Settings";
         "1" = "I";
         "2" = "II";
         "3" = "III";
@@ -85,6 +86,7 @@ in
         "Chat" = [ ];
         "Game" = [ ];
         "Music" = [ ];
+        "Settings" = [ ];
       };
     };
     cpu = {
