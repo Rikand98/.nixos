@@ -123,7 +123,7 @@ in
         default = [ "<span foreground='${blue}'> </span>" ];
       };
       scroll-step = 2;
-      on-click = "easyeffect -t";
+      on-click = "pwvucontrol -t";
     };
     battery = {
       format = "<span foreground='${yellow}'>{icon}</span> {capacity}%";

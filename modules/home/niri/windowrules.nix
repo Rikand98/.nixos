@@ -36,8 +36,6 @@
       open-maximized true
       open-on-workspace "Game"
   }
-
-  // Zen Browser and Zed settings
   window-rule {
       match app-id=r#"^(zen-beta|dev\.zed\.Zed)$"#
       opacity 0.98
@@ -45,5 +43,18 @@
       open-on-output "HDMI-A-1"
       open-on-workspace "Browser"
   }
-
+  window-rule {
+      match app-id=r#"^pwvucontrol"#
+      open-maximized true
+      open-on-output "DP-1"
+      opacity 0.98
+      open-on-workspace "Settings"
+  }
+  window-rule {
+      match app-id=r#"^easyeffect"#
+      open-maximized true
+      open-on-output "DP-1"
+      opacity 0.98
+      open-on-workspace "Settings"
+  }
 ''

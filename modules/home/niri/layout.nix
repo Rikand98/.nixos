@@ -38,6 +38,9 @@
   workspace "Game" {
       open-on-output "DP-1"
   }
+  workspace "Settings" {
+      open-on-output "DP-1"
+  }
   workspace "Browser" {
       open-on-output "HDMI-A-1"
   }

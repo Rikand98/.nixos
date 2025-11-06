@@ -14,7 +14,6 @@ in
       Mod+W { spawn-sh "wezterm"; }
       Mod+B { spawn-sh "zen"; }
       Mod+R { spawn-sh "fuzzel"; }
-      Mod+Shift+S { spawn "SoundWireServer"; }
       Mod+M { spawn "spotify"; }
       Mod+Y { spawn-sh "wezterm -e yazi"; }
       Mod+S { spawn-sh "steam"; }
@@ -22,6 +21,8 @@ in
       Mod+D { spawn-sh "discord"; }
       Mod+T { spawn-sh "thunderbird"; }
       Mod+E { spawn-sh "nemo"; }
+      Mod+Shift+S { spawn-sh "pwvucontrol"; }
+      Mod+Alt+S { spawn-sh "easyeffect"; }
       Mod+Shift+B { spawn-sh "toggle_waybar"; }
       Mod+Alt+W { spawn-sh "wallpaper-picker"; }
       Mod+N { spawn-sh "swaync-client -t -sw"; }
@@ -103,7 +104,7 @@ in
       Mod+3 { focus-workspace "Chat"; }
       Mod+4 { focus-workspace "Game"; }
       Mod+5 { focus-workspace "Music"; }
-      Mod+6 { focus-workspace 6; }
+      Mod+6 { focus-workspace "Settings"; }
       Mod+7 { focus-workspace 7; }
       Mod+8 { focus-workspace 8; }
       Mod+9 { focus-workspace 9; }
@@ -115,7 +116,7 @@ in
       Mod+Shift+3 { move-column-to-workspace "Chat"; }
       Mod+Shift+4 { move-column-to-workspace "Game"; }
       Mod+Shift+5 { move-column-to-workspace "Music"; }
-      Mod+Shift+6 { move-column-to-workspace 6; }
+      Mod+Shift+6 { move-column-to-workspace "Settings"; }
       Mod+Shift+7 { move-column-to-workspace 7; }
       Mod+Shift+8 { move-column-to-workspace 8; }
       Mod+Shift+9 { move-column-to-workspace 9; }
