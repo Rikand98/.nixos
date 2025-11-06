@@ -22,7 +22,7 @@ in
       Mod+T { spawn-sh "thunderbird"; }
       Mod+E { spawn-sh "nemo"; }
       Mod+Shift+S { spawn-sh "pwvucontrol"; }
-      Mod+Alt+S { spawn-sh "easyeffect"; }
+      Mod+Ctrl+S { spawn-sh "easyeffect"; }
       Mod+Shift+B { spawn-sh "toggle_waybar"; }
       Mod+Alt+W { spawn-sh "wallpaper-picker"; }
       Mod+N { spawn-sh "swaync-client -t -sw"; }
