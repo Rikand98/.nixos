@@ -116,14 +116,14 @@ in
       icon-size = 20;
       spacing = 8;
     };
-    pulseaudio = {
+    pipewire = {
       format = "{icon} {volume}%";
       format-muted = "<span foreground='${blue}'> </span> {volume}%";
       format-icons = {
         default = [ "<span foreground='${blue}'> </span>" ];
       };
       scroll-step = 2;
-      on-click = "pamixer -t";
+      on-click = "easyeffect -t";
     };
     battery = {
       format = "<span foreground='${yellow}'>{icon}</span> {capacity}%";

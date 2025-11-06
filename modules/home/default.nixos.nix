@@ -24,7 +24,6 @@
     ./spicetify.nix # spotify client
     ./starship.nix # Shell prompt
     ./swaylock.nix # lock screen
-    # ./swaync # notification deamon
     ./viewnior.nix # image viewer
     ./waybar # status bar
     ./waypaper.nix # GUI wallpaper setter for Wayland

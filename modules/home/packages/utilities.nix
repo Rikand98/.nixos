@@ -9,7 +9,7 @@
       fd # find replacement
       file # File info
       mimeo # Open files by MIME type
-      # playerctl # Controller for media players
+      playerctl # Controller for media players
       ripgrep # grep replacement
       gtrash # Trash manager (replacement for rm)
       wl-clipboard # Wayland clipboard utils
@@ -24,9 +24,7 @@
 
       # Maintenance
       bleachbit # Cache cleaner
-      pavucontrol # PulseAudio control
       soundwireserver # Sound server tools
-      # deskflow # Software kvm
       input-leap
       libei # For deskflow
       libportal # For deskflow
