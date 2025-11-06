@@ -11,13 +11,6 @@
       open-on-workspace "Terminal"
   }
   window-rule {
-      match app-id=r#"^webcord"#
-      open-maximized true
-      open-on-output "HDMI-A-1"
-      opacity 0.98
-      open-on-workspace "Chat"
-  }
-  window-rule {
       match app-id=r#"^discord"#
       open-maximized true
       open-on-output "HDMI-A-1"

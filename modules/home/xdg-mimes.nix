@@ -12,7 +12,7 @@ let
     pdf = [ "org.pwmt.zathura.desktop" ];
     terminal = [ "wezterm.desktop" ];
     archive = [ "org.gnome.FileRoller.desktop" ];
-    discord = [ "webcord.desktop" ];
+    discord = [ "discord.desktop" ];
   };
 
   mimeMap = {
@@ -75,7 +75,7 @@ let
       "application/7z"
       "application/*tar"
     ];
-    discord = [ "x-scheme-handler/webcord" ];
+    discord = [ "x-scheme-handler/discord" ];
   };
 
   associations =
