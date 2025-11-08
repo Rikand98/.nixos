@@ -54,7 +54,7 @@
       open-on-workspace "Settings"
   }
   window-rule {
-      match app-id=r#"^easyeffect"#
+      match app-id=r#"^easyeffects"#
       open-maximized true
       open-on-output "DP-1"
       opacity 0.98
