@@ -8,6 +8,7 @@
   window-rule {
       match app-id=r#"^org\.wezfurlong\.wezterm$"#
       open-maximized true
+      open-focused true
       open-on-workspace "Terminal"
   }
   window-rule {
@@ -28,12 +29,14 @@
       match app-id=r#"^steam"#
       open-on-output "DP-1"
       open-maximized true
+      open-focused true
       open-on-workspace "Game"
   }
   window-rule {
       match app-id=r#"^lutris"#
       open-on-output "DP-1"
       open-maximized true
+      open-focused true
       open-on-workspace "Game"
   }
   window-rule {
