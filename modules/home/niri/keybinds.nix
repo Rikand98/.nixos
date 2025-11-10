@@ -18,6 +18,7 @@ in
       Mod+Y { spawn-sh "wezterm -e yazi"; }
       Mod+S { spawn-sh "steam"; }
       Mod+A { spawn-sh "lutris"; }
+      Mod+P { spawn-sh "prismlauncher"; }
       Mod+D { spawn-sh "discord"; }
       Mod+T { spawn-sh "thunderbird"; }
       Mod+E { spawn-sh "nemo"; }

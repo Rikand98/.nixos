@@ -22,7 +22,7 @@
           natural-scroll
       }
       mouse {
-          accel-profile "falt"
+          accel-profile "flat"
           accel-speed 0.0
       }
       trackpoint {

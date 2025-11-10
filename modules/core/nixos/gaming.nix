@@ -6,6 +6,7 @@
     rivalcfg
     dxvk
     lutris
+    prismlauncher
   ];
   services.udev.packages = [
     (pkgs.writeTextFile {

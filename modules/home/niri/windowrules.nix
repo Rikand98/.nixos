@@ -40,6 +40,13 @@
       open-on-workspace "Game"
   }
   window-rule {
+      match app-id=r#"^prismlauncher"#
+      open-on-output "DP-1"
+      open-maximized true
+      open-focused true
+      open-on-workspace "Game"
+  }
+  window-rule {
       match app-id=r#"^(zen-beta|dev\.zed\.Zed)$"#
       opacity 0.98
       open-maximized true
