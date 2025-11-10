@@ -48,7 +48,7 @@ in
     spawn-sh-at-startup "waypaper --wallpaper ~/Pictures/Wallpapers/forest_pastel.png";
     spawn-sh-at-startup "swayidle timeout 300 swaylock -f";
     spawn-sh-at-startup "niri msg setcursor 'Capitaine Cursors (Gruvbox)' 24&"
-    spawn-at-startup "easyeffects"
+    spawn-at-startup "easyeffects --gapplication-service"
     spawn-at-startup "waybar"
     spawn-at-startup "swaync"
     spawn-at-startup "hyprlock"
