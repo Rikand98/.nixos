@@ -22,11 +22,11 @@ in
       Mod+D { spawn-sh "discord"; }
       Mod+T { spawn-sh "thunderbird"; }
       Mod+E { spawn-sh "nemo"; }
-      Mod+Shift+S { spawn-sh "pwvucontrol"; }
-      Mod+Ctrl+S { spawn-sh "easyeffects"; }
+      Mod+Z { spawn-sh "missioncenter"; }
+      Mod+X { spawn-sh "pwvucontrol"; }
       Mod+Shift+B { spawn-sh "toggle_waybar"; }
       Mod+Alt+W { spawn-sh "wallpaper-picker"; }
-      Mod+N { spawn-sh "swaync-client -t -sw"; }
+      Mod+N { spawn-sh "mako -t -sw"; }
 
       // === Security ===
       Mod+Escape { spawn "swaylock"; }
