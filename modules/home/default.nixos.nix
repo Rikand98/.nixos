@@ -15,7 +15,6 @@
     ./hyprlock.nix
     ./mako.nix
     ./micro.nix # nano replacement
-    ./minion.nix
     ./nemo.nix # file manager
     ./niri
     ./nix-search # TUI to search nixpkgs
