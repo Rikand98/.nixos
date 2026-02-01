@@ -8,6 +8,7 @@
       mode "2560x1440@200"
       scale 1.0
       transform "normal"
+      enable-hdr
       focus-at-startup
   }
 

@@ -63,7 +63,6 @@ in
 
       ${hostWindowRules}
 
-
     cursor {
     xcursor-theme "Capitaine Cursors (Gruvbox)"
     xcursor-size 24
