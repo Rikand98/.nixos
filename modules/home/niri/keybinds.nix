@@ -24,7 +24,6 @@ in
       Mod+E { spawn-sh "nemo"; }
       Mod+Z { spawn-sh "missioncenter"; }
       Mod+X { spawn-sh "pwvucontrol"; }
-      Mod+Ctrl+X { spawn-sh "easyeffects"; }
       Mod+Shift+B { spawn-sh "toggle_waybar"; }
       Mod+Alt+W { spawn-sh "wallpaper-picker"; }
       Mod+N { spawn-sh "mako -t -sw"; }
@@ -35,6 +34,7 @@ in
       Mod+Shift+Q { quit; }
 
       // === Audio Controls ===
+      Mod+Shift+M { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
       XF86AudioPlay { spawn "playerctl" "play-pause"; }
       XF86AudioNext { spawn "playerctl" "next"; }
       XF86AudioPrev { spawn "playerctl" "previous"; }
