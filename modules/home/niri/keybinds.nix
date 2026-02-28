@@ -34,7 +34,7 @@ in
       Mod+Shift+Q { quit; }
 
       // === Audio Controls ===
-      Mod+Shift+M { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+      Mod+Shift+M { spawn "mic-toggle"; }
       XF86AudioPlay { spawn "playerctl" "play-pause"; }
       XF86AudioNext { spawn "playerctl" "next"; }
       XF86AudioPrev { spawn "playerctl" "previous"; }

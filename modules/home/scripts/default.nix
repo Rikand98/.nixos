@@ -3,7 +3,7 @@ let
 
   runbg = pkgs.writeShellScriptBin "runbg" (builtins.readFile ./scripts/runbg.sh);
   music = pkgs.writeShellScriptBin "music" (builtins.readFile ./scripts/music.sh);
-  mic-toggle = pkgs.writeShellScriptBin "music" (builtins.readFile ./scripts/mic-toggle.sh);
+  mic-toggle = pkgs.writeShellScriptBin "mic-toggle" (builtins.readFile ./scripts/mic-toggle.sh);
   lofi = pkgs.writeScriptBin "lofi" (builtins.readFile ./scripts/lofi.sh);
 
   toggle_blur = pkgs.writeScriptBin "toggle_blur" (builtins.readFile ./scripts/toggle_blur.sh);
