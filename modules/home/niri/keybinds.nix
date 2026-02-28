@@ -24,6 +24,7 @@ in
       Mod+E { spawn-sh "nemo"; }
       Mod+Z { spawn-sh "missioncenter"; }
       Mod+X { spawn-sh "pwvucontrol"; }
+      Mod+Ctrl+X { spawn-sh "easyeffects"; }
       Mod+Shift+B { spawn-sh "toggle_waybar"; }
       Mod+Alt+W { spawn-sh "wallpaper-picker"; }
       Mod+N { spawn-sh "mako -t -sw"; }
