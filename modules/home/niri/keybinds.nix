@@ -11,9 +11,9 @@ in
       Mod+Shift+Slash { show-hotkey-overlay; }
 
       // === Application Launchers ===
+      Mod+Space { spawn-sh "fuzzel"; }
       Mod+W { spawn-sh "wezterm"; }
-      Mod+B { spawn-sh "zen"; }
-      Mod+R { spawn-sh "fuzzel"; }
+      Mod+B { spawn-sh "zen browser"; }
       Mod+M { spawn "spotify"; }
       Mod+Y { spawn-sh "wezterm -e yazi"; }
       Mod+S { spawn-sh "steam"; }
@@ -47,7 +47,6 @@ in
       Mod+Q { close-window; }
       Mod+Shift+F { fullscreen-window; }
       Mod+F { maximize-column; }
-      Mod+Space { toggle-window-floating; }
 
       // === Focus Navigation ===
       Mod+Ctrl+Left { focus-column-left; }

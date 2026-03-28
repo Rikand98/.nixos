@@ -6,6 +6,9 @@
     rivalcfg
     dxvk
     lutris
+    minion
+    glib
+    gsettings-desktop-schemas
   ];
   services.udev.packages = [
     (pkgs.writeTextFile {

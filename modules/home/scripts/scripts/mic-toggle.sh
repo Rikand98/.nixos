@@ -8,8 +8,8 @@ STATUS=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@)
 
 if echo "$STATUS" | grep -q '[MUTED]'; then
     espeak "Microphone muted" | paplay -
-    notify-send -u normal -t 5000 "Microphone Status" "Muted" -i microphone-sensitivity-muted-symbolic
+    notify-send -u critical -t 5000 "Microphone Status" "<span foreground='red'><b>Muted</b></span>" -i microphone-sensitivity-muted-symbolic
 else
     espeak "Microphone active" | paplay -
-    notify-send -u normal -t 5000 "Microphone Status" "Active" -i microphone-sensitivity-high-symbolic
+    notify-send -u normal -t 5000 "Microphone Status" "<span foreground='green'><b>Active</b></span>" -i microphone-sensitivity-high-symbolic
 fi

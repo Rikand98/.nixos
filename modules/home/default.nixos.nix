@@ -20,8 +20,8 @@
     ./nix-search # TUI to search nixpkgs
     ./nixvim # nixvim editor
     ./packages
+    ./qobuz.nix # Music
     ./scripts # personal scripts
-    ./spicetify.nix # spotify client
     ./starship.nix # Shell prompt
     ./swaylock.nix # lock screen
     ./viewnior.nix # image viewer

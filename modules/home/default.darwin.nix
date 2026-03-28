@@ -12,7 +12,7 @@
     ./nix-search
     ./nixvim # Nixvim editor
     ./packages
-    ./spicetify.nix # spotify client
+    ./qobuz.nix # Music
     ./starship.nix # Shell prompt
     ./yazi # Terminal filesystem
     ./wezterm.nix

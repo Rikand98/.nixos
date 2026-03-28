@@ -3,6 +3,9 @@
   home.packages = (
     with pkgs;
     [
+      #Terminal AI coding agent
+      opencode
+
       # C/C++ Development
       ninja
       gcc
@@ -10,20 +13,21 @@
       gnumake
       valgrind
 
+      # Zig
+      zig
+      zigfetch
+
       # Python
       python3
+      python314Packages.ipython
+      pipx
       uv
+
+      # Rust
+      rustup
 
       # GoLang
       go
-
-      # Flutter & Dart
-      flutter
-
-      # Android Development
-      # android-studio
-      # firebase-tools
-      # google-cloud-sdk
 
       # Git & Git-related utilities
       onefetch
