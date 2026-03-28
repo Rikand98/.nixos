@@ -14,7 +14,8 @@ in
       Mod+Space { spawn-sh "fuzzel"; }
       Mod+W { spawn-sh "wezterm"; }
       Mod+B { spawn-sh "zen browser"; }
-      Mod+M { spawn "spotify"; }
+      Mod+M { spawn-sh "wezterm -e qobux-palyer"; }
+      Mod+Shift+M { spawn-sh "wezterm -e streamrip"; }
       Mod+Y { spawn-sh "wezterm -e yazi"; }
       Mod+S { spawn-sh "steam"; }
       Mod+A { spawn-sh "lutris"; }
