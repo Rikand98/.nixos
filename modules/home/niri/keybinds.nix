@@ -12,23 +12,10 @@ in
 
       // === Application Launchers ===
       Mod+Space { spawn-sh "fuzzel"; }
-      Mod+W { spawn-sh "wezterm"; }
-      Mod+B { spawn-sh "zen browser"; }
-      Mod+M { spawn-sh "wezterm -e qobux-palyer"; }
-      Mod+Shift+M { spawn-sh "wezterm -e streamrip"; }
-      Mod+Y { spawn-sh "wezterm -e yazi"; }
-      Mod+S { spawn-sh "steam"; }
-      Mod+A { spawn-sh "lutris"; }
-      Mod+P { spawn-sh "prismlauncher"; }
-      Mod+D { spawn-sh "discord"; }
-      Mod+T { spawn-sh "thunderbird"; }
-      Mod+E { spawn-sh "nemo"; }
+      Mod+Shift+B { spawn-sh "toggle_waybar"; }
       Mod+Z { spawn-sh "missioncenter"; }
       Mod+X { spawn-sh "pwvucontrol"; }
       Mod+Ctrl+X { spawn-sh "easyeffects"; }
-      Mod+Shift+B { spawn-sh "toggle_waybar"; }
-      Mod+Alt+W { spawn-sh "wallpaper-picker"; }
-      Mod+N { spawn-sh "mako -t -sw"; }
 
       // === Security ===
       Mod+Escape { spawn "swaylock"; }
