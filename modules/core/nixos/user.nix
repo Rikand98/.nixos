@@ -21,7 +21,7 @@
       imports = [ ./../../home/default.nixos.nix ];
       home.username = "${username}";
       home.homeDirectory = "/home/${username}";
-      home.stateVersion = "26.05";
+      home.stateVersion = "26.11";
       programs.home-manager.enable = true;
     };
   };

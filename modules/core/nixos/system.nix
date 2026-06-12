@@ -19,6 +19,14 @@
     optimise.automatic = true;
   };
   nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate =
+        pkg:
+        builtins.elem (lib.getName pkg) [
+          "scope.nvim"
+        ];
+    };
     overlays = [
       inputs.nur.overlays.default
     ];
@@ -34,6 +42,5 @@
 
   time.timeZone = "Europe/Stockholm";
   i18n.defaultLocale = "en_US.UTF-8";
-  nixpkgs.config.allowUnfree = true;
-  system.stateVersion = "26.05";
+  system.stateVersion = "26.11";
 }
