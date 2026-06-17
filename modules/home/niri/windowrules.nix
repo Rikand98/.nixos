@@ -12,7 +12,7 @@
       open-on-workspace "Terminal"
   }
   window-rule {
-      match app-id=r#"discord"#
+      match app-id=r#"discord\vesktop"#
       open-maximized true
       open-on-output "HDMI-A-1"
       opacity 0.98
