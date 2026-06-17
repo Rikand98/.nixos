@@ -99,7 +99,7 @@ rules = [
 		"reveal",
 	] },
 	# Fallback
-	{ name = "*", use = [
+	{ mime = "*/", use = [
 		"open",
 		"reveal",
 	] },
@@ -154,7 +154,7 @@ previewers = [
 	# Empty file
 	{ mime = "inode/x-empty", run = "empty" },
 	# Fallback
-	{ name = "*", run = "file" },
+	{ mime = "/*", run = "file" },
 ]
 
 [input]

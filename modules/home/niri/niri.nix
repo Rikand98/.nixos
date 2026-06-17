@@ -25,7 +25,7 @@ in
 {
   home.packages = with pkgs; [
     niri
-    swww
+    awww
     grim
     slurp
     wl-clip-persist
@@ -37,14 +37,14 @@ in
     swappy
     xdg-desktop-portal-gnome
     xwayland-satellite
-    wineWowPackages.wayland
+    wineWow64Packages.wayland
   ];
   xdg.configFile."niri/config.kdl".text = ''
 
     spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP";
     spawn-sh-at-startup "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP";
-    spawn-sh-at-startup "swww-daemon";
-    spawn-sh-at-startup "sh -c swww init && swww img $(find ~/Pictures/Wallpapers/ -maxdepth 1 -type f | shuf -n 1) --transition-type none";
+    spawn-sh-at-startup "awww-daemon";
+    spawn-sh-at-startup "sh -c awww init && awww img $(find ~/Pictures/Wallpapers/ -maxdepth 1 -type f | shuf -n 1) --transition-type none";
     spawn-sh-at-startup "waypaper --wallpaper ~/Pictures/Wallpapers/forest_pastel.png";
     spawn-sh-at-startup "swayidle timeout 300 swaylock -f";
     spawn-sh-at-startup "niri msg setcursor 'Capitaine Cursors (Gruvbox)' 24&"

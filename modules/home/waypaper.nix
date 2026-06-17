@@ -7,7 +7,7 @@
     language = en
     folder = ${config.home.homeDirectory}/Pictures/wallpapers
     monitors = All
-    backend = swww
+    backend = awww
     fill = fill
     sort = name
     color = #ffffff
@@ -15,11 +15,11 @@
     show_hidden = False
     show_gifs_only = False
     number_of_columns = 3
-    swww_transition_type = any
-    swww_transition_step = 90
-    swww_transition_angle = 0
-    swww_transition_duration = 2
-    swww_transition_fps = 200
+    awww_transition_type = any
+    awww_transition_step = 90
+    awww_transition_angle = 0
+    awww_transition_duration = 2
+    awww_transition_fps = 200
     use_xdg_state = False
   '';
 }

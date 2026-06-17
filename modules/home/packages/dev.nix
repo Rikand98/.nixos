@@ -13,6 +13,9 @@
       gnumake
       valgrind
 
+      #java
+      jdk
+
       # Zig
       zig
       zigfetch

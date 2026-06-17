@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   programs.nixvim.plugins = {
     treesitter = {
@@ -8,7 +8,7 @@
         highlight.enable = true;
         indent.enable = true;
       };
-      folding = false;
+      folding.enable = false;
       nixvimInjections = true;
       grammarPackages = pkgs.vimPlugins.nvim-treesitter.allGrammars;
     };

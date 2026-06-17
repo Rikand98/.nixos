@@ -68,7 +68,7 @@
               "prettier"
             ];
             nix = [
-              "nixfmt-rfc-style"
+              "nixfmt"
             ];
             python = [
               "black"
@@ -153,8 +153,8 @@
             prettier = {
               command = lib.getExe pkgs.prettierd;
             };
-            nixfmt-rfc-style = {
-              command = lib.getExe pkgs.nixfmt-rfc-style;
+            nixfmt = {
+              command = lib.getExe pkgs.nixfmt;
             };
             black = {
               command = lib.getExe pkgs.python3Packages.black;
