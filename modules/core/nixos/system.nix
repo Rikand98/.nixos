@@ -38,6 +38,7 @@
     lazygit
     appimage-run
     zip
+    unrar
   ];
 
   time.timeZone = "Europe/Stockholm";

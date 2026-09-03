@@ -1,6 +1,5 @@
 { pkgs, ... }:
 let
-  # Build the wayland-push-to-talk-fix binary from source
   wayland-ptt-fix = pkgs.stdenv.mkDerivation {
     pname = "wayland-push-to-talk-fix";
     version = "unstable-2024";
@@ -8,8 +7,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "Rush";
       repo = "wayland-push-to-talk-fix";
-      rev = "main"; # Or a specific commit hash if you prefer
-      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # Run rebuilding once, Nix will tell you the correct hash!
+      rev = "main";
+      sha256 = "sha256-nvoeeOVBVm0GhTpsf8LkYUBXeRWDqdWuEO9FV8La13g="; # Updated with the correct hash for Rush/wayland-push-to-talk-fix
     };
 
     nativeBuildInputs = [
@@ -17,9 +16,12 @@ let
       pkgs.gnumake
       pkgs.gcc
     ];
+
+    # Added xorg.libX11 here to fix the missing X11/Xlib.h compiler error
     buildInputs = [
       pkgs.libevdev
       pkgs.xdotool
+      pkgs.xorg.libX11
     ];
 
     installPhase = ''
@@ -30,7 +32,6 @@ let
 in
 {
   home.packages = with pkgs; [
-    vesktop
-    wayland-ptt-fix # Installs your freshly built binary
+    wayland-ptt-fix
   ];
 }

@@ -7,6 +7,7 @@
     rivalcfg
     dxvk
     lutris
+    umu-launcher
     minion
     glib
     gsettings-desktop-schemas
