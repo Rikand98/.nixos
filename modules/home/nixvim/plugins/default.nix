@@ -2,22 +2,28 @@
   imports = [
     ./lsp
     # ./barbar.nix
+    ./blink-cmp.nix
+    ./bufferline.nix
     ./conform-nvim.nix
-    ./coq-nvim.nix
     ./dashboard.nix
+    ./dap.nix
+    ./dial.nix
     ./fidget.nix
     ./fzf-lua.nix
-    #./harpoon.nix
+    ./harpoon.nix
     ./inc-rename.nix
     ./indent-o-matic.nix
+    ./lint.nix
     ./lualine.nix
     ./mini.nix
+    ./neoconf.nix
+    ./neotest.nix
     ./noice.nix
-    ./none-ls.nix
     ./nui.nix
     ./nvim-bqf.nix
     ./persistence.nix
     ./project-nvim.nix
+    ./r-nvim.nix
     # ./scope.nix
     ./todo-comments.nix
     ./toggleterm.nix
@@ -31,8 +37,6 @@
   ];
 
   programs.nixvim = {
-    colorschemes.gruvbox.enable = true;
-
     plugins = {
       web-devicons.enable = true;
 

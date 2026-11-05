@@ -1,13 +1,6 @@
 {
-  programs.nixvim.plugins.lsp.servers = {
-    rust_analyzer = {
-      enable = true;
-      installCargo = true;
-      installRustc = true;
-      settings = {
-      	cargo = { allFeatures = true; };
-      };
-      };
-    };
+  programs.nixvim.plugins = {
+    rustaceanvim.enable = true;
+    crates.enable = true;
+  };
 }
-

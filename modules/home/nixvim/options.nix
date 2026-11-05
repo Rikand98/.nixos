@@ -15,7 +15,7 @@
     };
 
     opts = {
-      updatetime = 100; # Faster completion
+      updatetime = 50; # Faster completion
 
       # Line numbers
       relativenumber = true; # Relative line numbers
@@ -31,7 +31,7 @@
       modelines = 100; # Sets the type of modelines
       undofile = true; # Automatically save and restore undo history
       incsearch = true; # Incremental search: show match for partly typed search command
-      inccommand = "split"; # Search and replace: preview changes in quickfix list
+      inccommand = "nosplit"; # Search and replace: preview changes in the current window
       ignorecase = true; # When the search query is lower-case, match both lower and upper-case
       #   patterns
       smartcase = true; # Override the 'ignorecase' option if the search pattern contains upper
@@ -40,7 +40,6 @@
       cursorline = true; # Highlight the screen line of the cursor
       cursorcolumn = false; # Highlight the screen column of the cursor
       signcolumn = "yes"; # Whether to show the signcolumn
-      colorcolumn = "100"; # Columns to highlight
       laststatus = 3; # When to use a status line for the last window
       fileencoding = "utf-8"; # File-content encoding for the current buffer
       termguicolors = true; # Enables 24-bit RGB color in the |TUI|
@@ -48,10 +47,11 @@
       wrap = false; # Prevent text from wrapping
 
       # Tab options
-      tabstop = 4; # Number of spaces a <Tab> in the text stands for (local to buffer)
-      shiftwidth = 4; # Number of spaces used for each step of (auto)indent (local to buffer)
+      tabstop = 2; # Number of spaces a <Tab> in the text stands for (local to buffer)
+      shiftwidth = 2; # Number of spaces used for each step of (auto)indent (local to buffer)
+      softtabstop = 2; # Number of spaces a <Tab> counts for while editing (local to buffer)
       expandtab = true; # Expand <Tab> to spaces in Insert mode (local to buffer)
-      autoindent = true; # Do clever autoindenting
+      smartindent = true; # Do clever autoindenting
 
       textwidth = 0; # Maximum width of text that is being inserted.  A longer line will be
       #   broken after white space to get this width.
