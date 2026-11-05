@@ -1,14 +1,21 @@
 {
   imports = [
- 	./dart.nix
-	./git.nix
-	./json.nix
-	./nix.nix
-	./python.nix
-	./rust.nix
-	./tex.nix
-	./toml.nix
-	./yaml.nix
+    ./dart.nix
+    ./git.nix
+    ./java.nix
+    ./json.nix
+    ./lua.nix
+    ./markdown.nix
+    ./nix.nix
+    ./python.nix
+    ./r.nix
+    ./rust.nix
+    ./sql.nix
+    ./tex.nix
+    ./toml.nix
+    ./typescript.nix
+    ./yaml.nix
+    ./zig.nix
   ];
 
   programs.nixvim = {

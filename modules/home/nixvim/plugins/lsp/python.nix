@@ -1,12 +1,19 @@
 {
   programs.nixvim.plugins.lsp.servers = {
     ruff.enable = true;
-    pyright = {
-      enable = true;
-      settings = {
-        pyright.disableOrganizeImports = true;
-        python.analysis.ignore = [ "*" ];
-      };
-    };
+    pyrefly.enable = true;
   };
+
+  programs.nixvim.plugins.venv-selector.enable = true;
+
+  programs.nixvim.keymaps = [
+    {
+      mode = [ "n" ];
+      key = "<leader>cv";
+      action = "<cmd>VenvSelect<cr>";
+      options = {
+        desc = "Select VirtualEnv";
+      };
+    }
+  ];
 }

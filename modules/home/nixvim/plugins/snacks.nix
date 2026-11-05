@@ -7,7 +7,7 @@
         enabled = true;
       };
       bufdelete = {
-          enabled = false;
+          enabled = true;
         };
       notifier = {
         enabled = true;

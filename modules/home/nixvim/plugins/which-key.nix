@@ -15,6 +15,14 @@
           icon = "";
         }
         {
+          __unkeyed = "<leader>c";
+          group = "Code";
+        }
+        {
+          __unkeyed = "<leader>d";
+          group = "Debug";
+        }
+        {
           __unkeyed = "<leader>g";
           group = "Git";
         }
@@ -23,17 +31,33 @@
           group = "Find";
         }
         {
+          __unkeyed = "<leader>q";
+          group = "Session/Quit";
+        }
+        {
           __unkeyed = "<leader>r";
           group = "Refactor";
           icon = " ";
         }
         {
+          __unkeyed = "<leader>s";
+          group = "Search";
+        }
+        {
           __unkeyed = "<leader>t";
+          group = "Test";
+        }
+        {
+          __unkeyed = "<leader>T";
           group = "Terminal";
         }
         {
           __unkeyed = "<leader>u";
           group = "UI/UX";
+        }
+        {
+          __unkeyed = "<leader>x";
+          group = "Diagnostics/Quickfix";
         }
       ];
 
