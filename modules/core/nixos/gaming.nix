@@ -11,6 +11,8 @@
     minion
     glib
     gsettings-desktop-schemas
+    webkitgtk_4_1
+    satisfactorymodmanager
   ];
   services.udev.packages = [
     (pkgs.writeTextFile {
