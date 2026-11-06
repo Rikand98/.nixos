@@ -1,26 +1,24 @@
-{ self, pkgs, lib, inputs,username, ... }:
+{ pkgs, username, ... }:
 {
   nix = {
-    settings = {
-      nix.optimise.automatic = true;
-      experimental-features = [ "nix-command" "flakes" ];
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    optimise.automatic = true;
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 14d";
     };
   };
 
   system.stateVersion = 6;
   system.primaryUser = "${username}";
 
-  nixpkgs = {
-    overlays = [
-      inputs.nur.overlays.default # Ensure `nur` is defined in flake.nix inputs
-    ];
-    config.allowUnfree = true; # Allow proprietary packages
-    config.allowUnsupportedSystem = true;
-  };
+  nixpkgs.config.allowUnfree = true; # Allow proprietary packages
 
   environment.systemPackages = with pkgs; [
     git # Essential for repo management
-    # wget moved to network.nix to avoid redundancy
   ];
 
   time.timeZone = "Europe/Stockholm";

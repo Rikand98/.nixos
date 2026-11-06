@@ -1,8 +1,9 @@
 { ... }:
 {
   security.rtkit.enable = true;
-  security.sudo.enable = true;
-  security.pam.services.gdm-password.enableGnomeKeyring = true;
+  # You run LightDM (auto-enabled by services.xserver), not GDM — keyring
+  # unlock must hook the service that actually authenticates the login.
+  security.pam.services.lightdm.enableGnomeKeyring = true;
+  security.pam.services.lightdm-autologin.enableGnomeKeyring = true;
   security.pam.services.swaylock = { };
-  # security.pam.services.hyprlock = {};
 }

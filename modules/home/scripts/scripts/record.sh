@@ -59,7 +59,7 @@ stop() {
   if is_recorder_running; then
     kill $(pgrep -x wf-recorder)
 
-    if [[ -f /tmp/recording_gif ]] then
+    if [[ -f /tmp/recording_gif ]]; then
       notify "Stopped Recording" "Starting GIF conversion phase..."
       FILENAME+="gif"
       convert_to_gif

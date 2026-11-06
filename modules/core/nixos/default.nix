@@ -1,15 +1,6 @@
 {
-  inputs,
-  nixpkgs,
-  self,
-  username,
-  host,
-  ...
-}:
-{
   imports = [
     ./bootloader.nix
-    # ./database.nix
     ./flatpak.nix
     ./gaming.nix
     ./network.nix

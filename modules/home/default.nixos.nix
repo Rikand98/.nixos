@@ -1,8 +1,7 @@
 {
   imports = [
     ./bat.nix # better cat command
-    ./btop.nix # resouces monitor
-    ./bottom.nix # resouces monitor
+    ./btop.nix # resources monitor
     ./cava.nix # audio visualizer
     ./communication # discord with gruvbox + teamspeak6
     ./fastfetch.nix # fetch tool
@@ -12,7 +11,6 @@
     ./git.nix # version control
     ./gnome.nix # gnome apps
     ./gtk.nix # gtk theme
-    ./hyprlock.nix
     ./mako.nix
     ./micro.nix # nano replacement
     ./nemo.nix # file manager

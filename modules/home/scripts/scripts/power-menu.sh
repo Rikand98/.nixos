@@ -1,3 +1,19 @@
 #!/usr/bin/env bash
 
-rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 10em; height: 15em;} listview {lines: 5;}'
+# Fuzzel-based power menu (fuzzel is the only launcher on this system).
+
+choice=$(printf '%s\n' \
+  "󰐥  Shutdown" \
+  "  Restart" \
+  "  Suspend" \
+  "󰌾  Lock" \
+  "󰍃  Logout" \
+  | fuzzel --dmenu --prompt "" --lines 5)
+
+case "$choice" in
+  *Shutdown) systemctl poweroff ;;
+  *Restart)  systemctl reboot ;;
+  *Suspend)  systemctl suspend ;;
+  *Lock)     swaylock ;;
+  *Logout)   niri msg action quit ;;
+esac

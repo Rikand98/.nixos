@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ ... }:
 {
   programs.dconf.enable = true;
   programs.fish.enable = true;
@@ -7,8 +7,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    # pinentryFlavor = "";
   };
+  # nix-ld appends its own default library list; an empty list here is a no-op.
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [ ];
 }

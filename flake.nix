@@ -12,20 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprlock = {
-      url = "github:hyprwm/hyprlock";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
-    };
-
-    niri = {
-      url = "github:YaLTeR/niri";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nur.url = "github:nix-community/NUR";
-
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,11 +25,6 @@
     };
 
     flake-utils.url = "github:numtide/flake-utils";
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -52,8 +33,6 @@
       nix-darwin,
       home-manager,
       flake-utils,
-      self,
-      sops-nix,
       ...
     }@inputs:
     let
@@ -77,33 +56,20 @@
           buildInputs = with pkgs; [
             just
             nil
-            nixpkgs-fmt
-            (lib.optionalAttrs (system == "aarch64-darwin") darwin.apple_sdk.frameworks.SystemConfiguration)
+            nixfmt
           ];
         };
+
+        formatter = pkgs.nixfmt;
       }
     )
     // {
       # ── NixOS (Linux) ─────────────────────────────────────────────────────
+      # home-manager is wired up in modules/core/nixos/user.nix
       nixosConfigurations = {
         home-desktop = nixpkgs.lib.nixosSystem {
           system = system_1;
-          modules = [
-            ./hosts/${hostname_1}
-            home-manager.nixosModules.home-manager
-            sops-nix.nixosModules.sops
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                inherit
-                  inputs
-                  username
-                  user_info
-                  ;
-              };
-            }
-          ];
+          modules = [ ./hosts/${hostname_1} ];
           specialArgs = {
             inherit
               inputs
@@ -117,21 +83,11 @@
       };
 
       # ── Darwin (macOS) ───────────────────────────────────────────────────
+      # home-manager is wired up in modules/core/darwin/user.nix
       darwinConfigurations = {
         lysio-macbook = nix-darwin.lib.darwinSystem {
           system = system_2;
-          modules = [
-            ./hosts/${hostname_2}
-            home-manager.darwinModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                hostname = hostname_2;
-                inherit inputs username user_info;
-              };
-            }
-          ];
+          modules = [ ./hosts/${hostname_2} ];
           specialArgs = {
             hostname = hostname_2;
             system = system_2;
@@ -139,7 +95,5 @@
           };
         };
       };
-
-      formatter = nixpkgs.legacyPackages.x86_64-linux.nixfmt;
     };
 }

@@ -1,8 +1,5 @@
 { pkgs, hostname, ... }:
 {
-  # imports = [
-  #   ./wireguard.nix
-  # ];
   networking = {
     hostName = "${hostname}";
     networkmanager.enable = true;
@@ -13,21 +10,13 @@
     ];
     firewall = {
       enable = true;
+      # Dev ports live on the Tailscale interface only, not the LAN.
+      trustedInterfaces = [ "tailscale0" ];
       allowedTCPPorts = [
-        22
         80
         443
-        59010
-        59011
-        8000
-        8001
-        8002
-        24800
       ];
-      allowedUDPPorts = [
-        59010
-        59011
-      ];
+      allowedUDPPorts = [ ];
     };
   };
 

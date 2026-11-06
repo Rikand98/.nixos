@@ -1,22 +1,22 @@
-{ pkgs, inputs, username, hostname, ... }:
+{ pkgs, inputs, username, hostname, user_info, ... }:
 {
-  imports = [ inputs.home-manager.darwinModules.home-manager ]; # Use Darwin-specific module for clarity
+  imports = [ inputs.home-manager.darwinModules.home-manager ];
 
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs username hostname; };
+    extraSpecialArgs = { inherit inputs username hostname user_info; };
     users.${username} = {
       imports = [ ./../../home/default.darwin.nix ];
       home.username = "${username}";
       home.homeDirectory = "/Users/${username}";
-      home.stateVersion = "25.05"; # Set to match nixpkgs version (check flake.lock)
+      home.stateVersion = "25.05"; # Install-time version — do not bump
       programs.home-manager.enable = true;
     };
   };
   users.users.${username} = {
     name = "${username}";
     home = "/Users/${username}";
-    shell = pkgs.fish; # Consistent with programs.fish in program.nix
+    shell = pkgs.fish;
   };
 }

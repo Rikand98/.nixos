@@ -2,7 +2,6 @@
   imports = [
     ./bat.nix # Better cat command
     ./btop.nix # Resource monitor
-    ./bottom.nix # Resource monitor
     ./cava.nix # Audio visualizer
     ./fastfetch.nix # Fetch tool
     ./fish.nix

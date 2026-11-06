@@ -1,12 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs = {
     fish = {
       enable = true;
-      loginShellInit = ''
-        export EDITOR=nvim \n
-        starship init fish | source
-      '';
+      # EDITOR is set by programs.nixvim.defaultEditor; starship by enableFishIntegration.
+      loginShellInit = "";
 
       interactiveShellInit = ''
         ${pkgs.pfetch}/bin/pfetch
@@ -58,7 +56,6 @@
         py = "python";
         dsize = "du -hs";
         pdf = "tdf";
-        open = "xdg-open";
         space = "ncdu";
         man = "BAT_THEME='default' batman";
 
@@ -71,9 +68,13 @@
         nixop = "nix store optimise";
         nixgc = "nix store gc";
         nixup = "nix flake update";
-        nixosbuild = "sudo nixos-rebuild switch --flake .#nixos";
-        darwinbuild = "sudo nixos-rebuild switch --flake .#darwin";
+        nixosbuild = "sudo nixos-rebuild switch --flake .#home-desktop";
+        darwinbuild = "sudo darwin-rebuild switch --flake .#lysio-macbook";
         ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
+      }
+      # `open` is a native macOS command; don't shadow it there.
+      // lib.optionalAttrs pkgs.stdenv.isLinux {
+        open = "xdg-open";
       };
     };
   };
