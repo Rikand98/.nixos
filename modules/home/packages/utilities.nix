@@ -24,8 +24,6 @@
 
       # Windows
       winetricks # Helper for Wine installation
-
-      vial
     ]
     # Linux-only: no aarch64-darwin build, or Linux-only by nature.
     ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [

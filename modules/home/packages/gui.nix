@@ -12,6 +12,7 @@
       thunderbird # Email client
       mission-center # GUI resources monitor
       zenity # GUI dialogs
+      zmk-studio
 
       # Video & Image Viewers
       vlc # GUI video player

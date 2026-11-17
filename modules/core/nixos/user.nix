@@ -33,6 +33,7 @@
     description = "${username}";
     extraGroups = [
       "networkmanager"
+      "dialout"
       "wheel"
     ];
     shell = pkgs.fish;
