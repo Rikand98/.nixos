@@ -28,7 +28,7 @@
       vial
     ]
     # Linux-only: no aarch64-darwin build, or Linux-only by nature.
-    ++ lib.optionals pkgs.stdenv.isLinux [
+    ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
       wl-clipboard # Wayland clipboard utils
       poweralertd # Power management alert
       soundwireserver # Sound server tools

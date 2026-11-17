@@ -73,7 +73,7 @@
         ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
       }
       # `open` is a native macOS command; don't shadow it there.
-      // lib.optionalAttrs pkgs.stdenv.isLinux {
+      // lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
         open = "xdg-open";
       };
     };

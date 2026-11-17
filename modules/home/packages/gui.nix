@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
-  # Imported only on Linux (see packages/default.nix) — these are desktop apps
-  # with no aarch64-darwin build (mission-center, pitivi, gimp, obs, vlc, …).
-  home.packages = (
+  # Desktop apps with no aarch64-darwin build (mission-center, pitivi, gimp,
+  # obs, vlc, …). Gated here rather than in imports: referencing pkgs in
+  # imports forces _module.args -> config -> imports and recurses infinitely.
+  home.packages = lib.optionals pkgs.stdenv.hostPlatform.isLinux (
     with pkgs;
     [
       # Productivity Apps

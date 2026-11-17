@@ -46,7 +46,7 @@
       unzip
     ]
     # Linux-only: no aarch64-darwin build.
-    ++ lib.optionals pkgs.stdenv.isLinux [
+    ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
       nitch # System info fetcher
       swappy # Snapshot editing tool
       xxd # Hex/bit manipulation
