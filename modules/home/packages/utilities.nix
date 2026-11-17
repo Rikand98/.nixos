@@ -32,6 +32,8 @@
       # Windows
       winetricks # Helper for Wine installation
 
+      vial
+
     ]
   );
 }
