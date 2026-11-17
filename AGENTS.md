@@ -45,7 +45,7 @@ nix fmt
 nil fmt .
 
 # Check formatting without modifying
-nixpkgs-fmt --check .
+nix fmt -- --check .
 ```
 
 ### Development Shell
@@ -53,7 +53,7 @@ nixpkgs-fmt --check .
 # Enter dev shell with formatting/linting tools
 nix develop
 
-# Tools available: just, nil, nixpkgs-fmt
+# Tools available: just, nil, nixfmt
 ```
 
 ### Testing Single Modules

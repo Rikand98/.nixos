@@ -1,10 +1,4 @@
-{ config, ... }:
-let
-  dmsPath = "${config.home.homeDirectory}/.local/bin/dms";
-
-  # Determine launcher command based on barChoice
-  launcherCommand = ''"fuzzel"'';
-in
+{ ... }:
 ''
   binds {
       // === System & Overview ===

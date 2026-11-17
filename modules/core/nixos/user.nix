@@ -3,6 +3,7 @@
   inputs,
   username,
   hostname,
+  user_info,
   ...
 }:
 {
@@ -15,6 +16,7 @@
         inputs
         username
         hostname
+        user_info
         ;
     };
     users.${username} = {

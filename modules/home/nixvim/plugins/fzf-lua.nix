@@ -17,16 +17,6 @@
 
     keymaps = [
       {
-        mode = [ "t" ];
-        key = "<C-j>";
-        action = "<C-j>";
-      }
-      {
-        mode = [ "t" ];
-        key = "<C-k>";
-        action = "<C-k>";
-      }
-      {
         mode = [ "n" ];
         key = "<leader>,";
         action = "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>";

@@ -1,11 +1,9 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 {
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    config = {
-      common.default = [ "gtk" ];
-    };
+    # niri writes niri-portals.conf, which wins over `config.common` here.
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
     ];

@@ -5,7 +5,6 @@
 
     enableBashIntegration = true;
     enableFishIntegration = true;
-    enableNushellIntegration = true;
 
     settings = {
       format = lib.concatStrings [
@@ -19,7 +18,6 @@
         "[](fg:color_aqua bg:color_blue)"
         "$nix_shell"
         "$python"
-        "$dart"
         "$lua"
         "[](fg:color_blue bg:color_bg3)"
         "$docker_context"
@@ -73,12 +71,6 @@
         style = "bg:color_blue bold fg:color_fg0";
       };
 
-      time = {
-        disabled = false;
-        time_format = "%R";
-        style = "bg:color_bg1";
-        format = "[[   $time ](fg:color_fg0 bg:color_bg1)]($style)";
-      };
 
       cmd_duration = {
         format = "[ [󰔛 $duration](fg:color_fg0 bg:color_bg1)]($style)";
@@ -102,9 +94,6 @@
         vimcmd_visual_symbol = "[](bold fg:color_yellow)";
       };
 
-      hostname = {
-        ssh_symbol = " ";
-      };
 
       docker_context = {
         symbol = " ";
@@ -116,12 +105,6 @@
         symbol = " ";
         style = "bg:color_blue";
         format = "[[ $symbol($virtualenv) ](fg:color_fg0 bg:color_blue)]($style)";
-      };
-
-      dart = {
-        symbol = " ";
-        style = "bg:color_blue";
-        format = "[[ $symbol](fg:color_fg0 bg:color_blue)]($style)";
       };
 
       lua = {

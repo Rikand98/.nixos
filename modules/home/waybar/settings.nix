@@ -43,7 +43,6 @@ in
       "pulseaudio"
       "network"
       "battery"
-      "custom/notification"
     ];
     clock = {
       calendar = {
@@ -57,8 +56,6 @@ in
       format-alt = "  {:%d/%m} ";
     };
     "niri/workspaces" = {
-      active-only = true;
-      disable-scroll = true;
       format = "{icon}";
       on-click = "activate";
       format-icons = {
@@ -78,34 +75,25 @@ in
         "8" = "VIII";
         "9" = "IX";
         "10" = "X";
-        sort-by-number = false;
-      };
-      persistent-workspaces = {
-        "Browser" = [ ];
-        "Terminal" = [ ];
-        "Chat" = [ ];
-        "Game" = [ ];
-        "Music" = [ ];
-        "Settings" = [ ];
       };
     };
     cpu = {
       format = "<span foreground='${green}'> </span> {usage}%";
       format-alt = "<span foreground='${green}'> </span> {avg_frequency} GHz";
       interval = 2;
-      on-click-right = "hyprctl dispatch exec '[float; center; size 950 650] wezterm --override font_size=14 --title float_wezterm btop'";
+      on-click-right = "wezterm -e btop";
     };
     memory = {
       format = "<span foreground='${cyant}'>󰟜 </span>{}%";
       format-alt = "<span foreground='${cyant}'>󰟜 </span>{used} GiB"; # 
       interval = 2;
-      on-click-right = "hyprctl dispatch exec '[float; center; size 950 650] wezterm --override font_size=14 --title float_wezterm btop'";
+      on-click-right = "wezterm -e btop";
     };
     disk = {
       # path = "/";
       format = "<span foreground='${orange}'>󰋊 </span>{percentage_used}%";
       interval = 60;
-      on-click-right = "hyprctl dispatch exec '[float; center; size 950 650] wezterm --override font_size=14 --title float_wezterm btop'";
+      on-click-right = "wezterm -e btop";
     };
     network = {
       format-wifi = "<span foreground='${magenta}'> </span> {signalStrength}%";
@@ -118,7 +106,8 @@ in
       icon-size = 20;
       spacing = 8;
     };
-    pipewire = {
+    # modules-right lists `pulseaudio`, not `pipewire` — this block must match.
+    pulseaudio = {
       format = "{icon} {volume}%";
       format-muted = "<span foreground='${blue}'> </span> {volume}%";
       format-icons = {

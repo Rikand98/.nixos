@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   home.packages = (
     with pkgs;
@@ -13,14 +13,11 @@
       fortune
       lavat
       lolcat
-      nitch # System info fetcher
       pipes # Pipe screensaver
       sl # Steam locomotive
-      # tty-clock # CLI clock
 
       # Multimedia
       ani-cli # CLI anime player
-      imv
       lowfi
       mpv
 
@@ -28,16 +25,13 @@
       binsider # Binary viewer
       bitwise # Bit/hex manipulation
       programmer-calculator
-      xxd # Hex/bit manipulation
 
       # File & Document Tools
       docfd # Fuzzy finder for documents
       jq # JSON processor
-      hexdump # Hex viewer
       ffmpeg
       gifsicle
       yt-dlp-light
-      swappy # Snapshot editing tool
 
       #System Utils
       openssl # Security tools
@@ -46,11 +40,17 @@
       tldr # Simplified man pages
       tdf # CLI PDF viewer
       todo # CLI to-do list
-      toipe # Typing test in terminal
       ttyper # CLI typing test
       gtt # Google Translate
       man-pages # Additional man pages
       unzip
+    ]
+    # Linux-only: no aarch64-darwin build.
+    ++ lib.optionals pkgs.stdenv.isLinux [
+      nitch # System info fetcher
+      swappy # Snapshot editing tool
+      xxd # Hex/bit manipulation
+      hexdump # Hex viewer
     ]
   );
 }

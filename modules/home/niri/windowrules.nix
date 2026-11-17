@@ -19,7 +19,7 @@
       open-on-workspace "Chat"
   }
   window-rule {
-      match app-id=r#"qobuz|streamrip"#
+      match app-id=r#"qobuz"#
       open-maximized true
       open-on-output "HDMI-A-1"
       opacity 0.98

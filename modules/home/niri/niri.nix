@@ -1,16 +1,15 @@
 {
   hostname,
-  config,
   pkgs,
   ...
 }:
 let
 
-  keybindsModule = import ./keybinds.nix { inherit config; };
+  keybindsModule = import ./keybinds.nix { };
   windowrulesModule = import ./windowrules.nix { };
   layoutModule = import ./layout.nix { };
 
-  hostOutputsPath = ./hosts/${hostname}/outputs.nix;
+  hostOutputsPath = ./hosts/${hostname}/output.nix;
   hostOutputs =
     if builtins.pathExists hostOutputsPath then import hostOutputsPath { host = hostname; } else "";
 
@@ -23,35 +22,31 @@ let
 
 in
 {
+  # swayidle runs at startup for the idle lock — it must actually be installed.
   home.packages = with pkgs; [
     niri
     awww
-    grim
-    slurp
-    wl-clip-persist
+    slurp # record.sh grabs the capture area with it
     cliphist
     wf-recorder
-    glib
-    wayland
-    direnv
-    swappy
+    swayidle
     xdg-desktop-portal-gnome
     xwayland-satellite
     wineWow64Packages.wayland
   ];
+
+  # installs direnv + the fish hook; don't also list the package above
+  programs.direnv.enable = true;
+
   xdg.configFile."niri/config.kdl".text = ''
 
     spawn-sh-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP";
     spawn-sh-at-startup "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP";
     spawn-sh-at-startup "awww-daemon";
-    spawn-sh-at-startup "sh -c awww init && awww img $(find ~/Pictures/Wallpapers/ -maxdepth 1 -type f | shuf -n 1) --transition-type none";
     spawn-sh-at-startup "waypaper --wallpaper ~/Pictures/Wallpapers/forest_pastel.png";
     spawn-sh-at-startup "swayidle timeout 300 swaylock -f";
-    spawn-sh-at-startup "niri msg setcursor 'Capitaine Cursors (Gruvbox)' 24&"
     spawn-at-startup "easyeffects -w"
     spawn-at-startup "waybar"
-    spawn-at-startup "swaync"
-    spawn-at-startup "hyprlock"
 
       ${hostOutputs}
 

@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  # Imported only on Linux (see packages/default.nix) — these are desktop apps
+  # with no aarch64-darwin build (mission-center, pitivi, gimp, obs, vlc, …).
   home.packages = (
     with pkgs;
     [

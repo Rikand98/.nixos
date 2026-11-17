@@ -15,16 +15,8 @@
     Screenshots last updated <b>2024-11-13</b>
 </p>
 
-<details>
-    <summary>
-        Hyprlock (EXPAND)
-    </summary>
-    <p align="center">
-        <img src="./.github/assets/screenshots/hyprlock.png" style="margin-bottom: 10px;" /> <br>
-    </p>
-</details>
-
 # 🗃️ Overview
+
 > [!TIP]
 > Great commands for cleaning and optimising your nixos system
 > ```nix store optimise``` and
@@ -41,33 +33,30 @@
 -   [wallpapers](wallpapers/) 🌄 wallpapers collection
 
 ## 📓 Components
-|                             | NixOS + Hyprland                                                                              |
+
+|                             | NixOS + Niri                                                                                 |
 | --------------------------- | :---------------------------------------------------------------------------------------------:
 | **Window Manager**          | [Niri][Niri] |
 | **Bar**                     | [Waybar][Waybar] |
-| **Application Launcher**    | [rofi][rofi] |
-| **Notification Daemon**     | [swaync][swaync] |
+| **Application Launcher**    | [fuzzel][fuzzel] |
+| **Notification Daemon**     | [mako][mako] |
 | **Terminal Emulator**       | [Wezterm][Wezterm] |
 | **Shell**                   | [fish][fish] |
-| **Text Editor**             | [Neovim][Neovim] |
+| **Text Editor**             | [Neovim][Neovim] (nixvim) |
 | **Browser**                 | [Zen][Zen] |
 | **network management tool** | [NetworkManager][NetworkManager] + [network-manager-applet][network-manager-applet] |
-| **System resource monitor** | [Btop][Btop] |
-| **File Manager**            | [yazi][yazi] |
+| **System resource monitor** | [Btop][Btop] + [mission-center][mission-center] |
+| **File Manager**            | [yazi][yazi] + [nemo][nemo] |
 | **Fonts**                   | [CascadiaCode Nerd Font][Nerd fonts] + [JetBrainsMono Nerd Font][Nerd fonts] |
 | **Color Scheme**            | [Gruvbox Dark Hard][Gruvbox] |
 | **Cursor**                  | [Capitaine Cursors][Capitaine-Cursors] |
 | **Icons**                   | [Gruvbox-plus][Gruvbox-plus] |
-| **Lockscreen**              | [Hyprlock][Hyprlock] + [Swaylock-effects][Swaylock-effects] |
-| **Image Viewer**            | [qview][qview] |
+| **Lockscreen**              | [Swaylock-effects][Swaylock-effects] |
+| **Image Viewer**            | [viewnior][viewnior] |
 | **Media Player**            | [mpv][mpv] |
-| **Music Player**            | [audacious][audacious] |
-| **Screenshot Software**     | [grimblast][grimblast] |
+| **PDF Viewer**              | [zathura][zathura] |
 | **Screen Recording**        | [wf-recorder][wf-recorder] |
-| **Clipboard**               | [wl-clip-persist][wl-clip-persist] |
-| **Color Picker**            | [hyprpicker][hyprpicker] |
-
-</details>
+| **Clipboard**               | [cliphist][cliphist] |
 
 # 🚀 Installation
 
@@ -106,7 +95,7 @@ Execute and follow the installation script :
 
 #### 4. **Reboot**
 
-After rebooting, the config should be applied, you'll be greeted by hyprlock prompting for your password.
+After rebooting, the config should be applied, you'll be greeted by the login prompt.
 
 #### 5. **Manual config**
 
@@ -215,25 +204,23 @@ Other dotfiles that I learned / copy from:
 [Wezterm]: https://github.com/wezterm/wezterm
 [Starship]: https://github.com/starship/starship
 [Waybar]: https://github.com/Alexays/Waybar
-[rofi]: https://github.com/lbonn/rofi
+[fuzzel]: https://codeberg.org/fufexan/fuzzel
+[mako]: https://github.com/emersion/mako
+[mission-center]: https://gitlab.com/mission-center-devs/mission-center
 [Btop]: https://github.com/aristocratos/btop
 [nemo]: https://github.com/linuxmint/nemo/
 [yazi]: https://github.com/sxyazi/yazi
 [fish]: https://fishshell.com/
 [Swaylock-effects]: https://github.com/mortie/swaylock-effects
-[Hyprlock]: https://github.com/hyprwm/hyprlock
-[audacious]: https://audacious-media-player.org/
 [mpv]: https://github.com/mpv-player/mpv
+[zathura]: https://pwmt.org/projects/zathura/
+[viewnior]: https://github.com/easymodo/viewnior
 [Neovim]: https://github.com/neovim/neovim
-[grimblast]: https://github.com/hyprwm/contrib
-[qview]: https://interversehq.com/qview/
-[swaync]: https://github.com/ErikReider/SwayNotificationCenter
 [Nerd fonts]: https://github.com/ryanoasis/nerd-fonts
 [NetworkManager]: https://wiki.gnome.org/Projects/NetworkManager
 [network-manager-applet]: https://gitlab.gnome.org/GNOME/network-manager-applet/
-[wl-clip-persist]: https://github.com/Linus789/wl-clip-persist
+[cliphist]: https://github.com/sentriz/cliphist
 [wf-recorder]: https://github.com/ammen99/wf-recorder
-[hyprpicker]: https://github.com/hyprwm/hyprpicker
 [Gruvbox]: https://github.com/morhetz/gruvbox
 [Gruvbox-Plus]: https://github.com/SylEleuth/gruvbox-plus-icon-pack
 [Capitaine-Cursors]: https://github.com/sainnhe/capitaine-cursors

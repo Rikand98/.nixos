@@ -1,7 +1,6 @@
 {
   imports = [
     ./lsp
-    # ./barbar.nix
     ./blink-cmp.nix
     ./bufferline.nix
     ./conform-nvim.nix
@@ -11,7 +10,6 @@
     ./fidget.nix
     ./fzf-lua.nix
     ./harpoon.nix
-    ./inc-rename.nix
     ./indent-o-matic.nix
     ./lint.nix
     ./lualine.nix
@@ -22,9 +20,7 @@
     ./nui.nix
     ./nvim-bqf.nix
     ./persistence.nix
-    ./project-nvim.nix
     ./r-nvim.nix
-    # ./scope.nix
     ./todo-comments.nix
     ./toggleterm.nix
     ./trouble.nix

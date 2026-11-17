@@ -10,11 +10,6 @@
           group = "Buffers";
         }
         {
-          __unkeyed = "<leader>bs";
-          group = "󰒺 Sort";
-          icon = "";
-        }
-        {
           __unkeyed = "<leader>c";
           group = "Code";
         }
@@ -33,11 +28,6 @@
         {
           __unkeyed = "<leader>q";
           group = "Session/Quit";
-        }
-        {
-          __unkeyed = "<leader>r";
-          group = "Refactor";
-          icon = " ";
         }
         {
           __unkeyed = "<leader>s";

@@ -223,11 +223,17 @@ create_user_info() {
 	fi
 
 	echo "Creating user_info.nix..."
+	# Shape must match what flake.nix reads: hostname_1/system_1 (NixOS) and
+	# hostname_2/system_2 (Darwin). Both slots point at the newly created host so
+	# `./hosts/<name>` resolves whichever configuration gets evaluated.
 	cat <<EOF >user_info.nix
 # Private configuration - not committed to git
 {
   username = "$username";
-  hostname = "$hostname";
+  hostname_1 = "$hostname";
+  system_1 = "x86_64-linux";
+  hostname_2 = "$hostname";
+  system_2 = "aarch64-darwin";
   gitUserName = "$github_username";
   gitEmail = "$github_email";
 }
@@ -317,13 +323,12 @@ install() {
 	# Build the system (flakes + home manager)
 	echo -e "\nBuilding the system...\n"
 	if [[ "$SYSTEM" == "nixos" ]]; then
-		sudo nixos-rebuild switch --flake . || {
+		sudo nixos-rebuild switch --flake ".#${hostname}" || {
 			echo "${RED}NixOS rebuild failed.${NORMAL}"
 			exit 1
 		}
 	elif [[ "$SYSTEM" == "darwin" ]]; then
-		sudo nix run github:lnl7/nix-darwin#darwin-rebuild -- switch --flake .#${hostname}
-		sudo nix run nix-darwin --extra-experimental-features nix-command --extra-experimental-features flakes -- switch --flake .#${hostname} || {
+		sudo nix run github:lnl7/nix-darwin#darwin-rebuild -- switch --flake ".#${hostname}" || {
 			echo "${RED}Darwin rebuild failed (try with sudo if needed).${NORMAL}"
 			exit 1
 		}

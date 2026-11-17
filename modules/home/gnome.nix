@@ -1,9 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = (with pkgs; [
-    evince                                        # pdf
-    file-roller                                   # archive
-    gnome-text-editor                             # gedit
+    file-roller # archive manager — xdg archive default
+    gnome-text-editor # GUI text editor — xdg text default (nvim has no .desktop)
   ]);
 
   dconf.settings = {

@@ -3,14 +3,14 @@ with lib;
 let
   defaultApps = {
     browser = [ "zen.desktop" ];
-    text = [ "nvim.desktop" ];
+    # nvim ships no .desktop file, so this association silently did nothing.
+    text = [ "org.gnome.TextEditor.desktop" ];
     image = [ "viewnior.desktop" ];
     audio = [ "mpv.desktop" ];
     video = [ "mpv.desktop" ];
     directory = [ "yazi.desktop" ];
     office = [ "libreoffice.desktop" ];
     pdf = [ "org.pwmt.zathura.desktop" ];
-    terminal = [ "wezterm.desktop" ];
     archive = [ "org.gnome.FileRoller.desktop" ];
     discord = [ "discord.desktop" ];
   };
@@ -68,7 +68,6 @@ let
       "application/rtf"
     ];
     pdf = [ "application/pdf" ];
-    terminal = [ "terminal" ];
     archive = [
       "application/zip"
       "application/rar"

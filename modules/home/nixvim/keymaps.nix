@@ -392,7 +392,7 @@
       {
         mode = [ "n" ];
         key = "[d";
-        action = "<cmdlua vim.diagnostic.goto_prev()<CR>";
+        action = "<cmd>lua vim.diagnostic.goto_prev()<CR>";
         options = {
           silent = true;
           desc = "Prev Diagnostic";
@@ -520,7 +520,7 @@
       {
         mode = [ "n" ];
         key = "<leader>uh";
-        action = "<cmd>lua vim.lsp.inlay_hint(0)<CR>";
+        action = "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>";
         options = {
           silent = true;
           desc = "Toggle Inlay Hints";
@@ -528,15 +528,6 @@
       }
 
       # Window Management
-      {
-        mode = [ "n" ];
-        key = "<leader>w";
-        action = "<cmd>wincmd<CR>";
-        options = {
-          silent = true;
-          desc = "Windows";
-        };
-      }
       {
         mode = [ "n" ];
         key = "<leader>-";

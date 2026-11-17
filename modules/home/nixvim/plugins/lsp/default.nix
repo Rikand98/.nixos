@@ -82,12 +82,6 @@
     }
     {
       mode = ["n"];
-      key = "<leader>cR";
-      action = "<cmd>lua require('nvim-lspconfig').rename_file()<cr>";
-      options = { nowait = true; silent = true; desc = "Rename File"; };
-    }
-    {
-      mode = ["n"];
       key = "<leader>cr";
       action = "<cmd>lua vim.lsp.buf.rename()<cr>";
       options = { nowait = true; silent = true; desc = "Rename"; };
